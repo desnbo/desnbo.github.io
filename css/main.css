@@ -971,7 +971,7 @@ pre .javascript .function {
   bottom: 19px;
 }
 .header {
-  background: url("http://p1.bpimg.com/567571/ac166de55b71355c.png") center top no-repeat;
+  background: url("http://p1.bqimg.com/567571/050cb7af2a95b6c9.png") center top no-repeat;
 }
 .header-inner {
   position: relative;
@@ -994,8 +994,10 @@ pre .javascript .function {
   display: inline-block;
   padding: 0 40px;
   color: #fff;
-  background: #222;
+/*  background: $brand-bg;*/
+  background: rgba(255,255,255,0.4);
   border-bottom: none;
+  width: 280px;
 }
 .brand:hover {
   color: #fff;
@@ -1003,21 +1005,25 @@ pre .javascript .function {
 .logo {
   display: inline-block;
   margin-right: 5px;
-  line-height: 36px;
+  line-height: 40px;
   vertical-align: top;
 }
 .site-title {
   display: inline-block;
   vertical-align: top;
   line-height: 36px;
-  font-size: 20px;
+/* font-size: $logo-font-size;*/
+  font-size: 36px;
+  color: #222;
   font-weight: normal;
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 .site-subtitle {
   margin-top: 10px;
-  font-size: 13px;
-  color: #999;
+/* font-size: $subtitle-font-size;*/
+  font-size: 14px;
+/* color: $subtitle-color;*/
+  color: #222;
 }
 .use-motion .brand {
   opacity: 0;
@@ -1069,6 +1075,10 @@ pre .javascript .function {
   margin-top: 20px;
   padding-left: 0;
   text-align: center;
+  background: rgba(255,255,255,0.2);
+  width: 450px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .menu .menu-item {
   display: inline-block;
@@ -1082,7 +1092,8 @@ pre .javascript .function {
 }
 .menu .menu-item a {
   display: block;
-  font-size: 13px;
+  font-size: 16px;
+  color: #222;
   line-height: inherit;
   border-bottom: 1px solid transparent;
   transition-property: border-color;
@@ -1698,7 +1709,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #691bff;
+  background: #acb409;
 }
 .links-of-blogroll {
   font-size: 13px;
