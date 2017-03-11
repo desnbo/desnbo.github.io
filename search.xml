@@ -1,34 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   
+  
     
     <entry>
       <title><![CDATA[java使用视图值显示数据]]></title>
-      <url>%2F2017%2F03%2F11%2Fjava%E4%B8%AD%E8%A7%86%E5%9B%BE%E5%80%BC%E7%9A%84%E4%BD%BF%E7%94%A8%2F</url>
-      <content type="text"><![CDATA[java视图值的使用开发中,数据库字段如：日期Long,性别int 在页面的显示问题。视图值: 视图值是一种用于界面显示的变量值,该值不具体对应某个数据库字段,它服务与某个数据库字段。 当数据库中的某个字段值不便于显示时，为该字段添加视图值，用于显示对应的信息。 在Model中定义一个String类型的变量,变量名是无法合理显示的字段名+View 为其提供get方法 在其对应变量的set方法中对这个View值进行初始化 日期类型视图值123456789101112131415161718192021222324252627private Long birthday; //出生日期public String birthdayView; //为字段birthday添加视图值public String getBirthdayView() &#123; return birthdayView;&#125;//在相应字段的set方法中初始化视图值public void setBirthday(Long birthday) &#123; this.birthday = birthday; this.birthdayView = FormatUtil.formatDate(birthday);&#125;//日期通用格式化工具类 class FormatUtil &#123; public static final String formatDate(Long time)&#123; DateFormat df=new SimpleDateFormat("yyyy-MM-dd"); return df.format(new Date(time)); &#125; public static final String formatTime(Long time)&#123; DateFormat df=new SimpleDateFormat("HH:mm:ss"); return df.format(new Date(time)); &#125; public static final String formatDateTime(Long time)&#123; DateFormat df=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); return df.format(new Date(time)); &#125; &#125; 性别类型的视图值1234567891011private Integer gender; //性别:1-男;0-女public String genderView; //性别字段视图值public String getGenderView() &#123; return genderView;&#125;public void setGender(Integer gender) &#123; this.gender = gender; this.genderView = gender == 1 ? "男" : "女";&#125; 在页面上通过 OGNL 或 EL 表达式取值 1234&lt;s:iterator value="empList"&gt; &lt;s:property value="birthdayView"/&gt; &lt;td&gt;$&#123;genderView&#125;&lt;/td&gt;&lt;/s:iterator&gt; 如果相应的取值太多,可以采用如下方式: 123456789101112//数据结构思想应用public static final Integer EMP_GENDER_OF_MAN = 1;public static final Integer EMP_GENDER_OF_WOMAN = 0;public static final String EMP_GENDER_OF_MAN_VIEW = "男";public static final String EMP_GENDER_OF_WOMAN_VIEW = "女";public static final Map&lt;Integer, String&gt; genderMap = new HashMap&lt;Integer, String&gt;();static&#123;genderMap.put(EMP_GENDER_OF_MAN, EMP_GENDER_OF_MAN_VIEW);genderMap.put(EMP_GENDER_OF_WOMAN, EMP_GENDER_OF_WOMAN_VIEW);&#125; 相应的初始化 public void setGender(Integer gender) { this.gender = gender; this.genderView = genderMap.get(gender); } 同时，在页面标签中可以通过如下方式动态的调用回显:(需要设置genderMap 为public) &lt;s:select list=&quot;@me.erp.auth.emp.vo.EmpModel@genderMap&quot; name=&quot;em.gender&quot;/&gt; 现在开发中更为普遍的是使用数据字典来解决此类问题.]]></content>
+      <url>http://desnbo.github.io/blog/2017/03/11/java%E4%B8%AD%E8%A7%86%E5%9B%BE%E5%80%BC%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+      <content type="html"><![CDATA[<h2 id="java视图值的使用"><a href="#java视图值的使用" class="headerlink" title="java视图值的使用"></a>java视图值的使用</h2><p>开发中,数据库字段如：日期Long,性别int 在页面的显示问题。<br><strong>视图值</strong>: 视图值是一种用于界面显示的变量值,该值不具体对应某个数据库字段,它服务与某个数据库字段。<br>  当数据库中的某个字段值不便于显示时，为该字段添加视图值，用于显示对应的信息。</p>
+<ol>
+<li>在Model中定义一个String类型的变量,变量名是无法合理显示的字段名+View</li>
+<li>为其提供get方法</li>
+<li>在其对应变量的set方法中对这个View值进行初始化</li>
+</ol>
+<h3 id="日期类型视图值"><a href="#日期类型视图值" class="headerlink" title="日期类型视图值"></a>日期类型视图值</h3><pre><code><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> Long birthday; <span class="comment">//出生日期</span></div><div class="line"><span class="keyword">public</span> String birthdayView; <span class="comment">//为字段birthday添加视图值</span></div><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getBirthdayView</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> birthdayView;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//在相应字段的set方法中初始化视图值</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setBirthday</span><span class="params">(Long birthday)</span> </span>&#123;</div><div class="line">    <span class="keyword">this</span>.birthday = birthday;</div><div class="line">    <span class="keyword">this</span>.birthdayView = FormatUtil.formatDate(birthday);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//日期通用格式化工具类 </span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">FormatUtil</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String <span class="title">formatDate</span><span class="params">(Long time)</span></span>&#123;</div><div class="line">        DateFormat df=<span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd"</span>);</div><div class="line">        <span class="keyword">return</span> df.format(<span class="keyword">new</span> Date(time));</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String <span class="title">formatTime</span><span class="params">(Long time)</span></span>&#123;</div><div class="line">        DateFormat df=<span class="keyword">new</span> SimpleDateFormat(<span class="string">"HH:mm:ss"</span>);</div><div class="line">        <span class="keyword">return</span> df.format(<span class="keyword">new</span> Date(time));</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String <span class="title">formatDateTime</span><span class="params">(Long time)</span></span>&#123;</div><div class="line">        DateFormat df=<span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>);</div><div class="line">        <span class="keyword">return</span> df.format(<span class="keyword">new</span> Date(time));</div><div class="line">    &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><h3 id="性别类型的视图值"><a href="#性别类型的视图值" class="headerlink" title="性别类型的视图值"></a>性别类型的视图值</h3><pre><code><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> Integer gender; <span class="comment">//性别:1-男;0-女</span></div><div class="line"><span class="keyword">public</span> String genderView; <span class="comment">//性别字段视图值</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getGenderView</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> genderView;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setGender</span><span class="params">(Integer gender)</span> </span>&#123;</div><div class="line">    <span class="keyword">this</span>.gender = gender;</div><div class="line">    <span class="keyword">this</span>.genderView = gender == <span class="number">1</span> ? <span class="string">"男"</span> : <span class="string">"女"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><ul>
+<li><p>在页面上通过 OGNL 或 EL 表达式取值</p>
+  <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;s:iterator value="empList"&gt;</div><div class="line">    &lt;s:property value="birthdayView"/&gt;</div><div class="line">    &lt;td&gt;$&#123;genderView&#125;&lt;/td&gt;</div><div class="line">&lt;/s:iterator&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>如果相应的取值太多,可以采用如下方式:</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//数据结构思想应用</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Integer EMP_GENDER_OF_MAN = <span class="number">1</span>;</div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Integer EMP_GENDER_OF_WOMAN = <span class="number">0</span>;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String EMP_GENDER_OF_MAN_VIEW = <span class="string">"男"</span>;</div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String EMP_GENDER_OF_WOMAN_VIEW = <span class="string">"女"</span>;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Map&lt;Integer, String&gt; genderMap = <span class="keyword">new</span> HashMap&lt;Integer, String&gt;();</div><div class="line"><span class="keyword">static</span>&#123;</div><div class="line">genderMap.put(EMP_GENDER_OF_MAN, EMP_GENDER_OF_MAN_VIEW);</div><div class="line">genderMap.put(EMP_GENDER_OF_WOMAN, EMP_GENDER_OF_WOMAN_VIEW);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>相应的初始化</p>
+<pre><code class="java"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setGender</span><span class="params">(Integer gender)</span> </span>{
+    <span class="keyword">this</span>.gender = gender;
+    <span class="keyword">this</span>.genderView = genderMap.get(gender);
+}
+</code></pre>
+<p>同时，在页面标签中可以通过如下方式动态的调用回显:(需要设置genderMap 为public)</p>
+<p><code>&lt;s:select list=&quot;@me.erp.auth.emp.vo.EmpModel@genderMap&quot;  name=&quot;em.gender&quot;/&gt;</code></p>
+</li>
+</ul>
+<p>现在开发中更为普遍的是使用<strong>数据字典</strong>来解决此类问题.</p>
+]]></content>
+      
+        <categories>
+            
+            <category> java </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> viewdata </tag>
+            
+            <tag> javaweb </tag>
+            
+        </tags>
+        
     </entry>
-
     
     <entry>
       <title><![CDATA[my second blog]]></title>
-      <url>%2F2017%2F03%2F10%2Fmy-second-blog%2F</url>
-      <content type="text"><![CDATA[This is my second blog.Hello world peace!]]></content>
+      <url>http://desnbo.github.io/blog/2017/03/10/my-second-blog/</url>
+      <content type="html"><![CDATA[<h1 id="This-is-my-second-blog"><a href="#This-is-my-second-blog" class="headerlink" title="This is my second blog."></a>This is my second blog.</h1><h2 id="Hello-world-peace"><a href="#Hello-world-peace" class="headerlink" title="Hello world peace!"></a>Hello world peace!</h2><hr>
+]]></content>
+      
+        
     </entry>
-
     
     <entry>
       <title><![CDATA[first]]></title>
-      <url>%2F2017%2F03%2F09%2Ffirst%2F</url>
-      <content type="text"><![CDATA[Hi, Welcome to my blog !]]></content>
+      <url>http://desnbo.github.io/blog/2017/03/09/first/</url>
+      <content type="html"><![CDATA[<p>Hi, Welcome to my blog !</p>
+]]></content>
+      
+        
     </entry>
-
     
     <entry>
       <title><![CDATA[Hello World]]></title>
-      <url>%2F2017%2F03%2F09%2Fhello-world%2F</url>
-      <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+      <url>http://desnbo.github.io/blog/2017/03/09/hello-world/</url>
+      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+      
+        
     </entry>
-
     
   
   
