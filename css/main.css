@@ -185,8 +185,8 @@ th {
 }
 body {
   position: relative;
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-size: 14px;
+  font-family: "Microsoft YaHei", Verdana, sans-serif;
+  font-size: 16px;
   line-height: 2;
   color: #555;
   background: #fff;
@@ -216,7 +216,7 @@ h6 {
   padding: 0;
   font-weight: bold;
   line-height: 1.5;
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: Georgia, sans;
 }
 h2,
 h3,
@@ -475,14 +475,14 @@ pre,
   overflow: auto;
   margin: 20px 0;
   padding: 0;
-  font-size: 13px;
+  font-size: 14px;
   color: #4d4d4c;
   background: #f7f7f7;
   line-height: 1.6;
 }
 pre,
 code {
-  font-family: consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace;
+  font-family: "ubuntu mono", "Input Mono", Consolas, Menlo, monospace;
 }
 code {
   padding: 2px 4px;
@@ -490,7 +490,7 @@ code {
   color: #555;
   background: #eee;
   border-radius: 3px;
-  font-size: 13px;
+  font-size: 14px;
 }
 pre code {
   padding: 0;
@@ -994,7 +994,6 @@ pre .javascript .function {
   display: inline-block;
   padding: 0 40px;
   color: #fff;
-/*  background: $brand-bg;*/
   background: rgba(255,255,255,0.4);
   border-bottom: none;
   width: 280px;
@@ -1012,17 +1011,16 @@ pre .javascript .function {
   display: inline-block;
   vertical-align: top;
   line-height: 36px;
-/* font-size: $logo-font-size;*/
-  font-size: 36px;
+  font-size: 40px;
   color: #222;
   font-weight: normal;
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 .site-subtitle {
   margin-top: 10px;
-/* font-size: $subtitle-font-size;*/
-  font-size: 14px;
-/* color: $subtitle-color;*/
+  font-size: 16px;
+  font-size: 16px;
+  color: #222;
   color: #222;
 }
 .use-motion .brand {
@@ -1075,8 +1073,8 @@ pre .javascript .function {
   margin-top: 20px;
   padding-left: 0;
   text-align: center;
-  background: rgba(255,255,255,0.2);
-  width: 450px;
+  background: rgba(235,255,255,0.2);
+  width: 500px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1129,7 +1127,7 @@ pre .javascript .function {
 .post-body .figure .caption {
   margin: 10px auto 15px;
   text-align: center;
-  font-size: 14px;
+  font-size: 16px;
   color: #999;
   font-weight: bold;
   line-height: 1;
@@ -1709,7 +1707,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f7d2b8;
+  background: #ffff61;
 }
 .links-of-blogroll {
   font-size: 13px;
