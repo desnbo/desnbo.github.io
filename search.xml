@@ -4,22 +4,8 @@
     
     <entry>
       <title><![CDATA[java使用视图值显示数据]]></title>
-      <url>%2F2017%2F03%2F11%2Fjava%E4%B8%AD%E8%A7%86%E5%9B%BE%E5%80%BC%E7%9A%84%E4%BD%BF%E7%94%A8%2F</url>
+      <url>%2F2017%2F03%2F11%2Fjava-view-data%2F</url>
       <content type="text"><![CDATA[java视图值的使用开发中,数据库字段如：日期Long,性别int 在页面的显示问题。视图值: 视图值是一种用于界面显示的变量值,该值不具体对应某个数据库字段,它服务与某个数据库字段。 当数据库中的某个字段值不便于显示时，为该字段添加视图值，用于显示对应的信息。 在Model中定义一个String类型的变量,变量名是无法合理显示的字段名+View 为其提供get方法 在其对应变量的set方法中对这个View值进行初始化 日期类型视图值123456789101112131415161718192021222324252627private Long birthday; //出生日期public String birthdayView; //为字段birthday添加视图值public String getBirthdayView() &#123; return birthdayView;&#125;//在相应字段的set方法中初始化视图值public void setBirthday(Long birthday) &#123; this.birthday = birthday; this.birthdayView = FormatUtil.formatDate(birthday);&#125;//日期通用格式化工具类 class FormatUtil &#123; public static final String formatDate(Long time)&#123; DateFormat df=new SimpleDateFormat("yyyy-MM-dd"); return df.format(new Date(time)); &#125; public static final String formatTime(Long time)&#123; DateFormat df=new SimpleDateFormat("HH:mm:ss"); return df.format(new Date(time)); &#125; public static final String formatDateTime(Long time)&#123; DateFormat df=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); return df.format(new Date(time)); &#125; &#125; 性别类型的视图值1234567891011private Integer gender; //性别:1-男;0-女public String genderView; //性别字段视图值public String getGenderView() &#123; return genderView;&#125;public void setGender(Integer gender) &#123; this.gender = gender; this.genderView = gender == 1 ? "男" : "女";&#125; 在页面上通过 OGNL 或 EL 表达式取值 1234&lt;s:iterator value="empList"&gt; &lt;s:property value="birthdayView"/&gt; &lt;td&gt;$&#123;genderView&#125;&lt;/td&gt;&lt;/s:iterator&gt; 如果相应的取值太多,可以采用如下方式: 123456789101112//数据结构思想应用public static final Integer EMP_GENDER_OF_MAN = 1;public static final Integer EMP_GENDER_OF_WOMAN = 0;public static final String EMP_GENDER_OF_MAN_VIEW = "男";public static final String EMP_GENDER_OF_WOMAN_VIEW = "女";public static final Map&lt;Integer, String&gt; genderMap = new HashMap&lt;Integer, String&gt;();static&#123;genderMap.put(EMP_GENDER_OF_MAN, EMP_GENDER_OF_MAN_VIEW);genderMap.put(EMP_GENDER_OF_WOMAN, EMP_GENDER_OF_WOMAN_VIEW);&#125; 相应的初始化 public void setGender(Integer gender) { this.gender = gender; this.genderView = genderMap.get(gender); } 同时，在页面标签中可以通过如下方式动态的调用回显:(需要设置genderMap 为public) &lt;s:select list=&quot;@me.erp.auth.emp.vo.EmpModel@genderMap&quot; name=&quot;em.gender&quot;/&gt; 现在开发中更为普遍的是使用数据字典来解决此类问题.]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[my second blog]]></title>
-      <url>%2F2017%2F03%2F10%2Fmy-second-blog%2F</url>
-      <content type="text"><![CDATA[This is my second blog.Hello world peace!]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[first]]></title>
-      <url>%2F2017%2F03%2F09%2Ffirst%2F</url>
-      <content type="text"><![CDATA[Hi, Welcome to my blog !]]></content>
     </entry>
 
     
