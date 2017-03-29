@@ -1,0 +1,1148 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Spring,Quartz," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="Quartz 简介Quartz: Quartz是一个完全由java编写的开源作业调度框架。是OpenSymphony开源组织在Job scheduling领域又一个开源项目，它可以与J2EE与J2SE应用程序相结合也可以单独使用。Quartz可以用来创建或简单或复杂的程序。Jobs可以做成标准的Java组件或 EJBs。
+简单地创建一个实现org.quartz.Job接口的java类,实现Job接">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring整合Quartz作业调度框架">
+<meta property="og:url" content="http://desnbo.github.io/blog/2017/03/29/spring-quartz/index.html">
+<meta property="og:site_name" content="Desnbo's Notes">
+<meta property="og:description" content="Quartz 简介Quartz: Quartz是一个完全由java编写的开源作业调度框架。是OpenSymphony开源组织在Job scheduling领域又一个开源项目，它可以与J2EE与J2SE应用程序相结合也可以单独使用。Quartz可以用来创建或简单或复杂的程序。Jobs可以做成标准的Java组件或 EJBs。
+简单地创建一个实现org.quartz.Job接口的java类,实现Job接">
+<meta property="og:updated_time" content="2017-03-29T15:03:31.375Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Spring整合Quartz作业调度框架">
+<meta name="twitter:description" content="Quartz 简介Quartz: Quartz是一个完全由java编写的开源作业调度框架。是OpenSymphony开源组织在Job scheduling领域又一个开源项目，它可以与J2EE与J2SE应用程序相结合也可以单独使用。Quartz可以用来创建或简单或复杂的程序。Jobs可以做成标准的Java组件或 EJBs。
+简单地创建一个实现org.quartz.Job接口的java类,实现Job接">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://desnbo.github.io/blog/2017/03/29/spring-quartz/"/>
+
+
+
+
+
+  <title> Spring整合Quartz作业调度框架 | Desnbo's Notes </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?desnbo";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Desnbo's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Done is better than perfect.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-comments"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            Find kids
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://desnbo.github.io/blog/2017/03/29/spring-quartz/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="desnbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Desnbo's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Spring整合Quartz作业调度框架
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-29T22:57:14+08:00">
+                2017-03-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/Spring/" itemprop="url" rel="index">
+                    <span itemprop="name">Spring</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/03/29/spring-quartz/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/29/spring-quartz/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/03/29/spring-quartz/" class="leancloud_visitors" data-flag-title="Spring整合Quartz作业调度框架">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Quartz-简介"><a href="#Quartz-简介" class="headerlink" title="Quartz 简介"></a>Quartz 简介</h2><p><strong><a href="http://baike.baidu.com/link?url=cGixKL86QYZcUhrTpGYLjFmOghA5C00HDtBSmxpZxiRwiJhg9sn2FueHAu_v8WxGmJnW_XtY6jyfFS25qu187K" target="_blank" rel="external">Quartz</a></strong>: Quartz是一个完全由java编写的开源作业调度框架。是OpenSymphony开源组织在Job scheduling领域又一个开源项目，它可以与J2EE与J2SE应用程序相结合也可以单独使用。Quartz可以用来创建或简单或复杂的程序。Jobs可以做成标准的Java组件或 EJBs。</p>
+<p>简单地创建一个实现org.quartz.Job接口的java类,实现Job接口包含的唯一方法：<br><code>public void execute(JobExecutionContext context) throws JobExecutionException</code></p>
+<p>在Job接口实现类里面，添加一些逻辑到execute()方法。一旦你配置好Job实现类并设定好调度时间表，Quartz将密切注意剩余时间。当调度程序确定该是通知你的作业的时候，Quartz框架将调用你Job实现类（作业类）上的execute()方法并允许做它该做的事情。无需报告任何东西给调度器或调用任何特定的东西。仅仅执行任务和结束任务即可。如果配置你的作业在随后再次被调用，Quartz框架将在恰当的时间再次调用它.</p>
+<h2 id="Spring整合-Quartz"><a href="#Spring整合-Quartz" class="headerlink" title="Spring整合 Quartz"></a>Spring整合 Quartz</h2><h4 id="引入quartz-jar"><a href="#引入quartz-jar" class="headerlink" title="引入quartz.jar"></a>引入quartz.jar</h4><p>首先下载 quartz 1.6.1.jar,并加入到项目中.<br>如果是使用Maven构建的项目,在pom.xml中添加依赖<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- quartz --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.opensymphony.quartz<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>quartz<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.6.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="相关文件的配置"><a href="#相关文件的配置" class="headerlink" title="相关文件的配置"></a>相关文件的配置</h3><p>新建调度工具类TimerTask.java<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> me.util.quartz;</div><div class="line"><span class="keyword">import</span> me.util.format.FormatUtil;</div><div class="line"><span class="comment">/**</span></div><div class="line"> * Quartz定时器调度工具类</div><div class="line"> * <span class="doctag">@author</span> Desnbo</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TimerTask</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fnDemo</span><span class="params">()</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"--- begin &gt;&gt;&gt;"</span>);</div><div class="line">        System.out.println(<span class="string">"Quartz 定时器测试---"</span> + FormatUtil.formatDateTime(System.currentTimeMillis()));</div><div class="line">        System.out.println(<span class="string">"--- end &lt;&lt;&lt;"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="配置applicationContext-quartz-xml"><a href="#配置applicationContext-quartz-xml" class="headerlink" title="配置applicationContext-quartz.xml"></a>配置applicationContext-quartz.xml</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span> <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></div><div class="line">    <span class="attr">xsi:schemaLocation</span>=<span class="string">"</span></div><div class="line">        http://www.springframework.org/schema/beans </div><div class="line">        http://www.springframework.org/schema/beans/spring-beans.xsd "&gt;</div><div class="line"></div><div class="line">    <span class="comment">&lt;!-- 1.将要控制的任务配置成Spring可以管理的对象(Bean) --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"timerTask"</span> <span class="attr">class</span>=<span class="string">"me.util.quartz.TimerTask"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="comment">&lt;!-- 2.定义作业业务 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"jobTask"</span> <span class="attr">class</span>=<span class="string">"org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"</span>&gt;</span></div><div class="line">        <span class="comment">&lt;!-- 目标对象:指定对应的作业bean --&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"targetObject"</span> <span class="attr">ref</span>=<span class="string">"timerTask"</span> /&gt;</span></div><div class="line">        <span class="comment">&lt;!-- 目标方法:指定对应的作业方法 --&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"targetMethod"</span> <span class="attr">value</span>=<span class="string">"fnDemo"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></div><div class="line">    </div><div class="line">     <span class="comment">&lt;!-- 3.配置具体的任务执行触发时间 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"doTime"</span> <span class="attr">class</span>=<span class="string">"org.springframework.scheduling.quartz.CronTriggerBean"</span>&gt;</span></div><div class="line">        <span class="comment">&lt;!-- 指定对应的任务 --&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"jobDetail"</span> <span class="attr">ref</span>=<span class="string">"jobTask"</span> /&gt;</span></div><div class="line">        <span class="comment">&lt;!-- cron表达式指定对应的执行周期,此处为每30秒执行一次 --&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"cronExpression"</span> <span class="attr">value</span>=<span class="string">"0/30 * * * * ?"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="comment">&lt;!-- 4. 总管理类:设置具体运行的定时任务,如果将lazy-init='false'那么容器启动就会执行调度程序 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"startQuertz"</span> <span class="attr">class</span>=<span class="string">"org.springframework.scheduling.quartz.SchedulerFactoryBean"</span>&gt;</span></div><div class="line">        <span class="comment">&lt;!-- 定义任务序列,list下可加入其他的调度器--&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"triggers"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">list</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">ref</span> <span class="attr">bean</span>=<span class="string">"doTime"</span> /&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">list</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="配置web-xml"><a href="#配置web-xml" class="headerlink" title="配置web.xml"></a>配置web.xml</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 设置Spring的监听，项目启动时候初始化 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">listener</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">listener-class</span>&gt;</span>org.springframework.web.context.ContextLoaderListener<span class="tag">&lt;/<span class="name">listener-class</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">listener</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 指定Spring配置文件的路径,通配符classpath:applicationContext*.xml--&gt;</span> </div><div class="line"> <span class="tag">&lt;<span class="name">context-param</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>contextConfigLocation<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>classpath:applicationContext-quartz.xml<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></div></pre></td></tr></table></figure>
+<ul>
+<li>启动服务器进行测试,控制台输出如下:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">--- begin &gt;&gt;&gt;</div><div class="line">Quartz 定时器测试---2017-03-29 21:37:00</div><div class="line">--- end &lt;&lt;&lt;</div><div class="line">--- begin &gt;&gt;&gt;</div><div class="line">Quartz 定时器测试---2017-03-29 21:37:30</div><div class="line">--- end &lt;&lt;&lt;</div><div class="line">--- begin &gt;&gt;&gt;</div><div class="line">Quartz 定时器测试---2017-03-29 21:38:00</div><div class="line">--- end &lt;&lt;&lt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>测试成功!<br>使用时只需在配置文件中注入所需的属性,在相应的方法中添加需要执行的代码即可进行作业调度,实现如库存预警,定时发送邮件等功能.</p>
+<hr>
+<h2 id="关于cron表达式"><a href="#关于cron表达式" class="headerlink" title="关于cron表达式"></a>关于cron表达式</h2><p>Cron表达式是一个字符串，字符串以5或6个空格隔开，分开共6个或7个域，每一个域代表一个含义,Cron有如下两种语法格式： </p>
+<ul>
+<li><code>Seconds Minutes Hours DayofMonth Month DayofWeek Year</code></li>
+<li><code>Seconds Minutes Hours DayofMonth Month DayofWeek</code></li>
+</ul>
+<h4 id="每一个域可出现的字符如下："><a href="#每一个域可出现的字符如下：" class="headerlink" title="每一个域可出现的字符如下："></a>每一个域可出现的字符如下：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Seconds:可出现,-  *  / 四个字符，有效范围为0-59的整数   </div><div class="line">Minutes:可出现,-  *  / 四个字符，有效范围为0-59的整数   </div><div class="line">Hours:可出现,-  *  / 四个字符，有效范围为0-23的整数   </div><div class="line">DayofMonth:可出现,-  *  / ? L W C八个字符，有效范围为0-31的整数    </div><div class="line">Month:可出现,-  *  / 四个字符，有效范围为1-12的整数或JAN-DEc   </div><div class="line">DayofWeek:可出现,-  *  / ? L C #四个字符，有效范围为1-7的整数或SUN-SAT两个范围。1表示星期天，2表示星期一， 依次类推   </div><div class="line">Year:可出现,-  *  / 四个字符，有效范围为1970-2099年</div></pre></td></tr></table></figure>
+<h4 id="每一个域都使用数字，但还可以出现如下特殊字符，它们的含义是："><a href="#每一个域都使用数字，但还可以出现如下特殊字符，它们的含义是：" class="headerlink" title="每一个域都使用数字，但还可以出现如下特殊字符，它们的含义是："></a>每一个域都使用数字，但还可以出现如下特殊字符，它们的含义是：</h4><ul>
+<li><p><code>*</code>：表示匹配该域的任意值，假如在Minutes域使用*,即表示每分钟都会触发事件。</p>
+</li>
+<li><p><code>?</code>: 只能用在DayofMonth和DayofWeek两个域。它也匹配域的任意值，但实际不会。因为DayofMonth和DayofWeek会相互影响。例如想在每月的20日触发调度，不管20日到底是星期几，则只能使用如下写法:<br>  <code>13 13 15 20 * ?</code><br>其中最后一位只能用？，而不能使用<em>，如果使用</em>表示不管星期几都会触发，实际上并不是这样。   </p>
+</li>
+<li><p><code>-</code>: 表示范围，例如在Minutes域使用5-20，表示从5分到20分钟每分钟触发一次   </p>
+</li>
+<li><p><code>/</code>：表示起始时间开始触发，然后每隔固定时间触发一次，例如在Minutes域使用5/20,则意味着5分钟触发一次，而25，45等分别触发一次.   </p>
+</li>
+<li><p><code>,</code>: 表示列出枚举值值。例如:在Minutes域使用5,20，则意味着在5和20分每分钟触发一次。  </p>
+</li>
+<li><p><code>L</code>: 表示最后，只能出现在DayofWeek和DayofMonth域，如果在DayofWeek域使用5L,意味着在最后的一个星期四触发。  </p>
+</li>
+<li><p><code>W</code>: 表示有效工作日(周一到周五),只能出现在DayofMonth域，系统将在离指定日期的最近的有效工作日触发事件。例如：在 DayofMonth使用5W，如果5日是星期六，则将在最近的工作日：星期五，即4日触发。如果5日是星期天，则在6日触发；如果5日在星期一到星期五中的一天，则就在5日触发。另外一点，W的最近寻找不会跨过月份   </p>
+</li>
+<li><p><code>LW</code>: 这两个字符可以连用，表示在某个月最后一个工作日，即最后一个星期五。   </p>
+</li>
+<li><p><code>#</code>: 用于确定每个月第几个星期几，只能出现在DayofMonth域。例如在4#2，表示某月的第二个星期三。</p>
+</li>
+</ul>
+<h4 id="一个cron表达式有至少6个（也可能7个）有空格分隔的时间元素"><a href="#一个cron表达式有至少6个（也可能7个）有空格分隔的时间元素" class="headerlink" title="一个cron表达式有至少6个（也可能7个）有空格分隔的时间元素"></a>一个cron表达式有至少6个（也可能7个）有空格分隔的时间元素</h4><p>按顺序依次为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">秒（0~59） </div><div class="line">分钟（0~59） </div><div class="line">小时（0~23） </div><div class="line">天（月）（0~31，但是你需要考虑你月的天数） </div><div class="line">月（0~11） </div><div class="line">天（星期）（1~7 1=SUN 或 SUN，MON，TUE，WED，THU，FRI，SAT） </div><div class="line">年份（1970－2099）</div></pre></td></tr></table></figure></p>
+<p>其中每个元素可以是一个值(如6),一个连续区间(9-12),一个间隔时间(8-18/4)(/表示每隔4小时),一个列表(1,3,5),通配符。由于”月份中的日期”和”星期中的日期”这两个元素互斥的,必须要对其中一个设置<code>?</code>。</p>
+<h4 id="以下为一些cron表达式示例"><a href="#以下为一些cron表达式示例" class="headerlink" title="以下为一些cron表达式示例"></a>以下为一些cron表达式示例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&quot;0 0 2 1 * ? *&quot;  表示在每月的1日的凌晨2点调度任务    </div><div class="line">&quot;0 15 10 ? *  MON-FRI&quot; 表示周一到周五每天上午10：15执行作业            </div><div class="line">&quot;0 15 10 ? 6L 2002-2006&quot; 表示2002-2006年的每个月的最后一个星期五上午10:15执行作业  </div><div class="line">&quot;0 0 10,14,16 * * ?&quot; 每天上午10点，下午2点，4点 </div><div class="line">&quot;0 0/30 9-17 * * ?&quot; 朝九晚五工作时间内每半小时 </div><div class="line">&quot;0 0 12 ? * WED&quot; 表示每个星期三中午12点 </div><div class="line">&quot;0 0 12 * * ?&quot; 每天中午12点触发 </div><div class="line">&quot;0 15 10 ? * *&quot; 每天上午10:15触发 </div><div class="line">&quot;0 15 10 * * ?&quot; 每天上午10:15触发 </div><div class="line">&quot;0 15 10 * * ? *&quot; 每天上午10:15触发 </div><div class="line">&quot;0 15 10 * * ? 2005&quot; 2005年的每天上午10:15触发 </div><div class="line">&quot;0 * 14 * * ?&quot; 在每天下午2点到下午2:59期间的每1分钟触发 </div><div class="line">&quot;0 0/5 14 * * ?&quot; 在每天下午2点到下午2:55期间的每5分钟触发 </div><div class="line">&quot;0 0/5 14,18 * * ?&quot; 在每天下午2点到2:55期间和下午6点到6:55期间的每5分钟触发 </div><div class="line">&quot;0 0-5 14 * * ?&quot; 在每天下午2点到下午2:05期间的每1分钟触发 </div><div class="line">&quot;0 10,44 14 ? 3 WED&quot; 每年三月的星期三的下午2:10和2:44触发 </div><div class="line">&quot;0 15 10 ? * MON-FRI&quot; 周一至周五的上午10:15触发 </div><div class="line">&quot;0 15 10 15 * ?&quot; 每月15日上午10:15触发 </div><div class="line">&quot;0 15 10 L * ?&quot; 每月最后一日的上午10:15触发 </div><div class="line">&quot;0 15 10 ? * 6L&quot; 每月的最后一个星期五上午10:15触发 </div><div class="line">&quot;0 15 10 ? * 6L 2002-2005&quot; 2002年至2005年的每月的最后一个星期五上午10:15触发 </div><div class="line">&quot;0 15 10 ? * 6#3&quot; 每月的第三个星期五上午10:15触发</div></pre></td></tr></table></figure>
+<h4 id="有些子表达式能包含一些范围或列表"><a href="#有些子表达式能包含一些范围或列表" class="headerlink" title="有些子表达式能包含一些范围或列表"></a>有些子表达式能包含一些范围或列表</h4><p>子表达式（天（星期））可以为 “MON-FRI”，“MON，WED，FRI”，“MON-WED,SAT” </p>
+<ul>
+<li><p><code>*</code> <strong>字符代表所有可能的值</strong>, 因此 <code>*</code> 在子表达式（月）里表示每个月的含义，<code>*</code> 在子表达式（天（星期））表示星期的每一天 </p>
+</li>
+<li><p><code>/</code> <strong>字符用来指定数值的增量</strong>, 例如：<br><code>/</code> 在子表达式（分钟）里的“0/15”表示从第0分钟开始，每15分钟;<br><code>/</code> 在子表达式（分钟）里的“3/20”表示从第3分钟开始，每20分钟（它和“3，23，43”）的含义一样.</p>
+</li>
+</ul>
+<ul>
+<li><p><code>?</code> <strong>字符仅被用于天（月）和天（星期）两个子表达式，表示不指定值</strong> ,当2个子表达式其中之一被指定了值以后，为了避免冲突，需要将另一个子表达式的值设为“？” </p>
+</li>
+<li><p><code>L</code> <strong>字符仅被用于天（月）和天（星期）两个子表达式，它是单词“last”的缩写</strong> ,<br>但是它在两个子表达式里的含义是不同的。<br><code>L</code> 在天（月）子表达式中，“L”表示一个月的最后一天;<br><code>L</code> 在天（星期）自表达式中，“L”表示一个星期的最后一天，也就是SAT </p>
+</li>
+</ul>
+<p><strong>如果在 <code>L</code> 前有具体的内容，它就具有其他的含义了</strong>,例如：<br><code>6L</code> 表示这个月的倒数第６天，<br><code>FRIL</code>表示这个月的最一个星期五.<br><strong>注意</strong>：在使用“L”参数时，不要指定列表或范围，因为这会导致问题 </p>
+<h4 id="cron-表达式使用总结"><a href="#cron-表达式使用总结" class="headerlink" title="cron 表达式使用总结"></a>cron 表达式使用总结</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">字段   允许值   允许的特殊字符 </div><div class="line">秒    0-59    , - * / </div><div class="line">分    0-59    , - * / </div><div class="line">小时    0-23    , - * / </div><div class="line">日期    1-31    , - * ? / L W C </div><div class="line">月份    1-12 或者 JAN-DEC    , - * / </div><div class="line">星期    1-7 或者 SUN-SAT    , - * ? / L C # </div><div class="line">年（可选）    留空, 1970-2099    , - * /</div></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Spring/" rel="tag"># Spring</a>
+          
+            <a href="/tags/Quartz/" rel="tag"># Quartz</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/18/form-linkage/" rel="next" title="jQuery + ajax+ json + Struts2 实现表单联动">
+                <i class="fa fa-chevron-left"></i> jQuery + ajax+ json + Struts2 实现表单联动
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2017/03/29/spring-quartz/"
+     data-title="Spring整合Quartz作业调度框架"
+     data-content=""
+     data-url="http://desnbo.github.io/blog/2017/03/29/spring-quartz/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/03/29/spring-quartz/"
+           data-title="Spring整合Quartz作业调度框架" data-url="http://desnbo.github.io/blog/2017/03/29/spring-quartz/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="desnbo" />
+          <p class="site-author-name" itemprop="name">desnbo</p>
+           
+              <p class="site-description motion-element" itemprop="description">Make it Simple. Make it Happen.</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/desnbo" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quartz-简介"><span class="nav-number">1.</span> <span class="nav-text">Quartz 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring整合-Quartz"><span class="nav-number">2.</span> <span class="nav-text">Spring整合 Quartz</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#引入quartz-jar"><span class="nav-number">2.0.1.</span> <span class="nav-text">引入quartz.jar</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相关文件的配置"><span class="nav-number">2.1.</span> <span class="nav-text">相关文件的配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#配置applicationContext-quartz-xml"><span class="nav-number">2.1.1.</span> <span class="nav-text">配置applicationContext-quartz.xml</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置web-xml"><span class="nav-number">2.1.2.</span> <span class="nav-text">配置web.xml</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于cron表达式"><span class="nav-number">3.</span> <span class="nav-text">关于cron表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#每一个域可出现的字符如下："><span class="nav-number">3.0.1.</span> <span class="nav-text">每一个域可出现的字符如下：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#每一个域都使用数字，但还可以出现如下特殊字符，它们的含义是："><span class="nav-number">3.0.2.</span> <span class="nav-text">每一个域都使用数字，但还可以出现如下特殊字符，它们的含义是：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一个cron表达式有至少6个（也可能7个）有空格分隔的时间元素"><span class="nav-number">3.0.3.</span> <span class="nav-text">一个cron表达式有至少6个（也可能7个）有空格分隔的时间元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#以下为一些cron表达式示例"><span class="nav-number">3.0.4.</span> <span class="nav-text">以下为一些cron表达式示例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#有些子表达式能包含一些范围或列表"><span class="nav-number">3.0.5.</span> <span class="nav-text">有些子表达式能包含一些范围或列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cron-表达式使用总结"><span class="nav-number">3.0.6.</span> <span class="nav-text">cron 表达式使用总结</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">desnbo</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a> 
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"desnbo"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("pB1ikBJyJtDJJNo5p8GzcOVx-gzGzoHsz", "BpgFWaHxaVTLiErlBIheu3DB");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

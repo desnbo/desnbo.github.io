@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="ajax,json,jQuery,javaweb,Struts2," />
+  <meta name="keywords" content="ajax,json,jQuery,Struts2,javaweb," />
 
 
 
@@ -104,7 +104,7 @@
 当供应商信息发生变化时，ajax动态加载商品类别信息，并进行展示。
 如果供应商的商品类别为空时，直接不加载12345678910111213141516">
 <meta property="og:image" content="http://p1.bqimg.com/567571/18c3ab5484d90c16.gif">
-<meta property="og:updated_time" content="2017-03-18T18:21:24.075Z">
+<meta property="og:updated_time" content="2017-03-19T14:52:23.158Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery + ajax+ json + Struts2 实现表单联动">
 <meta name="twitter:description" content="在进行信息添加的过程中，经常会用到上下联动的需求，如省市联动。商品的供应商和商品类别的联动。如何实现呢？
@@ -488,14 +488,14 @@
 
       
         <p>在进行信息添加的过程中，经常会用到上下联动的需求，如省市联动。商品的供应商和商品类别的联动。如何实现呢？</p>
-<h3 id="预加载数据"><a href="#预加载数据" class="headerlink" title="预加载数据"></a>预加载数据</h3><p>进入商品信息添加页面前，需要加载一些需要的数据  </p>
+<h2 id="预加载数据"><a href="#预加载数据" class="headerlink" title="预加载数据"></a>预加载数据</h2><p>进入商品信息添加页面前，需要加载一些需要的数据  </p>
 <ul>
 <li>首先要加载所有的供应商信息集合与第一个供应商对应的商品类别集合，并进行展示;</li>
 <li>当供应商信息发生变化时，ajax动态加载商品类别信息，并进行展示。</li>
 <li>如果供应商的商品类别为空时，直接不加载<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> GoodsModel gm = <span class="keyword">new</span> GoodsModel();</div><div class="line"><span class="comment">// 到添加</span></div><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">input</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="comment">// 加载所有具有类别信息的供应商信息</span></div><div class="line">    List&lt;SupplierModel&gt; supplierList = supplierEbi.getAllUnion();</div><div class="line">    ActionContext.getContext().getSession().put(<span class="string">"supplierList"</span>, supplierList);</div><div class="line">    <span class="comment">// 加载当前选中的供应商对应的所有商品类别信息</span></div><div class="line">    Long supplierUuid = <span class="keyword">null</span>;</div><div class="line">    <span class="keyword">if</span> (gm.getUuid() != <span class="keyword">null</span>) &#123;</div><div class="line">        <span class="comment">// 修改操作</span></div><div class="line">        gm = goodsEbi.get(gm.getUuid());</div><div class="line">        supplierUuid = gm.getGtm().getSm().getUuid();</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="comment">//不是修改操作，默认加载第一个</span></div><div class="line">        supplierUuid = supplierList.get(<span class="number">0</span>).getUuid();</div><div class="line">    &#125;</div><div class="line">    List&lt;GoodsTypeModel&gt; gtmList = goodsTypeEbi.getAllBySupUuid(supplierUuid);</div><div class="line">     ActionContext.getContext().getSession().put(<span class="string">"gtmList"</span>, gtmList);</div><div class="line">    <span class="keyword">return</span> <span class="string">"input"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="页面请求"><a href="#页面请求" class="headerlink" title="页面请求"></a>页面请求</h3><ul>
+<h2 id="页面请求"><a href="#页面请求" class="headerlink" title="页面请求"></a>页面请求</h2><ul>
 <li><p>为供应商select添加选项改变事件</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">//为id为supplier 绑定change事件</span></div><div class="line">    $(<span class="string">"#supplier"</span>).change(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">    &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 </li>
@@ -511,19 +511,14 @@
 <li>第二个参数：json格式的参数列表</li>
 <li>第三个参数：当前ajax异步请求执行完毕后返回的处理事件，其中data参数封装了后台请求传输的数据</li>
 </ul>
-<h3 id="后台处理数据"><a href="#后台处理数据" class="headerlink" title="后台处理数据"></a>后台处理数据</h3><ul>
+<h2 id="后台处理数据"><a href="#后台处理数据" class="headerlink" title="后台处理数据"></a>后台处理数据</h2><ul>
 <li>在产品类别<code>GoodsTypeAction</code>中添加对应的方法，根据传递供应商编号获取对应类别信息</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> List&lt;GoodsTypeModel&gt; gtmList;</div><div class="line"></div><div class="line"><span class="comment">//ajax获取供应商对应的类别信息</span></div><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">ajaxGetBySupUuid</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="comment">//根据供应商的uuid获取对应的类别信息</span></div><div class="line">        gtmList = goodsTypeEbi.getAllBySm(gm.getSm().getUuid());</div><div class="line">        <span class="keyword">return</span> <span class="string">"ajaxGetBySupUuid"</span>;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<h3 id="如何将数据传递出去"><a href="#如何将数据传递出去" class="headerlink" title="如何将数据传递出去"></a>如何将数据传递出去</h3><p>得到的数据需要转化为json格式,可以使用json工具类JSONArray  </p>
-<h4 id="加入struts-json-plugin-jar"><a href="#加入struts-json-plugin-jar" class="headerlink" title="加入struts-json-plugin.jar"></a>加入struts-json-plugin.jar</h4><ul>
-<li>此处使用struts-json插件完成该功能(√) =&gt;向项目中加入struts-json对应的jar包</li>
-</ul>
-<h4 id="提供get方法"><a href="#提供get方法" class="headerlink" title="提供get方法"></a>提供get方法</h4><ul>
-<li>该插件只能将Action类中的get开头的方法数据返回，因此为上述方法对应的数据提供get方法  <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> List&lt;GoodsTypeModel&gt; <span class="title">getGtmList</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> gtmList;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="配置struts-xml"><a href="#配置struts-xml" class="headerlink" title="配置struts.xml"></a>配置struts.xml</h4><ul>
+<h2 id="如何将数据传递出去"><a href="#如何将数据传递出去" class="headerlink" title="如何将数据传递出去"></a>如何将数据传递出去</h2><p>得到的数据需要转化为json格式,可以使用json工具类JSONArray,或使用struts-json插件。此处使用struts-json插件完成该功能(√) </p>
+<h3 id="加入相关jar包"><a href="#加入相关jar包" class="headerlink" title="加入相关jar包"></a>加入相关jar包</h3><p>向项目中加入struts-json对应的jar包 <code>struts-json-plugin.jar</code></p>
+<h3 id="提供get方法"><a href="#提供get方法" class="headerlink" title="提供get方法"></a>提供get方法</h3><p>该插件只能将Action类中的get开头的方法数据返回，因此为上述方法对应的数据提供get方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> List&lt;GoodsTypeModel&gt; <span class="title">getGtmList</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> gtmList;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="配置struts-xml"><a href="#配置struts-xml" class="headerlink" title="配置struts.xml"></a>配置struts.xml</h3><ul>
 <li><p>struts.xml文件中开启json数据格式支持，修改默认的继承模式<br>  <code>&lt;package name=&quot;default&quot; namespace=&quot;/&quot; extends=&quot;json-default&quot;&gt;</code></p>
 </li>
 <li><p>设置对应的结果返回类型为json数据格式类型  <code>type=&quot;json&quot;</code></p>
@@ -532,18 +527,15 @@
 <li><p>设置数据来源<br>设置返回json数据，并没有指定返回的数据来源，需要指定返回数据来源,有几种常见方式</p>
 <ol>
 <li>设置数据来源于action类中:<br><code>&lt;param name=&quot;root&quot;&gt;action&lt;/param&gt;</code><br>如果只设置数据来源于action类中，那么此时返回的数据将是Action类中所有的get方法开头的方法返回值，一般需要过滤。</li>
-<li><p>包含过滤设置:<br> <code>&lt;param name=&quot;includeProperties&quot;&gt;gtmList\[\d\]\.uuid,gtmList\[\d\]\.name&lt;/param&gt;</code></p>
-</li>
-<li><p>排除过滤设置:<br> <code>&lt;param name=&quot;excludeProperties&quot;&gt; gtmList\[\d\]\.sm, &lt;/param&gt;</code></p>
-</li>
-<li><p>设置数据来源从某个根获取:  (√) </p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">result</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">"root"</span>&gt;</span>action<span class="tag">&lt;/<span class="name">param</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">"includeProperties"</span>&gt;</span></div><div class="line">            gtmList\[\d\]\.uuid,</div><div class="line">            gtmList\[\d\]\.name</div><div class="line">        <span class="tag">&lt;/<span class="name">param</span>&gt;</span> </div><div class="line"><span class="tag">&lt;/<span class="name">result</span>&gt;</span></div></pre></td></tr></table></figure>
+<li>包含过滤设置:<br> <code>&lt;param name=&quot;includeProperties&quot;&gt;gtmList\[\d\]\.uuid,gtmList\[\d\]\.name&lt;/param&gt;</code></li>
+<li>排除过滤设置:<br> <code>&lt;param name=&quot;excludeProperties&quot;&gt; gtmList\[\d\]\.sm, &lt;/param&gt;</code></li>
+<li>设置数据来源从某个根获取:  (√) <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">result</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">"root"</span>&gt;</span>action<span class="tag">&lt;/<span class="name">param</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">"includeProperties"</span>&gt;</span></div><div class="line">        gtmList\[\d\]\.uuid,</div><div class="line">        gtmList\[\d\]\.name</div><div class="line">    <span class="tag">&lt;/<span class="name">param</span>&gt;</span> </div><div class="line"><span class="tag">&lt;/<span class="name">result</span>&gt;</span></div></pre></td></tr></table></figure>
 </li>
 </ol>
 </li>
 </ul>
 <p>PS: 设置root时，还可以设置对象或者集合对象。<br>如果是对象，则获取的数据为对象json格式转化;<br>如果是集合对象，则获取的数据为集合中的对象数组.<br>上述格式中设置了需要的数据位gtmList集合中每个元素的uuid属性与gtmList集合中每个元素的name属性。</p>
-<h3 id="页面获取json数据"><a href="#页面获取json数据" class="headerlink" title="页面获取json数据"></a>页面获取json数据</h3><ul>
+<h2 id="页面获取json数据"><a href="#页面获取json数据" class="headerlink" title="页面获取json数据"></a>页面获取json数据</h2><ul>
 <li>请求相应的回调方法的参数data中封装了上述返回的json格式数据,根据json数据的格式特点，获取其中的gtmList数据</li>
 <li>将获取的数据拼装成jquery格式的option组件，并添加到对应的select中</li>
 <li><p>由于每次都向类别select中添加数据，数据越来越多，应该每次先清除掉原始数据，然后添加。</p>
@@ -553,7 +545,7 @@
 </li>
 </ul>
 <p><img src="http://p1.bqimg.com/567571/18c3ab5484d90c16.gif" alt="上下联动效果展示"></p>
-<h3 id="知识总结"><a href="#知识总结" class="headerlink" title="知识总结"></a>知识总结</h3><ul>
+<h2 id="知识总结"><a href="#知识总结" class="headerlink" title="知识总结"></a>知识总结</h2><ul>
 <li>jquery发送ajax请求的方式 </li>
 <li>struts-json-plugin插件的使用方式</li>
 <li>收集数据时，产品数据只需收集其类别数据即可，无需收集对应的供应商编号，毕竟后台数据模型关系式产品与产品类别产生关系。</li>
@@ -588,9 +580,9 @@
           
             <a href="/tags/jQuery/" rel="tag"># jQuery</a>
           
-            <a href="/tags/javaweb/" rel="tag"># javaweb</a>
-          
             <a href="/tags/Struts2/" rel="tag"># Struts2</a>
+          
+            <a href="/tags/javaweb/" rel="tag"># javaweb</a>
           
         </div>
       
@@ -612,6 +604,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/29/spring-quartz/" rel="prev" title="Spring整合Quartz作业调度框架">
+                Spring整合Quartz作业调度框架 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -706,7 +702,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -717,7 +713,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -728,7 +724,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -783,7 +779,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#预加载数据"><span class="nav-number">1.</span> <span class="nav-text">预加载数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#页面请求"><span class="nav-number">2.</span> <span class="nav-text">页面请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后台处理数据"><span class="nav-number">3.</span> <span class="nav-text">后台处理数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何将数据传递出去"><span class="nav-number">4.</span> <span class="nav-text">如何将数据传递出去</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#加入struts-json-plugin-jar"><span class="nav-number">4.1.</span> <span class="nav-text">加入struts-json-plugin.jar</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提供get方法"><span class="nav-number">4.2.</span> <span class="nav-text">提供get方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置struts-xml"><span class="nav-number">4.3.</span> <span class="nav-text">配置struts.xml</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#页面获取json数据"><span class="nav-number">5.</span> <span class="nav-text">页面获取json数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#知识总结"><span class="nav-number">6.</span> <span class="nav-text">知识总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#☆end★"><span class="nav-number"></span> <span class="nav-text">☆end★</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#预加载数据"><span class="nav-number">1.</span> <span class="nav-text">预加载数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#页面请求"><span class="nav-number">2.</span> <span class="nav-text">页面请求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后台处理数据"><span class="nav-number">3.</span> <span class="nav-text">后台处理数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何将数据传递出去"><span class="nav-number">4.</span> <span class="nav-text">如何将数据传递出去</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#加入相关jar包"><span class="nav-number">4.1.</span> <span class="nav-text">加入相关jar包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提供get方法"><span class="nav-number">4.2.</span> <span class="nav-text">提供get方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置struts-xml"><span class="nav-number">4.3.</span> <span class="nav-text">配置struts.xml</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#页面获取json数据"><span class="nav-number">5.</span> <span class="nav-text">页面获取json数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#知识总结"><span class="nav-number">6.</span> <span class="nav-text">知识总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#☆end★"><span class="nav-number">7.</span> <span class="nav-text">☆end★</span></a></li></ol></div>
             
 
           </div>
