@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="desnbo,java,web" />
+  <meta name="keywords" content="centos,tomcat,java," />
 
 
 
@@ -87,15 +87,28 @@
 
 
 
-<meta name="description" content="Make it Simple. Make it Happen.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Desnbo's Notes">
-<meta property="og:url" content="http://desnbo.github.io/blog/categories/java/Spring/index.html">
+<meta name="description" content="安装tomcat
+tomcat是免安装软件,下载tomcat8.x.xx.tar.gz,使用sftp或vsftp等上传到服务器  
+通过tar命令直接解压到 /usr/local/ 目录下,为了方便操作,将其修改为tomcat8.sudo tar zxvf tomcat8.x.xx.tar.gz -C /usr/local/sudo mv tomcat8.x.xx tomcat8
+
+配置开机运行t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CentOS7 tomcat的安装及开机自启动配置">
+<meta property="og:url" content="http://desnbo.github.io/blog/2017/04/12/centos7-tomcat-autostart/index.html">
 <meta property="og:site_name" content="Desnbo's Notes">
-<meta property="og:description" content="Make it Simple. Make it Happen.">
+<meta property="og:description" content="安装tomcat
+tomcat是免安装软件,下载tomcat8.x.xx.tar.gz,使用sftp或vsftp等上传到服务器  
+通过tar命令直接解压到 /usr/local/ 目录下,为了方便操作,将其修改为tomcat8.sudo tar zxvf tomcat8.x.xx.tar.gz -C /usr/local/sudo mv tomcat8.x.xx tomcat8
+
+配置开机运行t">
+<meta property="og:updated_time" content="2017-04-11T19:30:28.208Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Desnbo's Notes">
-<meta name="twitter:description" content="Make it Simple. Make it Happen.">
+<meta name="twitter:title" content="CentOS7 tomcat的安装及开机自启动配置">
+<meta name="twitter:description" content="安装tomcat
+tomcat是免安装软件,下载tomcat8.x.xx.tar.gz,使用sftp或vsftp等上传到服务器  
+通过tar命令直接解压到 /usr/local/ 目录下,为了方便操作,将其修改为tomcat8.sudo tar zxvf tomcat8.x.xx.tar.gz -C /usr/local/sudo mv tomcat8.x.xx tomcat8
+
+配置开机运行t">
 
 
 
@@ -123,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://desnbo.github.io/blog/categories/java/Spring/"/>
+  <link rel="canonical" href="http://desnbo.github.io/blog/2017/04/12/centos7-tomcat-autostart/"/>
 
 
 
 
 
-  <title> 分类: Spring | Desnbo's Notes </title>
+  <title> CentOS7 tomcat的安装及开机自启动配置 | Desnbo's Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -164,7 +177,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -322,47 +335,221 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        Spring
-        <small>分类</small>
-      </h2>
-    </div>
-
+  <div id="posts" class="posts-expand">
     
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/03/29/spring-quartz/" itemprop="url">
-              
-                <span itemprop="name">Spring整合Quartz作业调度框架</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-03-29T22:57:14+08:00"
-              content="2017-03-29" >
-          03-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-  </section>
 
   
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://desnbo.github.io/blog/2017/04/12/centos7-tomcat-autostart/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="desnbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Desnbo's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                CentOS7 tomcat的安装及开机自启动配置
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-12T03:18:17+08:00">
+                2017-04-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/04/12/centos7-tomcat-autostart/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/12/centos7-tomcat-autostart/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/04/12/centos7-tomcat-autostart/" class="leancloud_visitors" data-flag-title="CentOS7 tomcat的安装及开机自启动配置">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="安装tomcat"><a href="#安装tomcat" class="headerlink" title="安装tomcat"></a>安装tomcat</h2><ul>
+<li>tomcat是免安装软件,下载tomcat8.x.xx.tar.gz,使用sftp或vsftp等上传到服务器  </li>
+<li>通过tar命令直接解压到 /usr/local/ 目录下,为了方便操作,将其修改为tomcat8.<br><code>sudo tar zxvf tomcat8.x.xx.tar.gz -C /usr/local/</code><br><code>sudo mv tomcat8.x.xx tomcat8</code></li>
+</ul>
+<h2 id="配置开机运行"><a href="#配置开机运行" class="headerlink" title="配置开机运行"></a>配置开机运行</h2><h3 id="tomcat增加启动参数"><a href="#tomcat增加启动参数" class="headerlink" title="tomcat增加启动参数"></a>tomcat增加启动参数</h3><p>tomcat需要增加一个pid文件,在 _<code>$tomcat_home/bin</code><em> 目录下面，增加 </em><code>setenv.sh</code><em> 配置，</em><code>catalina.sh</code>_ 启动的时候会调用，同时配置java内存参数. 添加如下命令：<br><code>[root@desnbo bin]# vi setenv.sh</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">#tomcat startup pid</div><div class="line"></div><div class="line">#set java runtime environment variable </div><div class="line">export JAVA_HOME=/usr/java/jdk1.8.0_121</div><div class="line">export PATH=$PATH:$JAVA_HOME/bin</div><div class="line"></div><div class="line">export CATALINA_HOME=/usr/local/tomcat8</div><div class="line">export CATALINA_BASE=/usr/local/tomcat8</div><div class="line"></div><div class="line">#add tomcat pid</div><div class="line">CATALINA_PID=&quot;$CATALINA_BASE/tomcat.pid&quot;</div><div class="line"></div><div class="line">#add java opts</div><div class="line">JAVA_OPTS=&quot;-server -XX:PermSize=256M -XX:MaxPermSize=1024m -Xms512M -Xmx1024M -XX:MaxNewSize=256m&quot;</div></pre></td></tr></table></figure></p>
+<p><strong>注意:</strong> 配置开机运行时,需要再次添加 JAVA_HOME</p>
+<h3 id="增加-tomcat-service"><a href="#增加-tomcat-service" class="headerlink" title="增加 tomcat.service"></a>增加 tomcat.service</h3><p>在/usr/lib/systemd/system目录下增加tomcat.service，目录必须是绝对目录,添加如下命令：<br><code>[root@desnbo bin]# vim /usr/lib/systemd/system/tomcat.service</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"># conf service desc ,set do this after network started</div><div class="line">[Unit]</div><div class="line">Description=tomcat </div><div class="line">After=syslog.target network.target remote-fs.target nss-lookup.target</div><div class="line"></div><div class="line"># conf service pid, start,stop and restart</div><div class="line">[Service]</div><div class="line">Type=forking</div><div class="line">PIDFile=/usr/local/tomcat8/tomcat.pid</div><div class="line">ExecStart=/usr/local/tomcat8/bin/startup.sh</div><div class="line">ExecStop=/bin/kill -s QUIT $MAINPID</div><div class="line">ExecReload=/bin/kill -s HUP $MAINPID</div><div class="line">PrivateTmp=true</div><div class="line"></div><div class="line"># conf user </div><div class="line">[Install]</div><div class="line">WantedBy=multi-user.target</div></pre></td></tr></table></figure>
+<p><em>[unit]:</em> 配置了服务的描述，规定了在network启动之后执行，</p>
+<p><em>[service]:</em> 配置服务的pid，服务的启动，停止，重启</p>
+<p><em>[install]:</em> 配置了使用用户</p>
+<h3 id="使用tomcat-service"><a href="#使用tomcat-service" class="headerlink" title="使用tomcat.service"></a>使用tomcat.service</h3><p>centos7使用systemctl替换了service命令,如需设置其他服务,替换此处的tomcat即可,如:<code>systemctl start vsftp.service</code></p>
+<ul>
+<li><p>启动服务<br>systemctl start tomcat.service</p>
+</li>
+<li><p>停止服务<br>systemctl stop tomcat.service</p>
+</li>
+<li><p>重启服务<br>systemctl restart tomcat.service</p>
+</li>
+<li><p>增加开机启动<br>systemctl enable tomcat.service  </p>
+</li>
+<li><p>删除开机启动<br>systemctl disable tomcat.service</p>
+</li>
+</ul>
+<p>因为配置pid，在启动的时候会在tomcat的根目录下生产tomcat.pid文件,服务停止后删除.<br>同时tomcat在启动时，执行start不会启动两个tomcat，保证始终只有一个tomcat服务在运行.多个tomcat可以配置在多个目录下，互不影响。</p>
+<h3 id="查看效果"><a href="#查看效果" class="headerlink" title="查看效果"></a>查看效果</h3><p>重启服务器后,通过wget访问,终端输出如下所示,配置tomcat开机自启动成功!</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[desnbo@desnbo java]$ sudo wget 192.168.1.200:8080</div><div class="line">--2017-04-12 03:09:09--  http://192.168.1.200:8080/</div><div class="line">Connecting to 192.168.1.200:8080... connected.</div><div class="line">HTTP request sent, awaiting response... 200 OK</div><div class="line">Length: unspecified [text/html]</div><div class="line">Saving to: ‘index.html.3’</div><div class="line"></div><div class="line">    [ &lt;=&gt;                                                    ] 11,230      --.-K/s   in 0s      </div><div class="line"></div><div class="line">2017-04-12 03:09:09 (158 MB/s) - ‘index.html.3’ saved [11230]</div></pre></td></tr></table></figure>
+<p><strong>☆end☆</strong></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/centos/" rel="tag"># centos</a>
+          
+            <a href="/tags/tomcat/" rel="tag"># tomcat</a>
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/29/spring-quartz/" rel="next" title="Spring整合Quartz作业调度框架">
+                <i class="fa fa-chevron-left"></i> Spring整合Quartz作业调度框架
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2017/04/12/centos7-tomcat-autostart/"
+     data-title="CentOS7 tomcat的安装及开机自启动配置"
+     data-content=""
+     data-url="http://desnbo.github.io/blog/2017/04/12/centos7-tomcat-autostart/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
 
           
           </div>
@@ -370,6 +557,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/04/12/centos7-tomcat-autostart/"
+           data-title="CentOS7 tomcat的安装及开机自启动配置" data-url="http://desnbo.github.io/blog/2017/04/12/centos7-tomcat-autostart/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -389,8 +584,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
@@ -472,6 +676,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装tomcat"><span class="nav-number">1.</span> <span class="nav-text">安装tomcat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置开机运行"><span class="nav-number">2.</span> <span class="nav-text">配置开机运行</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#tomcat增加启动参数"><span class="nav-number">2.1.</span> <span class="nav-text">tomcat增加启动参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#增加-tomcat-service"><span class="nav-number">2.2.</span> <span class="nav-text">增加 tomcat.service</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用tomcat-service"><span class="nav-number">2.3.</span> <span class="nav-text">使用tomcat.service</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看效果"><span class="nav-number">2.4.</span> <span class="nav-text">查看效果</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -577,6 +797,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
