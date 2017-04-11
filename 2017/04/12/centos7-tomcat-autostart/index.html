@@ -101,7 +101,7 @@ tomcat是免安装软件,下载tomcat8.x.xx.tar.gz,使用sftp或vsftp等上传�
 通过tar命令直接解压到 /usr/local/ 目录下,为了方便操作,将其修改为tomcat8.sudo tar zxvf tomcat8.x.xx.tar.gz -C /usr/local/sudo mv tomcat8.x.xx tomcat8
 
 配置开机运行t">
-<meta property="og:updated_time" content="2017-04-11T19:30:28.208Z">
+<meta property="og:updated_time" content="2017-04-11T19:31:35.523Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS7 tomcat的安装及开机自启动配置">
 <meta name="twitter:description" content="安装tomcat
@@ -463,7 +463,7 @@ tomcat是免安装软件,下载tomcat8.x.xx.tar.gz,使用sftp或vsftp等上传�
 </li>
 </ul>
 <p>因为配置pid，在启动的时候会在tomcat的根目录下生产tomcat.pid文件,服务停止后删除.<br>同时tomcat在启动时，执行start不会启动两个tomcat，保证始终只有一个tomcat服务在运行.多个tomcat可以配置在多个目录下，互不影响。</p>
-<h3 id="查看效果"><a href="#查看效果" class="headerlink" title="查看效果"></a>查看效果</h3><p>重启服务器后,通过wget访问,终端输出如下所示,配置tomcat开机自启动成功!</p>
+<h2 id="查看效果"><a href="#查看效果" class="headerlink" title="查看效果"></a>查看效果</h2><p>重启服务器后,通过wget访问,终端输出如下所示,配置tomcat开机自启动成功!</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[desnbo@desnbo java]$ sudo wget 192.168.1.200:8080</div><div class="line">--2017-04-12 03:09:09--  http://192.168.1.200:8080/</div><div class="line">Connecting to 192.168.1.200:8080... connected.</div><div class="line">HTTP request sent, awaiting response... 200 OK</div><div class="line">Length: unspecified [text/html]</div><div class="line">Saving to: ‘index.html.3’</div><div class="line"></div><div class="line">    [ &lt;=&gt;                                                    ] 11,230      --.-K/s   in 0s      </div><div class="line"></div><div class="line">2017-04-12 03:09:09 (158 MB/s) - ‘index.html.3’ saved [11230]</div></pre></td></tr></table></figure>
 <p><strong>☆end☆</strong></p>
 
@@ -686,7 +686,7 @@ tomcat是免安装软件,下载tomcat8.x.xx.tar.gz,使用sftp或vsftp等上传�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装tomcat"><span class="nav-number">1.</span> <span class="nav-text">安装tomcat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置开机运行"><span class="nav-number">2.</span> <span class="nav-text">配置开机运行</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#tomcat增加启动参数"><span class="nav-number">2.1.</span> <span class="nav-text">tomcat增加启动参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#增加-tomcat-service"><span class="nav-number">2.2.</span> <span class="nav-text">增加 tomcat.service</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用tomcat-service"><span class="nav-number">2.3.</span> <span class="nav-text">使用tomcat.service</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看效果"><span class="nav-number">2.4.</span> <span class="nav-text">查看效果</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装tomcat"><span class="nav-number">1.</span> <span class="nav-text">安装tomcat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置开机运行"><span class="nav-number">2.</span> <span class="nav-text">配置开机运行</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#tomcat增加启动参数"><span class="nav-number">2.1.</span> <span class="nav-text">tomcat增加启动参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#增加-tomcat-service"><span class="nav-number">2.2.</span> <span class="nav-text">增加 tomcat.service</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用tomcat-service"><span class="nav-number">2.3.</span> <span class="nav-text">使用tomcat.service</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看效果"><span class="nav-number">3.</span> <span class="nav-text">查看效果</span></a></li></ol></div>
             
 
           </div>
