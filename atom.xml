@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://desnbo.github.io/blog/"/>
-  <updated>2017-04-14T10:51:49.843Z</updated>
+  <updated>2017-04-16T17:25:33.664Z</updated>
   <id>http://desnbo.github.io/blog/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://desnbo.github.io/blog/2017/04/12/centos7-tomcat-autostart/"/>
     <id>http://desnbo.github.io/blog/2017/04/12/centos7-tomcat-autostart/</id>
     <published>2017-04-11T19:18:17.000Z</published>
-    <updated>2017-04-14T10:51:49.843Z</updated>
+    <updated>2017-04-16T17:25:33.664Z</updated>
     
     <content type="html"><![CDATA[<h2 id="安装tomcat"><a href="#安装tomcat" class="headerlink" title="安装tomcat"></a>安装tomcat</h2><ul>
 <li>tomcat是免安装软件,下载tomcat8.x.xx.tar.gz,使用sftp或vsftp等上传到服务器  </li>
@@ -63,6 +63,8 @@
     
     </summary>
     
+      <category term="linux" scheme="http://desnbo.github.io/blog/categories/linux/"/>
+    
     
       <category term="centos" scheme="http://desnbo.github.io/blog/tags/centos/"/>
     
@@ -77,7 +79,7 @@
     <link href="http://desnbo.github.io/blog/2017/03/29/spring-quartz/"/>
     <id>http://desnbo.github.io/blog/2017/03/29/spring-quartz/</id>
     <published>2017-03-29T14:57:14.000Z</published>
-    <updated>2017-04-14T10:57:17.382Z</updated>
+    <updated>2017-04-16T16:31:44.823Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Quartz-简介"><a href="#Quartz-简介" class="headerlink" title="Quartz 简介"></a>Quartz 简介</h2><p><strong><a href="http://baike.baidu.com/link?url=cGixKL86QYZcUhrTpGYLjFmOghA5C00HDtBSmxpZxiRwiJhg9sn2FueHAu_v8WxGmJnW_XtY6jyfFS25qu187K" target="_blank" rel="external">Quartz</a></strong>: 是一个完全由java编写的开源作业调度框架。是OpenSymphony开源组织在Job scheduling领域又一个开源项目，它可以与J2EE与J2SE应用程序相结合也可以单独使用。Quartz可以用来创建或简单或复杂的程序。Jobs可以做成标准的Java组件或 EJBs。<br><a id="more"></a></p>
 <p>简单地创建一个实现org.quartz.Job接口的java类,实现Job接口包含的唯一方法：<br><code>public void execute(JobExecutionContext context) throws JobExecutionException</code></p>
@@ -148,8 +150,6 @@
     
       <category term="java" scheme="http://desnbo.github.io/blog/categories/java/"/>
     
-      <category term="Spring" scheme="http://desnbo.github.io/blog/categories/java/Spring/"/>
-    
     
       <category term="Spring" scheme="http://desnbo.github.io/blog/tags/Spring/"/>
     
@@ -162,7 +162,7 @@
     <link href="http://desnbo.github.io/blog/2017/03/18/form-linkage/"/>
     <id>http://desnbo.github.io/blog/2017/03/18/form-linkage/</id>
     <published>2017-03-18T12:52:23.000Z</published>
-    <updated>2017-04-14T06:39:26.159Z</updated>
+    <updated>2017-04-16T16:31:10.330Z</updated>
     
     <content type="html"><![CDATA[<p>在进行信息添加的过程中，经常会用到上下联动的需求，如省市联动。商品的供应商和商品类别的联动。如何实现呢？<br><a id="more"></a></p>
 <h2 id="预加载数据"><a href="#预加载数据" class="headerlink" title="预加载数据"></a>预加载数据</h2><p>进入商品信息添加页面前，需要加载一些需要的数据  </p>
@@ -238,8 +238,6 @@
     
       <category term="jQuery" scheme="http://desnbo.github.io/blog/categories/jQuery/"/>
     
-      <category term="ajax" scheme="http://desnbo.github.io/blog/categories/jQuery/ajax/"/>
-    
     
       <category term="ajax" scheme="http://desnbo.github.io/blog/tags/ajax/"/>
     
@@ -256,7 +254,7 @@
     <link href="http://desnbo.github.io/blog/2017/03/18/OmniMarkupPreviewer-404/"/>
     <id>http://desnbo.github.io/blog/2017/03/18/OmniMarkupPreviewer-404/</id>
     <published>2017-03-18T10:47:27.000Z</published>
-    <updated>2017-04-14T06:44:13.913Z</updated>
+    <updated>2017-04-16T17:20:48.701Z</updated>
     
     <content type="html"><![CDATA[<h3 id="什么是-Markdown"><a href="#什么是-Markdown" class="headerlink" title="什么是 Markdown"></a>什么是 Markdown</h3><blockquote>
 <p>Markdown 是一种轻量级标记语言，创始人为约翰·格鲁伯（John Gruber）。它允许人们“使用易读易写的纯文本格式编写文档，然后转换成有效的XHTML(或者HTML)文档”。</p>
@@ -281,12 +279,10 @@
     
     </summary>
     
-      <category term="Sublime Text3" scheme="http://desnbo.github.io/blog/categories/Sublime-Text3/"/>
-    
-      <category term="Markdown" scheme="http://desnbo.github.io/blog/categories/Sublime-Text3/Markdown/"/>
+      <category term="SublimeText" scheme="http://desnbo.github.io/blog/categories/SublimeText/"/>
     
     
-      <category term="Sublime text3" scheme="http://desnbo.github.io/blog/tags/Sublime-text3/"/>
+      <category term="SublimeText" scheme="http://desnbo.github.io/blog/tags/SublimeText/"/>
     
       <category term="Markdown" scheme="http://desnbo.github.io/blog/tags/Markdown/"/>
     
@@ -435,7 +431,7 @@
     <link href="http://desnbo.github.io/blog/2017/03/11/java-view-data/"/>
     <id>http://desnbo.github.io/blog/2017/03/11/java-view-data/</id>
     <published>2017-03-10T19:03:31.000Z</published>
-    <updated>2017-04-14T06:45:32.883Z</updated>
+    <updated>2017-04-16T17:21:39.603Z</updated>
     
     <content type="html"><![CDATA[<h2 id="java视图值的使用"><a href="#java视图值的使用" class="headerlink" title="java视图值的使用"></a>java视图值的使用</h2><p>开发中,数据库字段如：日期Long,性别int 在页面的显示问题。<br><strong>视图值</strong>: 视图值是一种用于界面显示的变量值,该值不具体对应某个数据库字段,它服务与某个数据库字段。<br>  当数据库中的某个字段值不便于显示时，为该字段添加视图值，用于显示对应的信息。</p>
 <ol>
