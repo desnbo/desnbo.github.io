@@ -841,11 +841,12 @@ html {
 
 .mid-col {
     position: absolute;
-    right: 0;
+    right: 8%;
     min-height: 100%;
     background: #eaeaea;
-    left: 300px;
+    left: 380px;
     width: auto
+    max-width:90%;
 }
 
 .mid-col.show {
@@ -858,31 +859,35 @@ html {
 }
 
 .left-col {
+    margin-top: 65px;
+    border: 1px dotted silver;
+    left: 40px;
     background: #fff;
-    width: 300px;
+    width: 327px;
     position: fixed;
     opacity: 1;
     -webkit-transition: all .2s ease-in;
     transition: all .2s ease-in;
-    height: 100%;
+    height: 90%;
     z-index: 999
 }
 
 .left-col .overlay {
+    float: left;
     width: 100%;
-    height: 180px;
+    height: 144px;
     position: absolute
 }
 
 .left-col .intrude-less {
     width: 76%;
     text-align: center;
-    margin: 112px auto 0
+    margin: 76px auto 0
 }
 
 .left-col #header {
     width: 100%;
-    height: 300px;
+    height: 240px;
     position: relative;
     border-bottom: 1px solid color-border
 }
@@ -913,7 +918,7 @@ html {
     cursor: pointer;
     text-transform: uppercase;
     float: none;
-    min-height: 150px;
+    min-height: 120px;
     margin-left: -12px;
     text-align: center;
     display: -webkit-box;
@@ -1803,7 +1808,7 @@ pre .id {
 }
 
 .tools-col {
-    width: 360px;
+    width: 350px;
     height: 100%;
     position: fixed;
     left: 0;
@@ -1825,7 +1830,8 @@ pre .id {
 
 .tools-col .tools-section,
 .tools-col .tools-wrap {
-    height: 100%;
+    margin-left: 28px;
+    height: 95%;
     color: #e5e5e5;
     width: 360px;
     overflow: hidden;
@@ -1838,13 +1844,13 @@ pre .id {
 }
 
 .tools-col .tools-section .search-wrap {
-    width: 310px;
-    margin: 20px 20px 10px;
+    width: 300px;
+    margin: 20px 30px 10px;
     position: relative
 }
 
 .tools-col .tools-section .search-wrap .search-ipt {
-    width: 310px;
+    width: 350px;
     color: #fff;
     background: none;
     border: none;
@@ -1855,7 +1861,7 @@ pre .id {
 .tools-col .tools-section .search-wrap .icon {
     position: absolute;
     right: 0;
-    top: 7px;
+    top: 10px;
     color: #fff;
     cursor: pointer
 }
@@ -2027,7 +2033,8 @@ pre .id {
 }
 
 .tools-col .tools-section-friends {
-    padding-top: 30px
+    padding-left:  20px;
+    padding-top: 80px
 }
 
 .tools-col .aboutme-wrap {
@@ -2775,7 +2782,7 @@ pre .id {
 .tooltip-top .tooltip-content {
     position: absolute;
     z-index: 9999;
-    width: 370px;
+    width: 350px;
     left: 50%;
     bottom: 100%;
     font-size: 20px;
