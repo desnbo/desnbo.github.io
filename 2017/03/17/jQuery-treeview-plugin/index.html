@@ -19,7 +19,7 @@
 <meta property="og:image" content="http://i1.piimg.com/567571/46511bae77371454.png">
 <meta property="og:image" content="http://p1.bqimg.com/567571/7f3234444b538e28.png">
 <meta property="og:image" content="http://p1.bpimg.com/567571/331a5f90cf0bb58b.png">
-<meta property="og:updated_time" content="2017-04-14T06:44:46.782Z">
+<meta property="og:updated_time" content="2017-04-17T15:59:20.424Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JQuery树状结构 jQuery Treeview 的使用">
 <meta name="twitter:description" content="在项目中，我们经常会需要一些树状结构的样式来显示层级结构，菜单等，利用Jquery的一些插件，可以实现这些效果的，如Jquery.treeview。jquery treeview树控件是一款非常实用的jquery插件。">
@@ -110,13 +110,7 @@ var _hmt = _hmt || [];
 				
 				<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
 				
-				<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
-				
 				<a class="jianshu" target="_blank" href="http://www.jianshu.com" title="jianshu"><i class="icon-jianshu"></i></a>
-				
-				<a class="mail" target="_blank" href="#" title="mail"><i class="icon-mail"></i></a>
-				
-				<a class="facebook" target="_blank" href="#" title="facebook"><i class="icon-facebook"></i></a>
 				
 				<a class="google" target="_blank" href="#" title="google"><i class="icon-google"></i></a>
 				
@@ -162,13 +156,7 @@ var _hmt = _hmt || [];
 			        
 						<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
 			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
-			        
 						<a class="jianshu" target="_blank" href="http://www.jianshu.com" title="jianshu"><i class="icon-jianshu"></i></a>
-			        
-						<a class="mail" target="_blank" href="#" title="mail"><i class="icon-mail"></i></a>
-			        
-						<a class="facebook" target="_blank" href="#" title="facebook"><i class="icon-facebook"></i></a>
 			        
 						<a class="google" target="_blank" href="#" title="google"><i class="icon-google"></i></a>
 			        
@@ -197,24 +185,34 @@ var _hmt = _hmt || [];
           </div>
           <div id="js-content" class="content-ll">
             <article id="post-jQuery-treeview-plugin" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+<div class="article-inner">
+
+  <header class="article-header">
+  
   
     <h1 class="article-title" itemprop="name">
       JQuery树状结构 jQuery Treeview 的使用
     </h1>
   
 
-        <a href="/2017/03/17/jQuery-treeview-plugin/" class="archive-article-date">
+  <a href="/2017/03/17/jQuery-treeview-plugin/" class="archive-article-date">
   	<time datetime="2017-03-17T12:43:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-17</time>
 </a>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在项目中，我们经常会需要一些树状结构的样式来显示层级结构，菜单等，利用Jquery的一些插件，可以实现这些效果的，如Jquery.treeview。jquery treeview树控件是一款非常实用的jquery插件。</p>
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+  
+
+        <!--Table of Contents begin-->
+        
+          <div id="toc" class="toc-article">
+          <strong class="toc-title">文章目录</strong>
+          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#参数说明"><span class="toc-number">1.</span> <span class="toc-text">参数说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在项目中导入相关的文件"><span class="toc-number">2.</span> <span class="toc-text">在项目中导入相关的文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#页面的实现"><span class="toc-number">3.</span> <span class="toc-text">页面的实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web层实现"><span class="toc-number">4.</span> <span class="toc-text">web层实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#web层实现-1"><span class="toc-number">4.1.</span> <span class="toc-text">web层实现</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#web层实现-2"><span class="toc-number">4.1.1.</span> <span class="toc-text">web层实现</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#业务层实现"><span class="toc-number">5.</span> <span class="toc-text">业务层实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#持久层实现"><span class="toc-number">6.</span> <span class="toc-text">持久层实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#页面显示"><span class="toc-number">7.</span> <span class="toc-text">页面显示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">8.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#☆-end-☆"><span class="toc-number"></span> <span class="toc-text">☆-end-☆</span></a>
+          </div>
+          
+        <!--Table of Contents end -->
+
+          <p>在项目中，我们经常会需要一些树状结构的样式来显示层级结构，菜单等，利用Jquery的一些插件，可以实现这些效果的，如Jquery.treeview。jquery treeview树控件是一款非常实用的jquery插件。</p>
 <p><img src="http://p1.bqimg.com/567571/f1951362bac7bc5f.png" alt="" title="树状结构"></p>
 <a id="more"></a>
 <h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h3><ul>
@@ -238,7 +236,8 @@ var _hmt = _hmt || [];
 </ul>
 <h3 id="页面的实现"><a href="#页面的实现" class="headerlink" title="页面的实现"></a>页面的实现</h3><p>新建一个menu.jsp文件，用于菜单结构的异步加载显示<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">%@</span> <span class="attr">page</span> <span class="attr">language</span>=<span class="string">"java"</span> <span class="attr">contentType</span>=<span class="string">"text/html; charset=UTF-8"</span></span></div><div class="line">    <span class="attr">pageEncoding</span>=<span class="string">"UTF-8"</span>%&gt;</div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>  <span class="attr">href</span>=<span class="string">"js/treeview/jquery.treeview.css"</span> /&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>  <span class="attr">href</span>=<span class="string">"js/treeview/screen.css"</span> /&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/jquery-1.8.3.js"</span>    <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/treeview/jquery.cookie.js"</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/treeview/jquery.treeview.min.js"</span>    <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/treeview/jquery.treeview.async.js"</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"black"</span> <span class="attr">class</span>=<span class="string">"filetree"</span>&gt;</span><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">        $(<span class="string">"#black"</span>).treeview(&#123;</div><div class="line">            <span class="attr">url</span> : <span class="string">"menu_showMenu.action"</span></div><div class="line">        &#125;)</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <h3 id="web层实现"><a href="#web层实现" class="headerlink" title="web层实现"></a>web层实现</h3><p>在MenuAction类中添加showMenu()方法，用于菜单显示数据的处理</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 显示菜单</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MenuAction</span> <span class="keyword">extends</span> <span class="title">ActionSupport</span> </span>&#123;</div><div class="line">    <span class="comment">// Spring注入业务层接口</span></div><div class="line">    <span class="keyword">private</span> MenuEbi menuEbi;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setMenuEbi</span><span class="params">(MenuEbi menuEbi)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.menuEbi = menuEbi;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showMenu</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</div><div class="line">        <span class="comment">//中文乱码解决</span></div><div class="line">        response.setContentType(<span class="string">"text/html;charset=utf-8"</span>);</div><div class="line">        PrintWriter pw = response.getWriter();</div><div class="line"></div><div class="line">        <span class="comment">// 1.首先获取root参数</span></div><div class="line">        String root = ServletActionContext.getRequest().getParameter(<span class="string">"root"</span>);</div><div class="line">        <span class="comment">// 2.判断参数值 source id</span></div><div class="line">        HttpServletResponse response = ServletActionContext.getResponse();</div><div class="line">        <span class="comment">//从session中获取当前登录用户</span></div><div class="line">        EmpModel loginEm = (EmpModel) ServletActionContext.getRequest().getSession().getAttribute(<span class="string">"loginEm"</span>);</div><div class="line"></div><div class="line">        StringBuilder json = <span class="keyword">new</span> StringBuilder();</div><div class="line">        json.append(<span class="string">"["</span>);</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (<span class="string">"source"</span>.equals(root)) &#123;</div><div class="line">            <span class="comment">// 生成一级菜单</span></div><div class="line">            <span class="comment">//获取当前登录用户可操作的一级菜单</span></div><div class="line">            List&lt;MenuModel&gt; menuList = menuEbi.getAllOneLevelByEmp(loginEm.getUuid());</div><div class="line">            <span class="keyword">for</span> (MenuModel temp : menuList) &#123;</div><div class="line">                json.append(<span class="string">"&#123;\"text\":\""</span>);</div><div class="line">                json.append(temp.getName());</div><div class="line">                json.append(<span class="string">"\",\"hasChildren\":true,\"classes\":\"folder\",\"id\":\""</span>);</div><div class="line">                json.append(temp.getUuid());</div><div class="line">                json.append(<span class="string">"\"&#125;,"</span>);</div><div class="line">            &#125;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="comment">// 生成二级菜单项</span></div><div class="line">            <span class="comment">// 获取指定一级菜单的二级菜单项</span></div><div class="line">            Long puuid = <span class="keyword">new</span> Long(root);</div><div class="line">            List&lt;MenuModel&gt; menuList = menuEbi.getByEmpAndPuuid(loginEm.getUuid(), puuid);</div><div class="line">            <span class="keyword">for</span> (MenuModel temp : menuList) &#123;</div><div class="line">                json.append(<span class="string">"&#123;\"text\":\"&lt;a class='hei' target='main' href='"</span>);</div><div class="line">                json.append(temp.getUrl());</div><div class="line">                json.append(<span class="string">"'&gt;"</span>);</div><div class="line">                json.append(temp.getName());</div><div class="line">                json.append(<span class="string">"&lt;/a&gt;\",\"hasChildren\":false,\"classes\":\"file\"&#125;,"</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">//删除最后一个','号</span></div><div class="line">        json.deleteCharAt(json.length() - <span class="number">1</span>);</div><div class="line">        json.append(<span class="string">"]"</span>);</div><div class="line"></div><div class="line">        pw.write(json.toString());</div><div class="line">        pw.flush();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="web层实现-1"><a href="#web层实现-1" class="headerlink" title="web层实现"></a>web层实现</h4><p>web层实现</p>
+<h5 id="web层实现-2"><a href="#web层实现-2" class="headerlink" title="web层实现"></a>web层实现</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 显示菜单</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MenuAction</span> <span class="keyword">extends</span> <span class="title">ActionSupport</span> </span>&#123;</div><div class="line">    <span class="comment">// Spring注入业务层接口</span></div><div class="line">    <span class="keyword">private</span> MenuEbi menuEbi;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setMenuEbi</span><span class="params">(MenuEbi menuEbi)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.menuEbi = menuEbi;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showMenu</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</div><div class="line">        <span class="comment">//中文乱码解决</span></div><div class="line">        response.setContentType(<span class="string">"text/html;charset=utf-8"</span>);</div><div class="line">        PrintWriter pw = response.getWriter();</div><div class="line"></div><div class="line">        <span class="comment">// 1.首先获取root参数</span></div><div class="line">        String root = ServletActionContext.getRequest().getParameter(<span class="string">"root"</span>);</div><div class="line">        <span class="comment">// 2.判断参数值 source id</span></div><div class="line">        HttpServletResponse response = ServletActionContext.getResponse();</div><div class="line">        <span class="comment">//从session中获取当前登录用户</span></div><div class="line">        EmpModel loginEm = (EmpModel) ServletActionContext.getRequest().getSession().getAttribute(<span class="string">"loginEm"</span>);</div><div class="line"></div><div class="line">        StringBuilder json = <span class="keyword">new</span> StringBuilder();</div><div class="line">        json.append(<span class="string">"["</span>);</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (<span class="string">"source"</span>.equals(root)) &#123;</div><div class="line">            <span class="comment">// 生成一级菜单</span></div><div class="line">            <span class="comment">//获取当前登录用户可操作的一级菜单</span></div><div class="line">            List&lt;MenuModel&gt; menuList = menuEbi.getAllOneLevelByEmp(loginEm.getUuid());</div><div class="line">            <span class="keyword">for</span> (MenuModel temp : menuList) &#123;</div><div class="line">                json.append(<span class="string">"&#123;\"text\":\""</span>);</div><div class="line">                json.append(temp.getName());</div><div class="line">                json.append(<span class="string">"\",\"hasChildren\":true,\"classes\":\"folder\",\"id\":\""</span>);</div><div class="line">                json.append(temp.getUuid());</div><div class="line">                json.append(<span class="string">"\"&#125;,"</span>);</div><div class="line">            &#125;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="comment">// 生成二级菜单项</span></div><div class="line">            <span class="comment">// 获取指定一级菜单的二级菜单项</span></div><div class="line">            Long puuid = <span class="keyword">new</span> Long(root);</div><div class="line">            List&lt;MenuModel&gt; menuList = menuEbi.getByEmpAndPuuid(loginEm.getUuid(), puuid);</div><div class="line">            <span class="keyword">for</span> (MenuModel temp : menuList) &#123;</div><div class="line">                json.append(<span class="string">"&#123;\"text\":\"&lt;a class='hei' target='main' href='"</span>);</div><div class="line">                json.append(temp.getUrl());</div><div class="line">                json.append(<span class="string">"'&gt;"</span>);</div><div class="line">                json.append(temp.getName());</div><div class="line">                json.append(<span class="string">"&lt;/a&gt;\",\"hasChildren\":false,\"classes\":\"file\"&#125;,"</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">//删除最后一个','号</span></div><div class="line">        json.deleteCharAt(json.length() - <span class="number">1</span>);</div><div class="line">        json.append(<span class="string">"]"</span>);</div><div class="line"></div><div class="line">        pw.write(json.toString());</div><div class="line">        pw.flush();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="业务层实现"><a href="#业务层实现" class="headerlink" title="业务层实现"></a>业务层实现</h3><ul>
 <li><p>业务层接口</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//开启事务</span></div><div class="line"><span class="meta">@Transactional</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">MenuEbi</span> </span>&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 获取指定员工可操作的一级菜单</div><div class="line">     * </div><div class="line">     * <span class="doctag">@param</span> uuid 员工uuid</div><div class="line">     * <span class="doctag">@return</span></div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> List&lt;MenuModel&gt; <span class="title">getAllOneLevelByEmp</span><span class="params">(Long uuid)</span></span>;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 获取指定员工对应的指定一级菜单可操作的二级菜单</div><div class="line">     * <span class="doctag">@param</span> uuid 员工uuid</div><div class="line">     * <span class="doctag">@param</span> puuid 一级菜单uuid</div><div class="line">     * <span class="doctag">@return</span></div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> List&lt;MenuModel&gt; <span class="title">getByEmpAndPuuid</span><span class="params">(Long uuid, Long puuid)</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -266,13 +265,13 @@ var _hmt = _hmt || [];
 <li>利用 jQuery treeview 实现树状效果十分方便,本次使用了它的异步加载实现了菜单功能,而其他的实现也是类似的,熟悉之后也能轻松的使用.</li>
 </ul>
 <h2 id="☆-end-☆"><a href="#☆-end-☆" class="headerlink" title="☆-end-☆"></a>☆-end-☆</h2>
-      
+          
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+          
+                </div>
+                <div class="article-info article-info-index">
+                
+                  
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
 		<ul class="article-tag-list">
@@ -292,17 +291,17 @@ var _hmt = _hmt || [];
 		</ul>
 	</div>
 
-      
+                  
 	<div class="article-category tagcloud">
 	<i class="icon-book icon"></i>
 	<a class="article-category-link" href="/categories/jQuery/">jQuery</a>
 	</div>
 
 
-      
+                  
 
-      
-        
+                    
+                      
 <div class="share-btn share-icons tooltip-left">
   <div class="tooltip tooltip-east">
     <span class="tooltip-item">
@@ -352,13 +351,13 @@ var _hmt = _hmt || [];
 </div>
 
 <div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-  
+                      
+                      <div class="clearfix"></div>
+                      </div>
+                      </div>
+                      </article>
+                      
+                        
 <nav id="article-nav">
   
     <a href="/2017/03/15/tomcat-datasource/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -378,12 +377,12 @@ var _hmt = _hmt || [];
   
 </nav>
 
+                        
 
+                        
 
-
-
-
-<div class="duoshuo">
+                          
+                            <div class="duoshuo">
 	<!-- 多说评论框 start -->
 	<div class="ds-thread" data-thread-key="jQuery-treeview-plugin" data-title="JQuery树状结构 jQuery Treeview 的使用" data-url="http://desnbo.github.io/blog/2017/03/17/jQuery-treeview-plugin/"></div>
 	<!-- 多说评论框 end -->
@@ -402,9 +401,9 @@ var _hmt = _hmt || [];
 	<!-- 多说公共JS代码 end -->
 </div>
 
+                            
 
-
-
+                            
 
           </div>
         </div>
@@ -522,10 +521,6 @@ var _hmt = _hmt || [];
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">SublimeText</a>
               </li>
              
@@ -543,6 +538,10 @@ var _hmt = _hmt || [];
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -642,11 +641,11 @@ var _hmt = _hmt || [];
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
+              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情岁月</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
+              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>给你好看</a>
             </li>
           
         </ul>

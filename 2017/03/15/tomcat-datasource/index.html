@@ -107,13 +107,7 @@ var _hmt = _hmt || [];
 				
 				<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
 				
-				<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
-				
 				<a class="jianshu" target="_blank" href="http://www.jianshu.com" title="jianshu"><i class="icon-jianshu"></i></a>
-				
-				<a class="mail" target="_blank" href="#" title="mail"><i class="icon-mail"></i></a>
-				
-				<a class="facebook" target="_blank" href="#" title="facebook"><i class="icon-facebook"></i></a>
 				
 				<a class="google" target="_blank" href="#" title="google"><i class="icon-google"></i></a>
 				
@@ -159,13 +153,7 @@ var _hmt = _hmt || [];
 			        
 						<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
 			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
-			        
 						<a class="jianshu" target="_blank" href="http://www.jianshu.com" title="jianshu"><i class="icon-jianshu"></i></a>
-			        
-						<a class="mail" target="_blank" href="#" title="mail"><i class="icon-mail"></i></a>
-			        
-						<a class="facebook" target="_blank" href="#" title="facebook"><i class="icon-facebook"></i></a>
 			        
 						<a class="google" target="_blank" href="#" title="google"><i class="icon-google"></i></a>
 			        
@@ -194,24 +182,29 @@ var _hmt = _hmt || [];
           </div>
           <div id="js-content" class="content-ll">
             <article id="post-tomcat-datasource" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+<div class="article-inner">
+
+  <header class="article-header">
+  
   
     <h1 class="article-title" itemprop="name">
       Tomcat JNDI数据源配置和使用
     </h1>
   
 
-        <a href="/2017/03/15/tomcat-datasource/" class="archive-article-date">
+  <a href="/2017/03/15/tomcat-datasource/" class="archive-article-date">
   	<time datetime="2017-03-15T09:37:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-15</time>
 </a>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>进行实际业务开发时，如果使用的不是专用的应用服务器与数据库服务器，那么往往是在网络上租用一个虚拟的服务器空间，将WEB应用的war包放入服务器空间内，将数据库相关信息放入指定的数据库服务器空间内。</p>
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+  
+
+        <!--Table of Contents begin-->
+        
+        <!--Table of Contents end -->
+
+          <p>进行实际业务开发时，如果使用的不是专用的应用服务器与数据库服务器，那么往往是在网络上租用一个虚拟的服务器空间，将WEB应用的war包放入服务器空间内，将数据库相关信息放入指定的数据库服务器空间内。</p>
 <p>当应用启动时，会根据使用需要创建对应的数据库连接对象。但是如果该服务器上WEB应用过多时，每个WEB应用都有自己的数据库连接管理方式。而WEB服务器连接的数据库地址又唯一。此时如果数据库服务器进行迁移，会造成大多数WEB应用无法正常工作。</p>
 <p>比较合理的解决方案是将Tomcat服务器与数据库服务器的连接关系进行统一配置，所有的应用都使用该配置，这样就不会造成数据库服务器迁移导致应用无法正常工作的现象。如果用户连接的是专用数据库服务器，即便上述操作修改，也不会产生影响。<br><a id="more"></a><br><strong>Tomcat数据源</strong> 是一种将数据库的连接配置信息在服务器端（客户端独立配置）进行配置，当服务器启动时，创建该对象。用户只需要根据对应的名称进行获取就可以了。</p>
 <p><img src="http://i1.piimg.com/567571/00b35a49a79b41ba.png" alt="Tomcat 数据源"></p>
@@ -244,13 +237,13 @@ var _hmt = _hmt || [];
 <li>在进行测试功能的执行时，由于SessionFactory仍然需要加载，而此时服务器无需启动，造成DataSource对应的Bean无法加载，抛出异常。推荐开发阶段使用原始的DataSource，上线后修改为服务器数据源。</li>
 </ol>
 
-      
+          
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+          
+                </div>
+                <div class="article-info article-info-index">
+                
+                  
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
 		<ul class="article-tag-list">
@@ -270,17 +263,17 @@ var _hmt = _hmt || [];
 		</ul>
 	</div>
 
-      
+                  
 	<div class="article-category tagcloud">
 	<i class="icon-book icon"></i>
 	<a class="article-category-link" href="/categories/java/">java</a>
 	</div>
 
 
-      
+                  
 
-      
-        
+                    
+                      
 <div class="share-btn share-icons tooltip-left">
   <div class="tooltip tooltip-east">
     <span class="tooltip-item">
@@ -330,13 +323,13 @@ var _hmt = _hmt || [];
 </div>
 
 <div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-  
+                      
+                      <div class="clearfix"></div>
+                      </div>
+                      </div>
+                      </article>
+                      
+                        
 <nav id="article-nav">
   
     <a href="/2017/03/11/java-view-data/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -356,12 +349,12 @@ var _hmt = _hmt || [];
   
 </nav>
 
+                        
 
+                        
 
-
-
-
-<div class="duoshuo">
+                          
+                            <div class="duoshuo">
 	<!-- 多说评论框 start -->
 	<div class="ds-thread" data-thread-key="tomcat-datasource" data-title="Tomcat JNDI数据源配置和使用" data-url="http://desnbo.github.io/blog/2017/03/15/tomcat-datasource/"></div>
 	<!-- 多说评论框 end -->
@@ -380,9 +373,9 @@ var _hmt = _hmt || [];
 	<!-- 多说公共JS代码 end -->
 </div>
 
+                            
 
-
-
+                            
 
           </div>
         </div>
@@ -500,10 +493,6 @@ var _hmt = _hmt || [];
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">SublimeText</a>
               </li>
              
@@ -521,6 +510,10 @@ var _hmt = _hmt || [];
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -620,11 +613,11 @@ var _hmt = _hmt || [];
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
+              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情岁月</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
+              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>给你好看</a>
             </li>
           
         </ul>

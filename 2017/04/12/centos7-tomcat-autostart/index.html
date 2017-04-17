@@ -17,7 +17,7 @@
 <meta property="og:description" content="安装tomcat tomcat是免安装软件,下载tomcat8.x.xx.tar.gz,使用sftp或vsftp等上传到服务器   通过tar命令直接解压到 /usr/local/ 目录下,为了方便操作,将其修改为tomcat8.sudo tar zxvf tomcat8.x.xx.tar.gz -C /usr/local/sudo mv tomcat8.x.xx tomcat8">
 <meta property="og:image" content="http://i4.buimg.com/567571/d189f29b6e7dc720.png">
 <meta property="og:image" content="http://i1.piimg.com/567571/5cb55a9ea03d39bb.png">
-<meta property="og:updated_time" content="2017-04-16T17:25:33.664Z">
+<meta property="og:updated_time" content="2017-04-17T15:32:00.896Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS7 tomcat的安装及开机自启动配置">
 <meta name="twitter:description" content="安装tomcat tomcat是免安装软件,下载tomcat8.x.xx.tar.gz,使用sftp或vsftp等上传到服务器   通过tar命令直接解压到 /usr/local/ 目录下,为了方便操作,将其修改为tomcat8.sudo tar zxvf tomcat8.x.xx.tar.gz -C /usr/local/sudo mv tomcat8.x.xx tomcat8">
@@ -108,13 +108,7 @@ var _hmt = _hmt || [];
 				
 				<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
 				
-				<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
-				
 				<a class="jianshu" target="_blank" href="http://www.jianshu.com" title="jianshu"><i class="icon-jianshu"></i></a>
-				
-				<a class="mail" target="_blank" href="#" title="mail"><i class="icon-mail"></i></a>
-				
-				<a class="facebook" target="_blank" href="#" title="facebook"><i class="icon-facebook"></i></a>
 				
 				<a class="google" target="_blank" href="#" title="google"><i class="icon-google"></i></a>
 				
@@ -160,13 +154,7 @@ var _hmt = _hmt || [];
 			        
 						<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
 			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
-			        
 						<a class="jianshu" target="_blank" href="http://www.jianshu.com" title="jianshu"><i class="icon-jianshu"></i></a>
-			        
-						<a class="mail" target="_blank" href="#" title="mail"><i class="icon-mail"></i></a>
-			        
-						<a class="facebook" target="_blank" href="#" title="facebook"><i class="icon-facebook"></i></a>
 			        
 						<a class="google" target="_blank" href="#" title="google"><i class="icon-google"></i></a>
 			        
@@ -195,24 +183,29 @@ var _hmt = _hmt || [];
           </div>
           <div id="js-content" class="content-ll">
             <article id="post-centos7-tomcat-autostart" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+<div class="article-inner">
+
+  <header class="article-header">
+  
   
     <h1 class="article-title" itemprop="name">
       CentOS7 tomcat的安装及开机自启动配置
     </h1>
   
 
-        <a href="/2017/04/12/centos7-tomcat-autostart/" class="archive-article-date">
+  <a href="/2017/04/12/centos7-tomcat-autostart/" class="archive-article-date">
   	<time datetime="2017-04-11T19:18:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-12</time>
 </a>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="安装tomcat"><a href="#安装tomcat" class="headerlink" title="安装tomcat"></a>安装tomcat</h2><ul>
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+  
+
+        <!--Table of Contents begin-->
+        
+        <!--Table of Contents end -->
+
+          <h2 id="安装tomcat"><a href="#安装tomcat" class="headerlink" title="安装tomcat"></a>安装tomcat</h2><ul>
 <li>tomcat是免安装软件,下载tomcat8.x.xx.tar.gz,使用sftp或vsftp等上传到服务器  </li>
 <li>通过tar命令直接解压到 /usr/local/ 目录下,为了方便操作,将其修改为tomcat8.<br><code>sudo tar zxvf tomcat8.x.xx.tar.gz -C /usr/local/</code><br><code>sudo mv tomcat8.x.xx tomcat8</code><a id="more"></a>
 <h2 id="配置开机运行"><a href="#配置开机运行" class="headerlink" title="配置开机运行"></a>配置开机运行</h2></li>
@@ -239,18 +232,18 @@ var _hmt = _hmt || [];
 </ul>
 <p>因为配置pid，在启动的时候会在tomcat的根目录下生产tomcat.pid文件,服务停止后删除.<br>同时tomcat在启动时，执行start不会启动两个tomcat，保证始终只有一个tomcat服务在运行.多个tomcat可以配置在多个目录下，互不影响。</p>
 <h2 id="查看效果"><a href="#查看效果" class="headerlink" title="查看效果"></a>查看效果</h2><p>重启服务器后,通过wget访问,终端输出如下所示,配置tomcat开机自启动成功!</p>
-<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[desnbo@desnbo ~]$ sudo wget <span class="number">192.168</span><span class="meta">.1</span><span class="meta">.200</span>:<span class="number">8080</span></div><div class="line">--<span class="number">2017</span>-<span class="number">04</span>-<span class="number">12</span> <span class="number">03</span>:<span class="number">09</span>:<span class="number">09</span>--  http://<span class="number">192.168</span><span class="meta">.1</span><span class="meta">.200</span>:<span class="number">8080</span>/</div><div class="line">Connecting to <span class="number">192.168</span><span class="meta">.1</span><span class="meta">.200</span>:<span class="number">8080</span>... connected.</div><div class="line">HTTP request sent, awaiting response... <span class="number">200</span> OK</div><div class="line"><span class="symbol">Length:</span> unspecified [text/html]</div><div class="line">Saving to: ‘index.html<span class="meta">.3</span>’</div><div class="line"></div><div class="line">    [ &lt;=&gt;       ] <span class="number">11</span>,<span class="number">230</span>                  --.-K/s   <span class="keyword">in</span> 0s      </div><div class="line"></div><div class="line"><span class="number">2017</span>-<span class="number">04</span>-<span class="number">12</span> <span class="number">03</span>:<span class="number">09</span>:<span class="number">09</span> (<span class="number">158</span> MB/s) - ‘index.html<span class="meta">.3</span>’ saved [<span class="number">11230</span>]</div></pre></td></tr></table></figure>
+<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">[desnbo@desnbo ~]$ sudo wget <span class="number">192.168</span><span class="meta">.1</span><span class="meta">.200</span>:<span class="number">8080</span></div><div class="line">--<span class="number">2017</span>-<span class="number">04</span>-<span class="number">12</span> <span class="number">03</span>:<span class="number">09</span>:<span class="number">09</span>--  http://<span class="number">192.168</span><span class="meta">.1</span><span class="meta">.200</span>:<span class="number">8080</span>/</div><div class="line">Connecting to <span class="number">192.168</span><span class="meta">.1</span><span class="meta">.200</span>:<span class="number">8080</span>... connected.</div><div class="line">HTTP request sent, awaiting response... <span class="number">200</span> OK</div><div class="line"><span class="symbol">Length:</span> unspecified [text/html]</div><div class="line">Saving to: ‘index.html<span class="meta">.3</span>’</div><div class="line"></div><div class="line">    [ &lt;=&gt;    ] <span class="number">11</span>,<span class="number">230</span>  --.-K/s   <span class="keyword">in</span> 0s</div><div class="line"><span class="number">2017</span>-<span class="number">04</span>-<span class="number">12</span> <span class="number">03</span>:<span class="number">09</span>:<span class="number">09</span> (<span class="number">158</span> MB/s) - ‘index.html<span class="meta">.3</span>’ saved [<span class="number">11230</span>]</div></pre></td></tr></table></figure>
 <p><img src="http://i4.buimg.com/567571/d189f29b6e7dc720.png" alt="" title="CentOS7-Tomcat-1"></p>
 <p>同时,客户端浏览器也能成功访问:<br><img src="http://i1.piimg.com/567571/5cb55a9ea03d39bb.png" alt="" title="CentOS7-Tomcat-2"></p>
 <p><strong>☆end☆</strong></p>
 
-      
+          
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+          
+                </div>
+                <div class="article-info article-info-index">
+                
+                  
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
 		<ul class="article-tag-list">
@@ -270,17 +263,17 @@ var _hmt = _hmt || [];
 		</ul>
 	</div>
 
-      
+                  
 	<div class="article-category tagcloud">
 	<i class="icon-book icon"></i>
 	<a class="article-category-link" href="/categories/linux/">linux</a>
 	</div>
 
 
-      
+                  
 
-      
-        
+                    
+                      
 <div class="share-btn share-icons tooltip-left">
   <div class="tooltip tooltip-east">
     <span class="tooltip-item">
@@ -330,13 +323,13 @@ var _hmt = _hmt || [];
 </div>
 
 <div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-  
+                      
+                      <div class="clearfix"></div>
+                      </div>
+                      </div>
+                      </article>
+                      
+                        
 <nav id="article-nav">
   
     <a href="/2017/03/29/spring-quartz/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -350,18 +343,18 @@ var _hmt = _hmt || [];
   
   
     <a href="/2017/04/17/first-essay/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">一个大胆的想法</div>
+      <div class="article-nav-title">我有一个大胆的想法</div>
       <i class="icon-circle-right"></i>
     </a>
   
 </nav>
 
+                        
 
+                        
 
-
-
-
-<div class="duoshuo">
+                          
+                            <div class="duoshuo">
 	<!-- 多说评论框 start -->
 	<div class="ds-thread" data-thread-key="centos7-tomcat-autostart" data-title="CentOS7 tomcat的安装及开机自启动配置" data-url="http://desnbo.github.io/blog/2017/04/12/centos7-tomcat-autostart/"></div>
 	<!-- 多说评论框 end -->
@@ -380,9 +373,9 @@ var _hmt = _hmt || [];
 	<!-- 多说公共JS代码 end -->
 </div>
 
+                            
 
-
-
+                            
 
           </div>
         </div>
@@ -500,10 +493,6 @@ var _hmt = _hmt || [];
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">SublimeText</a>
               </li>
              
@@ -521,6 +510,10 @@ var _hmt = _hmt || [];
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -620,11 +613,11 @@ var _hmt = _hmt || [];
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
+              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情岁月</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
+              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>给你好看</a>
             </li>
           
         </ul>
