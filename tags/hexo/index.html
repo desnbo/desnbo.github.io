@@ -6,21 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://desnbo.github.io/blog">
-  <title>Tomcat JNDI数据源配置和使用 | Desnbo</title>
+  <title>Tag: hexo | Desnbo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="进行实际业务开发时，如果使用的不是专用的应用服务器与数据库服务器，那么往往是在网络上租用一个虚拟的服务器空间，将WEB应用的war包放入服务器空间内，将数据库相关信息放入指定的数据库服务器空间内。 当应用启动时，会根据使用需要创建对应的数据库连接对象。但是如果该服务器上WEB应用过多时，每个WEB应用都有自己的数据库连接管理方式。而WEB服务器连接的数据库地址又唯一。此时如果数据库服务器进行迁移，">
-<meta name="keywords" content="tomcat,datasouce,JNDI">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Tomcat JNDI数据源配置和使用">
-<meta property="og:url" content="http://desnbo.github.io/blog/2017/03/15/tomcat-datasource/index.html">
+  <meta name="description" content="Make it Simple. Make it Happen.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Desnbo">
+<meta property="og:url" content="http://desnbo.github.io/blog/tags/hexo/index.html">
 <meta property="og:site_name" content="Desnbo">
-<meta property="og:description" content="进行实际业务开发时，如果使用的不是专用的应用服务器与数据库服务器，那么往往是在网络上租用一个虚拟的服务器空间，将WEB应用的war包放入服务器空间内，将数据库相关信息放入指定的数据库服务器空间内。 当应用启动时，会根据使用需要创建对应的数据库连接对象。但是如果该服务器上WEB应用过多时，每个WEB应用都有自己的数据库连接管理方式。而WEB服务器连接的数据库地址又唯一。此时如果数据库服务器进行迁移，">
-<meta property="og:image" content="http://i1.piimg.com/567571/00b35a49a79b41ba.png">
-<meta property="og:updated_time" content="2017-04-14T06:45:11.353Z">
+<meta property="og:description" content="Make it Simple. Make it Happen.">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tomcat JNDI数据源配置和使用">
-<meta name="twitter:description" content="进行实际业务开发时，如果使用的不是专用的应用服务器与数据库服务器，那么往往是在网络上租用一个虚拟的服务器空间，将WEB应用的war包放入服务器空间内，将数据库相关信息放入指定的数据库服务器空间内。 当应用启动时，会根据使用需要创建对应的数据库连接对象。但是如果该服务器上WEB应用过多时，每个WEB应用都有自己的数据库连接管理方式。而WEB服务器连接的数据库地址又唯一。此时如果数据库服务器进行迁移，">
-<meta name="twitter:image" content="http://i1.piimg.com/567571/00b35a49a79b41ba.png">
+<meta name="twitter:title" content="Desnbo">
+<meta name="twitter:description" content="Make it Simple. Make it Happen.">
   
     <link rel="alternative" href="/atom.xml" title="Desnbo" type="application/atom+xml">
   
@@ -181,201 +177,74 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-tomcat-datasource" class="article article-type-post " itemscope itemprop="blogPost">
-<div class="article-inner">
-
-  <header class="article-header">
+            
   
   
-    <h1 class="article-title" itemprop="name">
-      Tomcat JNDI数据源配置和使用
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/04/20/Hexo-yilia-toc/" class="archive-article-date">
+  	<time datetime="2017-04-19T20:44:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-20</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/04/20/Hexo-yilia-toc/">为Hexo-yilia主题添加目录</a>
     </h1>
   
 
-  <a href="/2017/03/15/tomcat-datasource/" class="archive-article-date">
-  	<time datetime="2017-03-15T09:37:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-15</time>
-</a>
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-  
-
-        <!--Table of Contents begin-->
-        
-          <!--Table of Contents end -->
+        <div class="article-info info-on-right">
           
-          <p>进行实际业务开发时，如果使用的不是专用的应用服务器与数据库服务器，那么往往是在网络上租用一个虚拟的服务器空间，将WEB应用的war包放入服务器空间内，将数据库相关信息放入指定的数据库服务器空间内。</p>
-<p>当应用启动时，会根据使用需要创建对应的数据库连接对象。但是如果该服务器上WEB应用过多时，每个WEB应用都有自己的数据库连接管理方式。而WEB服务器连接的数据库地址又唯一。此时如果数据库服务器进行迁移，会造成大多数WEB应用无法正常工作。</p>
-<p>比较合理的解决方案是将Tomcat服务器与数据库服务器的连接关系进行统一配置，所有的应用都使用该配置，这样就不会造成数据库服务器迁移导致应用无法正常工作的现象。如果用户连接的是专用数据库服务器，即便上述操作修改，也不会产生影响。<br><a id="more"></a><br><strong>Tomcat数据源</strong> 是一种将数据库的连接配置信息在服务器端（客户端独立配置）进行配置，当服务器启动时，创建该对象。用户只需要根据对应的名称进行获取就可以了。</p>
-<p><img src="http://i1.piimg.com/567571/00b35a49a79b41ba.png" alt="Tomcat 数据源"></p>
-<h3 id="配置Tomcat数据源"><a href="#配置Tomcat数据源" class="headerlink" title="配置Tomcat数据源"></a>配置Tomcat数据源</h3><ul>
-<li>修改tomcat安装目录/conf/context.xml，添加如下配置  <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">Resource</span> </span></div><div class="line"><span class="attr">name</span>=<span class="string">"jdbc/DataSource"</span> </div><div class="line"><span class="attr">auth</span>=<span class="string">"Container"</span> </div><div class="line"><span class="attr">type</span>=<span class="string">"javax.sql.DataSource"</span></div><div class="line"><span class="attr">maxActive</span>=<span class="string">"100"</span> </div><div class="line"><span class="attr">maxIdle</span>=<span class="string">"30"</span> </div><div class="line"><span class="attr">maxWait</span>=<span class="string">"10000"</span></div><div class="line"><span class="attr">url</span>=<span class="string">"jdbc:mysql://localhost:3306/[app]"</span></div><div class="line"><span class="attr">driverClassName</span>=<span class="string">"com.mysql.jdbc.Driver"</span></div><div class="line"><span class="attr">username</span>=<span class="string">"root"</span> </div><div class="line"><span class="attr">password</span>=<span class="string">"123456"</span> </div><div class="line">/&gt;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="配置Web应用使用Tomcat数据源"><a href="#配置Web应用使用Tomcat数据源" class="headerlink" title="配置Web应用使用Tomcat数据源"></a>配置Web应用使用Tomcat数据源</h3><ul>
-<li>修改WEB-INF/web.xml，添加如下配置  <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">resource-ref</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">res-ref-name</span>&gt;</span>jdbc/DataSource<span class="tag">&lt;/<span class="name">res-ref-name</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">res-type</span>&gt;</span>javax.sql.DataSource<span class="tag">&lt;/<span class="name">res-type</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">res-auth</span>&gt;</span>Container<span class="tag">&lt;/<span class="name">res-auth</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">resource-ref</span>&gt;</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="配置Spring核心配置文件中使用数据源"><a href="#配置Spring核心配置文件中使用数据源" class="headerlink" title="配置Spring核心配置文件中使用数据源,"></a>配置Spring核心配置文件中使用数据源,</h3><ul>
-<li>开启jee命名空间  <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span><span class="meta">?&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">beans</span></span></div><div class="line"><span class="attr">xmlns:jee</span>=<span class="string">"http://www.springframework.org/schema/jee"</span></div><div class="line"><span class="attr">xsi:schemaLocation</span>=<span class="string">"</span></div><div class="line">    http://www.springframework.org/schema/jee </div><div class="line">    http://www.springframework.org/schema/jee/spring-jee-3.2.xsd</div><div class="line">    "&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li>使用jee命名空间  <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 通过获取服务器配置的数据源，获取数据库连接的信息 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">jee:jndi-lookup</span> <span class="attr">id</span>=<span class="string">"dataSource"</span> </span></div><div class="line"><span class="attr">jndi-name</span>=<span class="string">"java:comp/env/jdbc/DataSource"</span>/&gt;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li>重启服务器，测试功能。测试通过，可以正常登陆</li>
-</ul>
-<h3 id="知识总结"><a href="#知识总结" class="headerlink" title="[知识总结]"></a>[知识总结]</h3><ul>
-<li>有关数据源对象的配置方式有很多种，此处仅为其中一种开发方式，而且此方式没有强依赖关系（其他配置方式中存在）。</li>
-<li><strong>JNDI</strong> ：(Java Naming and Directory Interface)Java命名和目录接口，是SUN公司提供的一种标准的Java命名系统接口,一个应用程序设计的API，它为开发人员提供了查找和访问各种命名和目录服务的通用、统一的接口，类似JDBC都是构建在抽象层上。<br>JNDI名是远端访问的通用名称，可以理解为使用该名称获取对应的资源信息。<br>JNDI的命名官方规范=&gt; java:comp/env/JNDI名称<br>Jboss=&gt; java:JNDI名称<br>Weblogic=&gt; JNDI名称</li>
-</ul>
-<h3 id="开发技巧"><a href="#开发技巧" class="headerlink" title="[开发技巧]"></a>[开发技巧]</h3><ol>
-<li>数据源在配置时，如果是绑定项目的，需要将数据库驱动jar包拷贝到tomcat的lib包下，否则服务器加载时无法找到驱动包，抛出异常</li>
-<li>JNDI规范是J2EE标准定义，但是不同服务器厂商的定义规则有所不同，使用时需要进行区分对待</li>
-<li>在进行测试功能的执行时，由于SessionFactory仍然需要加载，而此时服务器无需启动，造成DataSource对应的Bean无法加载，抛出异常。推荐开发阶段使用原始的DataSource，上线后修改为服务器数据源。</li>
-</ol>
-
-          
-
-          
-                </div>
-                <div class="article-info article-info-index">
-                
-                  
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
 		<ul class="article-tag-list">
 			 
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color2">tomcat</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color5">blog</a>
         </li>
        
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color5">datasouce</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color5">hexo</a>
         </li>
        
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color5">JNDI</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">theme</a>
         </li>
       
 		</ul>
 	</div>
 
-                  
+          
 	<div class="article-category tagcloud">
 	<i class="icon-book icon"></i>
-	<a class="article-category-link" href="/categories/java/">java</a>
+	<a class="article-category-link" href="/categories/hexo/">hexo</a>
 	</div>
 
 
-                  
-
-                    
-                      
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
+        <div class="clearfix"></div>
+    </header>
   </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://desnbo.github.io/blog/2017/03/15/tomcat-datasource/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-                      
-                      <div class="clearfix"></div>
-                      </div>
-                      </div>
-                      </article>
-                      
-                        
-<nav id="article-nav">
-  
-    <a href="/2017/03/11/java-view-data/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          java使用视图值显示数据
-        
-      </div>
-    </a>
+</article>
   
   
-    <a href="/2017/03/17/jQuery-treeview-plugin/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">JQuery树状结构 jQuery Treeview 的使用</div>
-      <i class="icon-circle-right"></i>
-    </a>
+    </div></section>
   
-</nav>
 
-                        
+    
 
-                        
-
-                          
-                            <div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="tomcat-datasource" data-title="Tomcat JNDI数据源配置和使用" data-url="http://desnbo.github.io/blog/2017/03/15/tomcat-datasource/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"desnbo"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
-                            
-
-                            
 
           </div>
         </div>
@@ -412,9 +281,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",

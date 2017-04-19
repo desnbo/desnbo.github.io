@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>http://desnbo.github.io/blog/2017/04/20/Hexo-yilia-toc/</loc>
+    <lastmod>2017-04-19T21:11:38.406Z</lastmod>
+    <data>
+        <display>
+        <title>为Hexo-yilia主题添加目录</title>
+        <pubTime>2017-04-19T20:44:37.000Z</pubTime>
+        
+        <tag>blog</tag>
+         
+        <tag>hexo</tag>
+         
+        <tag>theme</tag>
+         
+         
+           
+             
+              <breadCrumb title="hexo" url="http://desnbo.github.io/blog/categories/hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://desnbo.github.io/blog/2017/03/09/hello-world/</loc>
     <lastmod>2017-04-19T20:05:32.301Z</lastmod>
     <data>

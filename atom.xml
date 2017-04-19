@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://desnbo.github.io/blog/"/>
-  <updated>2017-04-17T13:52:19.743Z</updated>
+  <updated>2017-04-19T21:11:38.406Z</updated>
   <id>http://desnbo.github.io/blog/</id>
   
   <author>
@@ -14,6 +14,47 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>为Hexo-yilia主题添加目录</title>
+    <link href="http://desnbo.github.io/blog/2017/04/20/Hexo-yilia-toc/"/>
+    <id>http://desnbo.github.io/blog/2017/04/20/Hexo-yilia-toc/</id>
+    <published>2017-04-19T20:44:37.000Z</published>
+    <updated>2017-04-19T21:11:38.406Z</updated>
+    
+    <content type="html"><![CDATA[<p>自从使用Hexo建博客以来,前后体验过好几种主题，各有千秋吧,但唯独 <em>Litten</em> 大大的<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">hexo-theme-yilia</a>主题便让我一见倾心,如获至宝,果断收入麾下,强烈推荐一波,在此表示衷心的感谢!!<br>默认还没有添加toc目录功能,有些童鞋迫切的需求,经过一番捣鼓,简单的实现之,将其记录下来与大家分享!<br><a href="https://desnbo.github.io/2017/03/09/hello-world/">查看我的 yilia 主题目录效果</a><br><a id="more"></a></p>
+<h3 id="修改hexo主题的ejs文件"><a href="#修改hexo主题的ejs文件" class="headerlink" title="修改hexo主题的ejs文件"></a>修改hexo主题的ejs文件</h3><ul>
+<li><p>编辑文章显示页面的模板<br><code>themes/yilia/layout/_partial/article.ejs</code>文件。在这个文件中找到<code>&lt;%- post.content %&gt;</code>，并在这一行之前加入如下代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;!--Table <span class="keyword">of</span> Contents begin--&gt;</div><div class="line">&lt;% if (!index &amp;&amp; post.toc)&#123; %&gt;</div><div class="line">  &lt;div id="toc" class="toc-article"&gt;</div><div class="line">  &lt;strong class="toc-title"&gt;文章目录&lt;/strong&gt;</div><div class="line">  &lt;%- toc(post.content) %&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">  &lt;% &#125; %&gt;</div><div class="line">&lt;!--Table of Contents end --&gt;</div><div class="line">  </div><div class="line">&lt;%- post.content %&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>在需要生成toc的文章开头’front-matter’添加 <code>toc: true</code>,就能生成带链接的默认样式目录.如果不指定,则默认不生成目录</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">---</span></div><div class="line"><span class="attr">title:</span> <span class="string">Hello</span> <span class="string">World</span></div><div class="line"><span class="attr">toc:</span> <span class="literal">true</span></div><div class="line"><span class="meta">---</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>TOC默认的样式<br><img src="http://i1.piimg.com/567571/39d8862d41aedd5d.png" alt="" title="[TOC] 默认样式"></p>
+<h3 id="为目录编写简单的CSS文件"><a href="#为目录编写简单的CSS文件" class="headerlink" title="为目录编写简单的CSS文件"></a>为目录编写简单的CSS文件</h3><p>找到<code>themes/yilia/source-src/css/article.scss</code>在文件的最后，添加一些简单样式再编译到source里,当然如果为了简单可以直接添加到<code>themes/yilia/source/main.xxxxxx.css</code>后面  </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*toc*/</span></div><div class="line"><span class="comment">/*指定整个目录div的一些属性*/</span></div><div class="line"><span class="selector-class">.toc-article</span> &#123;</div><div class="line">  <span class="attribute">background</span>: <span class="number">#EAEAEA</span>;</div><div class="line">  <span class="attribute">border</span>: <span class="number">1px</span> dotted <span class="number">#4D4D4D</span>;</div><div class="line">  <span class="attribute">border-radius</span>: <span class="number">10px</span>;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">1.5em</span> <span class="number">1em</span> <span class="number">0.2em</span> <span class="number">2em</span>;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">1.2em</span>;</div><div class="line">  <span class="attribute">max-width</span>: <span class="number">88%</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">/*设置 toc头 字号稍大,以及其颜色*/</span></div><div class="line"><span class="selector-class">.toc-title</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">120%</span>;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#574C4C</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">/*指定了目录列表的一些细节,行高,是否自动不换行,超出隐藏(否则影响窄屏效果)等*/</span></div><div class="line"><span class="selector-class">.toc</span> &#123;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">1em</span>;</div><div class="line">  <span class="attribute">line-height</span>: <span class="number">1.8em</span>;</div><div class="line">  <span class="attribute">white-space</span>: nowrap;</div><div class="line">  <span class="attribute">overflow</span>: hidden;</div><div class="line">&#125;</div><div class="line"><span class="comment">/*指定二级目录的缩进量*/</span></div><div class="line"><span class="selector-class">.toc-child</span> &#123;</div><div class="line">  <span class="attribute">margin-left</span>: <span class="number">1em</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>不同屏幕宽度的TOC预览,<a href="https://desnbo.github.io/2017/03/09/hello-world/">查看我的 yilia 主题目录效果</a> 。  </p>
+<p><img src="http://i1.piimg.com/567571/fde89359e2f51c56.gif" alt="yilia 目录效果" title="TOC预览"></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>只是简单的实现目录功能,如果需要其他更为美观的样式，可以自行进一步美化，如要让目录只在右侧显示，只需添加 <code>#toc{float: right; }</code>并设置相应的一些属性（如最大宽度等）即可。由于我的文章一般不长,所有只能拼凑出来举个简单的栗子,有许多不足的地方,还望不吝赐教。</p>
+<h2 id="☆end☆"><a href="#☆end☆" class="headerlink" title="☆end☆"></a>☆end☆</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;自从使用Hexo建博客以来,前后体验过好几种主题，各有千秋吧,但唯独 &lt;em&gt;Litten&lt;/em&gt; 大大的&lt;a href=&quot;https://github.com/litten/hexo-theme-yilia&quot;&gt;hexo-theme-yilia&lt;/a&gt;主题便让我一见倾心,如获至宝,果断收入麾下,强烈推荐一波,在此表示衷心的感谢!!&lt;br&gt;默认还没有添加toc目录功能,有些童鞋迫切的需求,经过一番捣鼓,简单的实现之,将其记录下来与大家分享!&lt;br&gt;&lt;a href=&quot;https://desnbo.github.io/2017/03/09/hello-world/&quot;&gt;查看我的 yilia 主题目录效果&lt;/a&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="hexo" scheme="http://desnbo.github.io/blog/categories/hexo/"/>
+    
+    
+      <category term="blog" scheme="http://desnbo.github.io/blog/tags/blog/"/>
+    
+      <category term="hexo" scheme="http://desnbo.github.io/blog/tags/hexo/"/>
+    
+      <category term="theme" scheme="http://desnbo.github.io/blog/tags/theme/"/>
+    
+  </entry>
   
   <entry>
     <title>我有一个大胆的想法</title>

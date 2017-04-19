@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[为Hexo-yilia主题添加目录]]></title>
+      <url>%2F2017%2F04%2F20%2FHexo-yilia-toc%2F</url>
+      <content type="text"><![CDATA[自从使用Hexo建博客以来,前后体验过好几种主题，各有千秋吧,但唯独 Litten 大大的hexo-theme-yilia主题便让我一见倾心,如获至宝,果断收入麾下,强烈推荐一波,在此表示衷心的感谢!!默认还没有添加toc目录功能,有些童鞋迫切的需求,经过一番捣鼓,简单的实现之,将其记录下来与大家分享!查看我的 yilia 主题目录效果 修改hexo主题的ejs文件 编辑文章显示页面的模板themes/yilia/layout/_partial/article.ejs文件。在这个文件中找到&lt;%- post.content %&gt;，并在这一行之前加入如下代码： 1234567891011&lt;!--Table of Contents begin--&gt;&lt;% if (!index &amp;&amp; post.toc)&#123; %&gt; &lt;div id="toc" class="toc-article"&gt; &lt;strong class="toc-title"&gt;文章目录&lt;/strong&gt; &lt;%- toc(post.content) %&gt; &lt;/div&gt; &lt;% &#125; %&gt;&lt;!--Table of Contents end --&gt; &lt;%- post.content %&gt;&lt;% &#125; %&gt; 在需要生成toc的文章开头’front-matter’添加 toc: true,就能生成带链接的默认样式目录.如果不指定,则默认不生成目录 1234---title: Hello Worldtoc: true--- TOC默认的样式 为目录编写简单的CSS文件找到themes/yilia/source-src/css/article.scss在文件的最后，添加一些简单样式再编译到source里,当然如果为了简单可以直接添加到themes/yilia/source/main.xxxxxx.css后面 123456789101112131415161718192021222324252627/*toc*//*指定整个目录div的一些属性*/.toc-article &#123; background: #EAEAEA; border: 1px dotted #4D4D4D; border-radius: 10px; margin: 1.5em 1em 0.2em 2em; padding: 1.2em; max-width: 88%;&#125;/*设置 toc头 字号稍大,以及其颜色*/.toc-title &#123; font-size: 120%; color: #574C4C;&#125;/*指定了目录列表的一些细节,行高,是否自动不换行,超出隐藏(否则影响窄屏效果)等*/.toc &#123; padding: 0; margin: 1em; line-height: 1.8em; white-space: nowrap; overflow: hidden;&#125;/*指定二级目录的缩进量*/.toc-child &#123; margin-left: 1em;&#125; 不同屏幕宽度的TOC预览,查看我的 yilia 主题目录效果 。 总结只是简单的实现目录功能,如果需要其他更为美观的样式，可以自行进一步美化，如要让目录只在右侧显示，只需添加 #toc{float: right; }并设置相应的一些属性（如最大宽度等）即可。由于我的文章一般不长,所有只能拼凑出来举个简单的栗子,有许多不足的地方,还望不吝赐教。 ☆end☆]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[我有一个大胆的想法]]></title>
       <url>%2F2017%2F04%2F17%2Ffirst-essay%2F</url>
       <content type="text"><![CDATA[☆END☆]]></content>
