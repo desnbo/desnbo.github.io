@@ -840,13 +840,13 @@ html {
 }
 
 .mid-col {
+    right: 0.5%;
     position: absolute;
-    right: 4.5%;
     min-height: 100%;
     background: #eaeaea;
     left: 380px;
-    width: auto
-    max-width:90%;
+    width: auto;
+    max-width: 1300px;
 }
 
 .mid-col.show {
@@ -861,9 +861,9 @@ html {
 .left-col {
     margin-top: 65px;
     border: 1px dotted silver;
-    left: 45px;
+    left: 55px;
     background: #fff;
-    width: 322px;
+    width: 312px;
     position: fixed;
     opacity: 1;
     -webkit-transition: all .2s ease-in;
@@ -1356,7 +1356,8 @@ pre .id {
 }
 
 .article-category {
-    float: left
+    float: left;
+    
 }
 
 .article-category .icon {
@@ -3957,7 +3958,6 @@ a.pswp__share--download:hover {
     margin-top: -8px;
     color: #ccc
 }
-
 .pswp__error-msg a {
     color: #ccc;
     text-decoration: underline
@@ -3965,33 +3965,23 @@ a.pswp__share--download:hover {
 
 /*toc*/
 .toc-article {
-  background: #eee;
-  border: 1px dotted #bbb;
+  background: #EAEAEA;
+  border: 1px dotted #4D4D4D;
   border-radius: 10px;
-  margin: 5px 1px 3px 5px;
-  padding: 5px 1px 3px 5px;
-  max-width: 28%;
-  min-width: 240px;
+  margin: 1.5em 1em 0.2em 2em;
+  padding: 1em 0.2em 0.2em 1em;
+  max-width: 88%;
 }
-
 .toc-title {
   font-size: 120%;
+  color: #574C4C;
 }
-
-#toc {
-  line-height: 1em;
-  font-size: 0.9em;
-  float: right;
-}
-
 .toc {
   padding: 0;
   margin: 1em;
   line-height: 1.8em;
-}
-
-li {
-  list-style-type: none;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .toc-child {

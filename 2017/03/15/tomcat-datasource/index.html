@@ -109,7 +109,7 @@ var _hmt = _hmt || [];
 				
 				<a class="jianshu" target="_blank" href="http://www.jianshu.com" title="jianshu"><i class="icon-jianshu"></i></a>
 				
-				<a class="google" target="_blank" href="#" title="google"><i class="icon-google"></i></a>
+				<a class="facebook" target="_blank" href="#" title="facebook"><i class="icon-facebook"></i></a>
 				
 			</div>
 		</nav>
@@ -155,7 +155,7 @@ var _hmt = _hmt || [];
 			        
 						<a class="jianshu" target="_blank" href="http://www.jianshu.com" title="jianshu"><i class="icon-jianshu"></i></a>
 			        
-						<a class="google" target="_blank" href="#" title="google"><i class="icon-google"></i></a>
+						<a class="facebook" target="_blank" href="#" title="facebook"><i class="icon-facebook"></i></a>
 			        
 				</div>
 			</nav>
@@ -202,8 +202,8 @@ var _hmt = _hmt || [];
 
         <!--Table of Contents begin-->
         
-        <!--Table of Contents end -->
-
+          <!--Table of Contents end -->
+          
           <p>进行实际业务开发时，如果使用的不是专用的应用服务器与数据库服务器，那么往往是在网络上租用一个虚拟的服务器空间，将WEB应用的war包放入服务器空间内，将数据库相关信息放入指定的数据库服务器空间内。</p>
 <p>当应用启动时，会根据使用需要创建对应的数据库连接对象。但是如果该服务器上WEB应用过多时，每个WEB应用都有自己的数据库连接管理方式。而WEB服务器连接的数据库地址又唯一。此时如果数据库服务器进行迁移，会造成大多数WEB应用无法正常工作。</p>
 <p>比较合理的解决方案是将Tomcat服务器与数据库服务器的连接关系进行统一配置，所有的应用都使用该配置，这样就不会造成数据库服务器迁移导致应用无法正常工作的现象。如果用户连接的是专用数据库服务器，即便上述操作修改，也不会产生影响。<br><a id="more"></a><br><strong>Tomcat数据源</strong> 是一种将数据库的连接配置信息在服务器端（客户端独立配置）进行配置，当服务器启动时，创建该对象。用户只需要根据对应的名称进行获取就可以了。</p>
