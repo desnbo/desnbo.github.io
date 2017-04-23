@@ -4,9 +4,9 @@
   <subtitle>Done is better than perfect.</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://desnbo.github.io/blog/"/>
-  <updated>2017-04-19T21:11:38.406Z</updated>
-  <id>http://desnbo.github.io/blog/</id>
+  <link href="/"/>
+  <updated>2017-04-23T16:57:24.796Z</updated>
+  <id>/</id>
   
   <author>
     <name>Desnbo</name>
@@ -16,50 +16,49 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>为Hexo-yilia主题添加目录</title>
-    <link href="http://desnbo.github.io/blog/2017/04/20/Hexo-yilia-toc/"/>
-    <id>http://desnbo.github.io/blog/2017/04/20/Hexo-yilia-toc/</id>
+    <title>Hexo 主题添加目录</title>
+    <link href="/2017/04/20/Hexo-yilia-toc/"/>
+    <id>/2017/04/20/Hexo-yilia-toc/</id>
     <published>2017-04-19T20:44:37.000Z</published>
-    <updated>2017-04-19T21:11:38.406Z</updated>
+    <updated>2017-04-23T16:57:24.796Z</updated>
     
-    <content type="html"><![CDATA[<p>自从使用Hexo建博客以来,前后体验过好几种主题，各有千秋吧,但唯独 <em>Litten</em> 大大的<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">hexo-theme-yilia</a>主题便让我一见倾心,如获至宝,果断收入麾下,强烈推荐一波,在此表示衷心的感谢!!<br>默认还没有添加toc目录功能,有些童鞋迫切的需求,经过一番捣鼓,简单的实现之,将其记录下来与大家分享!<br><a href="https://desnbo.github.io/2017/03/09/hello-world/">查看我的 yilia 主题目录效果</a><br><a id="more"></a></p>
+    <content type="html"><![CDATA[<p>自从使用Hexo建博客以来,前后体验过好几种主题，深爱 <em>Litten</em> 的<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">hexo-theme-yilia</a>,让我一见倾心,果断收入麾下,在此表示衷心的感谢!!<br>Yilia 主题目前还没有添加toc目录功能,长篇幅文章有目录会显得层次清晰,所以简单的实现并记录之!    </p>
+<a id="more"></a>
 <h3 id="修改hexo主题的ejs文件"><a href="#修改hexo主题的ejs文件" class="headerlink" title="修改hexo主题的ejs文件"></a>修改hexo主题的ejs文件</h3><ul>
-<li><p>编辑文章显示页面的模板<br><code>themes/yilia/layout/_partial/article.ejs</code>文件。在这个文件中找到<code>&lt;%- post.content %&gt;</code>，并在这一行之前加入如下代码：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;!--Table <span class="keyword">of</span> Contents begin--&gt;</div><div class="line">&lt;% if (!index &amp;&amp; post.toc)&#123; %&gt;</div><div class="line">  &lt;div id="toc" class="toc-article"&gt;</div><div class="line">  &lt;strong class="toc-title"&gt;文章目录&lt;/strong&gt;</div><div class="line">  &lt;%- toc(post.content) %&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">  &lt;% &#125; %&gt;</div><div class="line">&lt;!--Table of Contents end --&gt;</div><div class="line">  </div><div class="line">&lt;%- post.content %&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure>
-</li>
-<li><p>在需要生成toc的文章开头’front-matter’添加 <code>toc: true</code>,就能生成带链接的默认样式目录.如果不指定,则默认不生成目录</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">---</span></div><div class="line"><span class="attr">title:</span> <span class="string">Hello</span> <span class="string">World</span></div><div class="line"><span class="attr">toc:</span> <span class="literal">true</span></div><div class="line"><span class="meta">---</span></div></pre></td></tr></table></figure>
+<li>编辑文章显示页面的模板<br><code>themes/yilia/layout/_partial/article.ejs</code>文件。在这个文件中找到<code>&lt;%- post.content %&gt;</code>，并在这一行之前加入如下代码：<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">    &lt;!--Table <span class="keyword">of</span> Contents begin--&gt;</div><div class="line">    &lt;% if (!index &amp;&amp; post.toc)&#123; %&gt;</div><div class="line">      &lt;div id="toc" class="toc-article"&gt;</div><div class="line">      &lt;strong class="toc-title"&gt;文章目录&lt;/strong&gt;</div><div class="line">      &lt;%- toc(post.content) %&gt;</div><div class="line">      &lt;/div&gt;</div><div class="line">      &lt;% &#125; %&gt;</div><div class="line">    &lt;!--Table of Contents end --&gt;</div><div class="line">  </div><div class="line">    &lt;%- post.content %&gt;</div><div class="line">    &lt;% &#125; %&gt;</div><div class="line">```  </div><div class="line">![toc1](http://i1.piimg.com/567571/6c0397c4f7df7fff.png)</div><div class="line"></div><div class="line">* 在需要生成toc的文章开头'front-matter'添加 `toc: true`,就能生成带链接的默认样式目录.如果不指定,则默认不生成目录</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>TOC默认的样式<br><img src="http://i1.piimg.com/567571/39d8862d41aedd5d.png" alt="" title="[TOC] 默认样式"></p>
-<h3 id="为目录编写简单的CSS文件"><a href="#为目录编写简单的CSS文件" class="headerlink" title="为目录编写简单的CSS文件"></a>为目录编写简单的CSS文件</h3><p>找到<code>themes/yilia/source-src/css/article.scss</code>在文件的最后，添加一些简单样式再编译到source里,当然如果为了简单可以直接添加到<code>themes/yilia/source/main.xxxxxx.css</code>后面  </p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*toc*/</span></div><div class="line"><span class="comment">/*指定整个目录div的一些属性*/</span></div><div class="line"><span class="selector-class">.toc-article</span> &#123;</div><div class="line">  <span class="attribute">background</span>: <span class="number">#EAEAEA</span>;</div><div class="line">  <span class="attribute">border</span>: <span class="number">1px</span> dotted <span class="number">#4D4D4D</span>;</div><div class="line">  <span class="attribute">border-radius</span>: <span class="number">10px</span>;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">1.5em</span> <span class="number">1em</span> <span class="number">0.2em</span> <span class="number">2em</span>;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">1.2em</span>;</div><div class="line">  <span class="attribute">max-width</span>: <span class="number">88%</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">/*设置 toc头 字号稍大,以及其颜色*/</span></div><div class="line"><span class="selector-class">.toc-title</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">120%</span>;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#574C4C</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">/*指定了目录列表的一些细节,行高,是否自动不换行,超出隐藏(否则影响窄屏效果)等*/</span></div><div class="line"><span class="selector-class">.toc</span> &#123;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">1em</span>;</div><div class="line">  <span class="attribute">line-height</span>: <span class="number">1.8em</span>;</div><div class="line">  <span class="attribute">white-space</span>: nowrap;</div><div class="line">  <span class="attribute">overflow</span>: hidden;</div><div class="line">&#125;</div><div class="line"><span class="comment">/*指定二级目录的缩进量*/</span></div><div class="line"><span class="selector-class">.toc-child</span> &#123;</div><div class="line">  <span class="attribute">margin-left</span>: <span class="number">1em</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>不同屏幕宽度的TOC预览,<a href="https://desnbo.github.io/2017/03/09/hello-world/">查看我的 yilia 主题目录效果</a> 。  </p>
-<p><img src="http://i1.piimg.com/567571/fde89359e2f51c56.gif" alt="yilia 目录效果" title="TOC预览"></p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>只是简单的实现目录功能,如果需要其他更为美观的样式，可以自行进一步美化，如要让目录只在右侧显示，只需添加 <code>#toc{float: right; }</code>并设置相应的一些属性（如最大宽度等）即可。由于我的文章一般不长,所有只能拼凑出来举个简单的栗子,有许多不足的地方,还望不吝赐教。</p>
+<hr>
+<p>title: toc目录</p>
+<h2 id="toc-true"><a href="#toc-true" class="headerlink" title="toc: true"></a>toc: true</h2><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">TOC默认的样式  </div><div class="line">!<span class="selector-attr">[toc2]</span>(http://i1.piimg.com/<span class="number">567571</span>/<span class="number">39</span>d8862d41aedd5d.png <span class="string">"[TOC] 默认样式"</span>)</div><div class="line"></div><div class="line">### 为目录编写简单的CSS文件</div><div class="line"></div><div class="line">找到`themes/yilia/source-src/css/article.scss`, 在文件的最后，添加如下样式后进行编译,如果只是为了简单使用可以直接修改编译后的样式,添加到`themes/yilia/source/main.xxxxxx.css`后面即可.  </div><div class="line"></div><div class="line">```css</div><div class="line">/*toc*/</div><div class="line">/*指定整个目录div的一些属性*/</div><div class="line">.toc-article &#123;</div><div class="line">  background: <span class="number">#EAEAEA</span>;</div><div class="line">  <span class="attribute">border</span>: <span class="number">1px</span> dotted <span class="number">#4D4D4D</span>;</div><div class="line">  <span class="attribute">border-radius</span>: <span class="number">10px</span>;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">1.5em</span> <span class="number">1em</span> <span class="number">0.2em</span> <span class="number">2em</span>;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">1.2em</span>;</div><div class="line">  <span class="attribute">max-width</span>: <span class="number">80%</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">/*设置 toc头 字号稍大,以及其颜色*/</span></div><div class="line"><span class="selector-class">.toc-title</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">120%</span>;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#574C4C</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">/*指定了目录列表的一些细节,行高,是否自动不换行,超出隐藏(否则影响窄屏效果)等*/</span></div><div class="line"><span class="selector-class">.toc</span> &#123;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">1em</span>;</div><div class="line">  <span class="attribute">line-height</span>: <span class="number">1.8em</span>;</div><div class="line">  <span class="attribute">white-space</span>: nowrap;</div><div class="line">  <span class="attribute">overflow</span>: hidden;</div><div class="line">&#125;</div><div class="line"><span class="comment">/*指定二级目录的缩进量*/</span></div><div class="line"><span class="selector-class">.toc-child</span> &#123;</div><div class="line">  <span class="attribute">margin-left</span>: <span class="number">1em</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><a href="https://desnbo.github.io/2017/03/09/hello-world/" target="_blank" rel="external">Yilia 主题目录效果预览</a> 。  </p>
+<p><img src="http://i1.piimg.com/567571/fde89359e2f51c56.gif" alt="toc3" title="yilia 目录效果"></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>只是实现了基本目录功能,并添加了简单的样式，如要希望让目录只在文章右侧显示，需要添加如下属性即可.  </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#toc</span>&#123;</div><div class="line"> <span class="attribute">float</span>: right;  </div><div class="line">&#125;</div><div class="line"><span class="selector-class">.toc-article</span> &#123;</div><div class="line"> <span class="attribute">max-width</span>: <span class="number">32%</span>; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>由于并不是所有的文章都需要生成目录，所以设置只有指定<code>toc：true</code>的文章才会生成, 而大多简短的文章则默认不会生成目录，此处只是简单的实现,基本上满足了需求.</p>
 <h2 id="☆end☆"><a href="#☆end☆" class="headerlink" title="☆end☆"></a>☆end☆</h2>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;自从使用Hexo建博客以来,前后体验过好几种主题，各有千秋吧,但唯独 &lt;em&gt;Litten&lt;/em&gt; 大大的&lt;a href=&quot;https://github.com/litten/hexo-theme-yilia&quot;&gt;hexo-theme-yilia&lt;/a&gt;主题便让我一见倾心,如获至宝,果断收入麾下,强烈推荐一波,在此表示衷心的感谢!!&lt;br&gt;默认还没有添加toc目录功能,有些童鞋迫切的需求,经过一番捣鼓,简单的实现之,将其记录下来与大家分享!&lt;br&gt;&lt;a href=&quot;https://desnbo.github.io/2017/03/09/hello-world/&quot;&gt;查看我的 yilia 主题目录效果&lt;/a&gt;&lt;br&gt;
+      &lt;p&gt;自从使用Hexo建博客以来,前后体验过好几种主题，深爱 &lt;em&gt;Litten&lt;/em&gt; 的&lt;a href=&quot;https://github.com/litten/hexo-theme-yilia&quot;&gt;hexo-theme-yilia&lt;/a&gt;,让我一见倾心,果断收入麾下,在此表示衷心的感谢!!&lt;br&gt;Yilia 主题目前还没有添加toc目录功能,长篇幅文章有目录会显得层次清晰,所以简单的实现并记录之!    &lt;/p&gt;
     
     </summary>
     
-      <category term="hexo" scheme="http://desnbo.github.io/blog/categories/hexo/"/>
+      <category term="hexo" scheme="/categories/hexo/"/>
     
     
-      <category term="blog" scheme="http://desnbo.github.io/blog/tags/blog/"/>
+      <category term="blog" scheme="/tags/blog/"/>
     
-      <category term="hexo" scheme="http://desnbo.github.io/blog/tags/hexo/"/>
+      <category term="hexo" scheme="/tags/hexo/"/>
     
-      <category term="theme" scheme="http://desnbo.github.io/blog/tags/theme/"/>
+      <category term="hexo-theme" scheme="/tags/hexo-theme/"/>
     
   </entry>
   
   <entry>
     <title>我有一个大胆的想法</title>
-    <link href="http://desnbo.github.io/blog/2017/04/17/first-essay/"/>
-    <id>http://desnbo.github.io/blog/2017/04/17/first-essay/</id>
+    <link href="/2017/04/17/first-essay/"/>
+    <id>/2017/04/17/first-essay/</id>
     <published>2017-04-17T04:05:29.000Z</published>
     <updated>2017-04-17T13:52:19.743Z</updated>
     
@@ -76,17 +75,17 @@
     
     </summary>
     
-      <category term="随笔" scheme="http://desnbo.github.io/blog/categories/essay/"/>
+      <category term="随笔" scheme="/categories/essay/"/>
     
     
-      <category term="随笔" scheme="http://desnbo.github.io/blog/tags/essay/"/>
+      <category term="随笔" scheme="/tags/essay/"/>
     
   </entry>
   
   <entry>
     <title>CentOS7 tomcat的安装及开机自启动配置</title>
-    <link href="http://desnbo.github.io/blog/2017/04/12/centos7-tomcat-autostart/"/>
-    <id>http://desnbo.github.io/blog/2017/04/12/centos7-tomcat-autostart/</id>
+    <link href="/2017/04/12/centos7-tomcat-autostart/"/>
+    <id>/2017/04/12/centos7-tomcat-autostart/</id>
     <published>2017-04-11T19:18:17.000Z</published>
     <updated>2017-04-17T15:32:00.896Z</updated>
     
@@ -131,21 +130,21 @@
     
     </summary>
     
-      <category term="linux" scheme="http://desnbo.github.io/blog/categories/linux/"/>
+      <category term="linux" scheme="/categories/linux/"/>
     
     
-      <category term="centos" scheme="http://desnbo.github.io/blog/tags/centos/"/>
+      <category term="centos" scheme="/tags/centos/"/>
     
-      <category term="tomcat" scheme="http://desnbo.github.io/blog/tags/tomcat/"/>
+      <category term="tomcat" scheme="/tags/tomcat/"/>
     
-      <category term="java" scheme="http://desnbo.github.io/blog/tags/java/"/>
+      <category term="java" scheme="/tags/java/"/>
     
   </entry>
   
   <entry>
     <title>Spring整合Quartz作业调度框架</title>
-    <link href="http://desnbo.github.io/blog/2017/03/29/spring-quartz/"/>
-    <id>http://desnbo.github.io/blog/2017/03/29/spring-quartz/</id>
+    <link href="/2017/03/29/spring-quartz/"/>
+    <id>/2017/03/29/spring-quartz/</id>
     <published>2017-03-29T14:57:14.000Z</published>
     <updated>2017-04-16T16:31:44.823Z</updated>
     
@@ -216,19 +215,19 @@
     
     </summary>
     
-      <category term="java" scheme="http://desnbo.github.io/blog/categories/java/"/>
+      <category term="java" scheme="/categories/java/"/>
     
     
-      <category term="Spring" scheme="http://desnbo.github.io/blog/tags/Spring/"/>
+      <category term="Spring" scheme="/tags/Spring/"/>
     
-      <category term="Quartz" scheme="http://desnbo.github.io/blog/tags/Quartz/"/>
+      <category term="Quartz" scheme="/tags/Quartz/"/>
     
   </entry>
   
   <entry>
     <title>jQuery + ajax+ json + Struts2 实现表单联动</title>
-    <link href="http://desnbo.github.io/blog/2017/03/18/form-linkage/"/>
-    <id>http://desnbo.github.io/blog/2017/03/18/form-linkage/</id>
+    <link href="/2017/03/18/form-linkage/"/>
+    <id>/2017/03/18/form-linkage/</id>
     <published>2017-03-18T12:52:23.000Z</published>
     <updated>2017-04-16T16:31:10.330Z</updated>
     
@@ -304,23 +303,23 @@
     
     </summary>
     
-      <category term="jQuery" scheme="http://desnbo.github.io/blog/categories/jQuery/"/>
+      <category term="jQuery" scheme="/categories/jQuery/"/>
     
     
-      <category term="ajax" scheme="http://desnbo.github.io/blog/tags/ajax/"/>
+      <category term="ajax" scheme="/tags/ajax/"/>
     
-      <category term="json" scheme="http://desnbo.github.io/blog/tags/json/"/>
+      <category term="json" scheme="/tags/json/"/>
     
-      <category term="jQuery" scheme="http://desnbo.github.io/blog/tags/jQuery/"/>
+      <category term="jQuery" scheme="/tags/jQuery/"/>
     
-      <category term="Struts2" scheme="http://desnbo.github.io/blog/tags/Struts2/"/>
+      <category term="Struts2" scheme="/tags/Struts2/"/>
     
   </entry>
   
   <entry>
     <title>Sublime Text3 OmniMarkupPreviewer 404</title>
-    <link href="http://desnbo.github.io/blog/2017/03/18/OmniMarkupPreviewer-404/"/>
-    <id>http://desnbo.github.io/blog/2017/03/18/OmniMarkupPreviewer-404/</id>
+    <link href="/2017/03/18/OmniMarkupPreviewer-404/"/>
+    <id>/2017/03/18/OmniMarkupPreviewer-404/</id>
     <published>2017-03-18T10:47:27.000Z</published>
     <updated>2017-04-16T17:20:48.701Z</updated>
     
@@ -347,19 +346,19 @@
     
     </summary>
     
-      <category term="SublimeText" scheme="http://desnbo.github.io/blog/categories/SublimeText/"/>
+      <category term="SublimeText" scheme="/categories/SublimeText/"/>
     
     
-      <category term="SublimeText" scheme="http://desnbo.github.io/blog/tags/SublimeText/"/>
+      <category term="SublimeText" scheme="/tags/SublimeText/"/>
     
-      <category term="Markdown" scheme="http://desnbo.github.io/blog/tags/Markdown/"/>
+      <category term="Markdown" scheme="/tags/Markdown/"/>
     
   </entry>
   
   <entry>
     <title>JQuery树状结构 jQuery Treeview 的使用</title>
-    <link href="http://desnbo.github.io/blog/2017/03/17/jQuery-treeview-plugin/"/>
-    <id>http://desnbo.github.io/blog/2017/03/17/jQuery-treeview-plugin/</id>
+    <link href="/2017/03/17/jQuery-treeview-plugin/"/>
+    <id>/2017/03/17/jQuery-treeview-plugin/</id>
     <published>2017-03-17T12:43:13.000Z</published>
     <updated>2017-04-17T18:30:01.726Z</updated>
     
@@ -422,21 +421,21 @@
     
     </summary>
     
-      <category term="jQuery" scheme="http://desnbo.github.io/blog/categories/jQuery/"/>
+      <category term="jQuery" scheme="/categories/jQuery/"/>
     
     
-      <category term="jquery" scheme="http://desnbo.github.io/blog/tags/jquery/"/>
+      <category term="jquery" scheme="/tags/jquery/"/>
     
-      <category term="treeview" scheme="http://desnbo.github.io/blog/tags/treeview/"/>
+      <category term="treeview" scheme="/tags/treeview/"/>
     
-      <category term="javaweb" scheme="http://desnbo.github.io/blog/tags/javaweb/"/>
+      <category term="javaweb" scheme="/tags/javaweb/"/>
     
   </entry>
   
   <entry>
     <title>Tomcat JNDI数据源配置和使用</title>
-    <link href="http://desnbo.github.io/blog/2017/03/15/tomcat-datasource/"/>
-    <id>http://desnbo.github.io/blog/2017/03/15/tomcat-datasource/</id>
+    <link href="/2017/03/15/tomcat-datasource/"/>
+    <id>/2017/03/15/tomcat-datasource/</id>
     <published>2017-03-15T09:37:30.000Z</published>
     <updated>2017-04-14T06:45:11.353Z</updated>
     
@@ -482,21 +481,21 @@
     
     </summary>
     
-      <category term="java" scheme="http://desnbo.github.io/blog/categories/java/"/>
+      <category term="java" scheme="/categories/java/"/>
     
     
-      <category term="tomcat" scheme="http://desnbo.github.io/blog/tags/tomcat/"/>
+      <category term="tomcat" scheme="/tags/tomcat/"/>
     
-      <category term="datasouce" scheme="http://desnbo.github.io/blog/tags/datasouce/"/>
+      <category term="datasouce" scheme="/tags/datasouce/"/>
     
-      <category term="JNDI" scheme="http://desnbo.github.io/blog/tags/JNDI/"/>
+      <category term="JNDI" scheme="/tags/JNDI/"/>
     
   </entry>
   
   <entry>
     <title>java使用视图值显示数据</title>
-    <link href="http://desnbo.github.io/blog/2017/03/11/java-view-data/"/>
-    <id>http://desnbo.github.io/blog/2017/03/11/java-view-data/</id>
+    <link href="/2017/03/11/java-view-data/"/>
+    <id>/2017/03/11/java-view-data/</id>
     <published>2017-03-10T19:03:31.000Z</published>
     <updated>2017-04-17T15:57:21.424Z</updated>
     
@@ -540,40 +539,32 @@
     
     </summary>
     
-      <category term="java" scheme="http://desnbo.github.io/blog/categories/java/"/>
+      <category term="java" scheme="/categories/java/"/>
     
     
-      <category term="javaweb" scheme="http://desnbo.github.io/blog/tags/javaweb/"/>
+      <category term="javaweb" scheme="/tags/javaweb/"/>
     
-      <category term="viewdata" scheme="http://desnbo.github.io/blog/tags/viewdata/"/>
+      <category term="viewdata" scheme="/tags/viewdata/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://desnbo.github.io/blog/2017/03/09/hello-world/"/>
-    <id>http://desnbo.github.io/blog/2017/03/09/hello-world/</id>
+    <link href="/2017/03/09/hello-world/"/>
+    <id>/2017/03/09/hello-world/</id>
     <published>2017-03-09T08:30:01.109Z</published>
-    <updated>2017-04-19T20:05:32.301Z</updated>
+    <updated>2017-04-23T16:37:26.444Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.<br><a id="more"></a></p>
-<h2 id="Quick-Start-二级标题（一）"><a href="#Quick-Start-二级标题（一）" class="headerlink" title="Quick Start 二级标题（一）"></a>Quick Start 二级标题（一）</h2><p>已经有title,个人习惯一般不再使用一级标题</p>
-<h3 id="Create-a-new-post-Create-a-new-post-三级标题"><a href="#Create-a-new-post-Create-a-new-post-三级标题" class="headerlink" title="Create a new post Create a new post 三级标题"></a>Create a new post Create a new post 三级标题</h3><p>Create a new post<br>Create a new post</p>
-<h4 id="Create-a-new-postCreate-a-new-post-四级标题"><a href="#Create-a-new-postCreate-a-new-post-四级标题" class="headerlink" title="Create a new postCreate a new post 四级标题"></a>Create a new postCreate a new post 四级标题</h4><p>Create a new post<br>Create a new post</p>
-<h5 id="Create-a-new-post-五级标题"><a href="#Create-a-new-post-五级标题" class="headerlink" title="Create a new post 五级标题"></a>Create a new post 五级标题</h5><p>Create a new post<br>Create a new post</p>
-<h6 id="Create-a-new-post-六级标题"><a href="#Create-a-new-post-六级标题" class="headerlink" title="Create a new post 六级标题"></a>Create a new post 六级标题</h6><p>Create a new post<br>Create a new post</p>
-<h2 id="Quick-Start-二级标题（二）"><a href="#Quick-Start-二级标题（二）" class="headerlink" title="Quick Start 二级标题（二）"></a>Quick Start 二级标题（二）</h2><p>Quick Start<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure></p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start "></a>Quick Start </h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
 <h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-<h2 id="☆end☆-二级标题（三）"><a href="#☆end☆-二级标题（三）" class="headerlink" title="☆end☆ 二级标题（三）"></a>☆end☆ 二级标题（三）</h2>]]></content>
+<h2 id="☆end☆"><a href="#☆end☆" class="headerlink" title="☆end☆ "></a>☆end☆ </h2>]]></content>
     
     <summary type="html">
     

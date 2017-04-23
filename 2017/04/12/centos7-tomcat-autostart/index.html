@@ -5,14 +5,14 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://desnbo.github.io/blog">
+  <link rel="dns-prefetch" href="">
   <title>CentOS7 tomcat的安装及开机自启动配置 | Desnbo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="安装tomcat tomcat是免安装软件,下载tomcat8.x.xx.tar.gz,使用sftp或vsftp等上传到服务器   通过tar命令直接解压到 /usr/local/ 目录下,为了方便操作,将其修改为tomcat8.sudo tar zxvf tomcat8.x.xx.tar.gz -C /usr/local/sudo mv tomcat8.x.xx tomcat8">
 <meta name="keywords" content="centos,tomcat,java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CentOS7 tomcat的安装及开机自启动配置">
-<meta property="og:url" content="http://desnbo.github.io/blog/2017/04/12/centos7-tomcat-autostart/index.html">
+<meta property="og:url" content="/2017/04/12/centos7-tomcat-autostart/index.html">
 <meta property="og:site_name" content="Desnbo">
 <meta property="og:description" content="安装tomcat tomcat是免安装软件,下载tomcat8.x.xx.tar.gz,使用sftp或vsftp等上传到服务器   通过tar命令直接解压到 /usr/local/ 目录下,为了方便操作,将其修改为tomcat8.sudo tar zxvf tomcat8.x.xx.tar.gz -C /usr/local/sudo mv tomcat8.x.xx tomcat8">
 <meta property="og:image" content="http://i4.buimg.com/567571/d189f29b6e7dc720.png">
@@ -80,6 +80,8 @@ var _hmt = _hmt || [];
 				
 				<li><a href="/">主页</a></li>
 				
+				<li><a href="/archive/">全部文章</a></li>
+				
 				<li><a href="/tags/essay/">随笔</a></li>
 				
 			</ul>
@@ -87,11 +89,9 @@ var _hmt = _hmt || [];
 		<nav class="header-smart-menu">
 			
 			
-			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">全部文章</a>
+			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">标签</a>
 			
 			
-			
-			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
 			
 			
 			
@@ -143,6 +143,8 @@ var _hmt = _hmt || [];
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -162,12 +164,14 @@ var _hmt = _hmt || [];
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/essay/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/archive/">全部文章</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/tags/essay/">随笔</a></li>
 		        
 				</ul>
 			</nav>
@@ -318,7 +322,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://desnbo.github.io/blog/2017/04/12/centos7-tomcat-autostart/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http:/2017/04/12/centos7-tomcat-autostart/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -356,7 +360,7 @@ var _hmt = _hmt || [];
                           
                             <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="centos7-tomcat-autostart" data-title="CentOS7 tomcat的安装及开机自启动配置" data-url="http://desnbo.github.io/blog/2017/04/12/centos7-tomcat-autostart/"></div>
+	<div class="ds-thread" data-thread-key="centos7-tomcat-autostart" data-title="CentOS7 tomcat的安装及开机自启动配置" data-url="/2017/04/12/centos7-tomcat-autostart/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -451,8 +455,6 @@ var _hmt = _hmt || [];
       
     
       
-      
-      
     
       
       
@@ -464,15 +466,13 @@ var _hmt = _hmt || [];
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">全部文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">标签</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
-      
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -501,7 +501,7 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">theme</a>
+                <a href="javascript:void(0)" class="color1">hexo-theme</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -619,22 +619,6 @@ var _hmt = _hmt || [];
     	</section>
     
 
-    
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-        <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情岁月</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>给你好看</a>
-            </li>
-          
-        </ul>
-  		
-    	</section>
     
 
     

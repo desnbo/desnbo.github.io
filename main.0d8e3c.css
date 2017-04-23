@@ -840,13 +840,13 @@ html {
 }
 
 .mid-col {
-    right: 0.5%;
+    right: 0;
     position: absolute;
     min-height: 100%;
     background: #eaeaea;
-    left: 380px;
+    left: 385px;
     width: auto;
-    max-width: 1300px;
+    max-width: 1200px;
 }
 
 .mid-col.show {
@@ -3970,7 +3970,7 @@ a.pswp__share--download:hover {
   border-radius: 10px;
   margin: 1.5em 1em 0.2em 2em;
   padding: 1em 0.2em 0.2em 1em;
-  max-width: 88%;
+  max-width: 80%;
 }
 .toc-title {
   font-size: 120%;
@@ -3982,7 +3982,6 @@ a.pswp__share--download:hover {
   line-height: 1.8em;
   white-space: nowrap;
   overflow: hidden;
- 
 }
 
 .toc-child {

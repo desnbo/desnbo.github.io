@@ -5,17 +5,17 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://desnbo.github.io/blog">
+  <link rel="dns-prefetch" href="">
   <title>Hello World | Desnbo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
 <meta name="keywords">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://desnbo.github.io/blog/2017/03/09/hello-world/index.html">
+<meta property="og:url" content="/2017/03/09/hello-world/index.html">
 <meta property="og:site_name" content="Desnbo">
 <meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
-<meta property="og:updated_time" content="2017-04-19T20:05:32.301Z">
+<meta property="og:updated_time" content="2017-04-23T16:37:26.444Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hello World">
 <meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
@@ -77,6 +77,8 @@ var _hmt = _hmt || [];
 				
 				<li><a href="/">主页</a></li>
 				
+				<li><a href="/archive/">全部文章</a></li>
+				
 				<li><a href="/tags/essay/">随笔</a></li>
 				
 			</ul>
@@ -84,11 +86,9 @@ var _hmt = _hmt || [];
 		<nav class="header-smart-menu">
 			
 			
-			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">全部文章</a>
+			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">标签</a>
 			
 			
-			
-			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
 			
 			
 			
@@ -140,6 +140,8 @@ var _hmt = _hmt || [];
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -159,12 +161,14 @@ var _hmt = _hmt || [];
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/essay/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/archive/">全部文章</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/tags/essay/">随笔</a></li>
 		        
 				</ul>
 			</nav>
@@ -202,29 +206,21 @@ var _hmt = _hmt || [];
         
           <div id="toc" class="toc-article">
           <strong class="toc-title">文章目录</strong>
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start-二级标题（一）"><span class="toc-number">1.</span> <span class="toc-text">Quick Start 二级标题（一）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post-Create-a-new-post-三级标题"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post Create a new post 三级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Create-a-new-postCreate-a-new-post-四级标题"><span class="toc-number">1.1.1.</span> <span class="toc-text">Create a new postCreate a new post 四级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Create-a-new-post-五级标题"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">Create a new post 五级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#Create-a-new-post-六级标题"><span class="toc-number">1.1.1.1.1.</span> <span class="toc-text">Create a new post 六级标题</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start-二级标题（二）"><span class="toc-number">2.</span> <span class="toc-text">Quick Start 二级标题（二）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">2.1.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">2.2.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">2.3.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#☆end☆-二级标题（三）"><span class="toc-number">3.</span> <span class="toc-text">☆end☆ 二级标题（三）</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.1.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.2.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.3.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#☆end☆"><span class="toc-number">2.</span> <span class="toc-text">☆end☆ </span></a></li></ol>
           </div>
           
           <!--Table of Contents end -->
           
           <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.<br><a id="more"></a></p>
-<h2 id="Quick-Start-二级标题（一）"><a href="#Quick-Start-二级标题（一）" class="headerlink" title="Quick Start 二级标题（一）"></a>Quick Start 二级标题（一）</h2><p>已经有title,个人习惯一般不再使用一级标题</p>
-<h3 id="Create-a-new-post-Create-a-new-post-三级标题"><a href="#Create-a-new-post-Create-a-new-post-三级标题" class="headerlink" title="Create a new post Create a new post 三级标题"></a>Create a new post Create a new post 三级标题</h3><p>Create a new post<br>Create a new post</p>
-<h4 id="Create-a-new-postCreate-a-new-post-四级标题"><a href="#Create-a-new-postCreate-a-new-post-四级标题" class="headerlink" title="Create a new postCreate a new post 四级标题"></a>Create a new postCreate a new post 四级标题</h4><p>Create a new post<br>Create a new post</p>
-<h5 id="Create-a-new-post-五级标题"><a href="#Create-a-new-post-五级标题" class="headerlink" title="Create a new post 五级标题"></a>Create a new post 五级标题</h5><p>Create a new post<br>Create a new post</p>
-<h6 id="Create-a-new-post-六级标题"><a href="#Create-a-new-post-六级标题" class="headerlink" title="Create a new post 六级标题"></a>Create a new post 六级标题</h6><p>Create a new post<br>Create a new post</p>
-<h2 id="Quick-Start-二级标题（二）"><a href="#Quick-Start-二级标题（二）" class="headerlink" title="Quick Start 二级标题（二）"></a>Quick Start 二级标题（二）</h2><p>Quick Start<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure></p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start "></a>Quick Start </h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
 <h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-<h2 id="☆end☆-二级标题（三）"><a href="#☆end☆-二级标题（三）" class="headerlink" title="☆end☆ 二级标题（三）"></a>☆end☆ 二级标题（三）</h2>
+<h2 id="☆end☆"><a href="#☆end☆" class="headerlink" title="☆end☆ "></a>☆end☆ </h2>
           
 
           
@@ -282,7 +278,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://desnbo.github.io/blog/2017/03/09/hello-world/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http:/2017/03/09/hello-world/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -311,7 +307,7 @@ var _hmt = _hmt || [];
                           
                             <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="hello-world" data-title="Hello World" data-url="http://desnbo.github.io/blog/2017/03/09/hello-world/"></div>
+	<div class="ds-thread" data-thread-key="hello-world" data-title="Hello World" data-url="/2017/03/09/hello-world/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -406,8 +402,6 @@ var _hmt = _hmt || [];
       
     
       
-      
-      
     
       
       
@@ -419,15 +413,13 @@ var _hmt = _hmt || [];
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">全部文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">标签</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
-      
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -456,7 +448,7 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">theme</a>
+                <a href="javascript:void(0)" class="color1">hexo-theme</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -574,22 +566,6 @@ var _hmt = _hmt || [];
     	</section>
     
 
-    
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-        <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情岁月</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>给你好看</a>
-            </li>
-          
-        </ul>
-  		
-    	</section>
     
 
     
