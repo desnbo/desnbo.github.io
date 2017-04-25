@@ -840,7 +840,7 @@ html {
 }
 
 .mid-col {
-    right: 0;
+    right: 0.5%;
     position: absolute;
     min-height: 100%;
     background: #eaeaea;
