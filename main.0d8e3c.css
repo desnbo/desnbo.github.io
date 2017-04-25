@@ -840,13 +840,13 @@ html {
 }
 
 .mid-col {
-    right: 0.5%;
+    right: 0;
     position: absolute;
     min-height: 100%;
     background: #eaeaea;
-    left: 385px;
+    left: 380px;
     width: auto;
-    max-width: 1200px;
+    max-width: 1440px;
 }
 
 .mid-col.show {
@@ -860,7 +860,7 @@ html {
 
 .left-col {
     margin-top: 65px;
-    border: 1px dotted silver;
+    border: 1px solid silver;
     left: 55px;
     background: #fff;
     width: 312px;
