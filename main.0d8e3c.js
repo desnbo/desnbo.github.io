@@ -532,7 +532,7 @@
             n = window.location.search.substr(1).match(t);
         return null != n ? unescape(n[2]) : null }
     var r = n(90);
-    if (n(80), window.BJ_REPORT) { BJ_REPORT.init({ id: 1 }), BJ_REPORT.init({ id: 1, uin: window.location.origin, combo: 0, delay: 1e3, url: "//litten.me:9005/badjs/", ignore: [/Script error/i], random: 1, repeat: 5e5, onReport: function(e, t) {}, ext: {} });
+    if (n(80), window.BJ_REPORT) { BJ_REPORT.init({ id: 1 }), BJ_REPORT.init({ id: 1, uin: window.location.origin, combo: 0, delay: 1e3, url: "", ignore: [/Script error/i], random: 1, repeat: 5e5, onReport: function(e, t) {}, ext: {} });
         var i = window.location.host,
             a = top === window,
             u = !(/localhost/i.test(i) || /127.0.0.1/i.test(i) || /0.0.0.0/i.test(i));

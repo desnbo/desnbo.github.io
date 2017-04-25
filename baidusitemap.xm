@@ -5,10 +5,10 @@
     
   <url>
     <loc>/2017/04/20/Hexo-yilia-toc/</loc>
-    <lastmod>2017-04-23T16:57:24.796Z</lastmod>
+    <lastmod>2017-04-25T07:43:57.003Z</lastmod>
     <data>
         <display>
-        <title>Hexo 主题添加目录</title>
+        <title>Hexo Yilia 主题添加目录</title>
         <pubTime>2017-04-19T20:44:37.000Z</pubTime>
         
         <tag>blog</tag>
