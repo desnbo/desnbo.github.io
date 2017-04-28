@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2017-04-25T07:43:57.003Z</updated>
+  <updated>2017-04-25T08:36:38.822Z</updated>
   <id>/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="/2017/04/20/Hexo-yilia-toc/"/>
     <id>/2017/04/20/Hexo-yilia-toc/</id>
     <published>2017-04-19T20:44:37.000Z</published>
-    <updated>2017-04-25T07:43:57.003Z</updated>
+    <updated>2017-04-25T08:36:38.822Z</updated>
     
     <content type="html"><![CDATA[<p>自从使用Hexo建博客以来,前后体验过好几种主题，最喜欢的还是 <em>Litten</em> 的<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">Yilia</a>,一见倾心,果断收入麾下,在此表示衷心的感谢!!<br>Yilia 主题目前还没有添加toc目录功能,长篇幅文章有目录会显得层次清晰,所以简单的实现并记录之!    </p>
 <a id="more"></a>
