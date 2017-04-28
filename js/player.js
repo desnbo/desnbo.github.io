@@ -48,7 +48,7 @@
 	} 
 
 	var play = function(){
-		audio.volume=0.40;
+		audio.volume=0.35;
 		audio.play();
 		if (isRotate) {
 			$("#player .cover img").css("animation","9.8s linear 0s normal none infinite rotate");
