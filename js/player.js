@@ -9,6 +9,7 @@
 		isFirstPlay = localStorage.qplayer == undefined? true: false,
 		isShuffle = localStorage.qplayer == undefined? false: localStorage.qplayer === 'true'? true: false;
 
+
 	// Load playlist
 	for (var i = 0; i < playlist.length; i++){
 		var item = playlist[i];
@@ -47,6 +48,7 @@
 	} 
 
 	var play = function(){
+		audio.volume=0.40;
 		audio.play();
 		if (isRotate) {
 			$("#player .cover img").css("animation","9.8s linear 0s normal none infinite rotate");
@@ -102,6 +104,7 @@
 		loadMusic(track);
 		play();
 	}
+
 
 	// Shuffle
 	var shufflePlay = function(i){
