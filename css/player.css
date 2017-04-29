@@ -2,7 +2,7 @@
 	position:fixed;
 	overflow:hidden;
 	bottom:35px;
-	left:-2801px;
+	left:-281px;
 	transition:transform .5s ease;
 }
 #QPlayer .left {
@@ -186,6 +186,7 @@
 	width:25px;
 	height:60px;
 	background:#4D4D77 none repeat scroll 0% 0%;
+	opacity: 0.9;
 	position:relative;
 	right:0px;
 	bottom:0px;
@@ -317,6 +318,7 @@ to {
     font-weight: bold;
     background-color: #2980b9;
     line-height: 48px;
+     border-radius: 3px;
 }
 
 
@@ -327,7 +329,8 @@ to {
     height: 50px;
     vertical-align: middle;
     display: table;
-    background-color: white;
+    background-color: rgba(77,77,77,0.2);
+    border-radius: 3px;
     left: 50px;
     top: 0;
     position: relative;
@@ -338,7 +341,7 @@ to {
     display: table-cell;
     vertical-align: middle;
     white-space:nowrap;
-    color: #789;
+    color: #2980b9;
     font-size: 15px;
     font-weight:bold;
 }
