@@ -4,7 +4,7 @@
     position:fixed;
     overflow:hidden;
     bottom:40px;
-    left:-332px;
+    left:0px;
     transition:transform .5s ease;
 }
 #QPlayer .left {
@@ -115,7 +115,7 @@
     height:10px;
     position:absolute;
     margin-top:4px;
-    left:82px;
+    left:85px;
 }
 .playback {
     background-position:0 0 !important;
@@ -127,7 +127,7 @@
     width:14px;
     height:18px;
     position:absolute;
-    left:125px;
+    left:131px;
 }
 .fastforward {
     background-position:-58px 0 !important;
@@ -135,7 +135,7 @@
     height:10px;
     margin-top:4px;
     position:absolute;
-    left:172px;
+    left:180px;
 }
 #player .ctrl .progress {
     margin-top:12px;
