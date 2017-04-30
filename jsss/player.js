@@ -9,7 +9,6 @@
 		isFirstPlay = localStorage.qplayer == undefined? true: false,
 		isShuffle = localStorage.qplayer == undefined? false: localStorage.qplayer === 'true'? true: false;
 
-
 	// Load playlist
 	for (var i = 0; i < playlist.length; i++){
 		var item = playlist[i];
@@ -48,7 +47,7 @@
 	} 
 
 	var play = function(){
-		audio.volume=0.35;
+		audio.volume=0.28;
 		audio.play();
 		if (isRotate) {
 			$("#player .cover img").css("animation","9.8s linear 0s normal none infinite rotate");
@@ -104,7 +103,6 @@
 		loadMusic(track);
 		play();
 	}
-
 
 	// Shuffle
 	var shufflePlay = function(i){
@@ -217,7 +215,7 @@
 	$('#QPlayer .liebiao,#QPlayer .liebiao').on('click', function(){
 		var pl = $('#playlist');
 		if (pl.hasClass('go') === false) {
-			pl.css({"max-height":"302px","transition":"max-height .5s ease"});		
+			pl.css({"max-height":"360px","transition":"max-height .5s ease"});		
 			pl.css("border", "1px solid #dedede");
 			pl.addClass('go');
 		} else {
@@ -235,7 +233,7 @@
 			    isFirstPlay = !isFirstPlay;
 			    localStorage.qplayer = 'false';
 			}
-			mA.css("transform", "translateX(282px)");
+			mA.css("transform", "translateX(332px)");
 		    $('.ssBtn .adf').addClass('on');
 		} else {	
 			mA.css("transform", "translateX(0px)");
@@ -353,7 +351,7 @@ function showNotification(info) {
 		$('.qplayer-notification').css({"width":width,"transition":"all .7s ease"});
 		$('.qplayer-notification .close').delay(500).show(0);
 	},1500);
-	autoClearTimer = setTimeout("if ($('.qplayer-notification').length>0) {closeNotification()}",4000);
+	autoClearTimer = setTimeout("if ($('.qplayer-notification').length>0) {closeNotification()}",8000);
 }
 
 
