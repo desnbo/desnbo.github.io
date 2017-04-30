@@ -4,7 +4,7 @@
     position:fixed;
     overflow:hidden;
     bottom:40px;
-    left:0px;
+    left:-322px;
     transition:transform .5s ease;
 }
 #QPlayer .left {
