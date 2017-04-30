@@ -844,9 +844,9 @@ html {
     position: absolute;
     min-height: 100%;
     background: #eaeaea;
-    left: 380px;
+    left: 385px;
     width: auto;
-    max-width: 1440px;
+    max-width: 1210px;
 }
 
 .mid-col.show {
@@ -861,9 +861,9 @@ html {
 .left-col {
     margin-top: 65px;
     border: 1px solid silver;
-    left: 55px;
+    left: 32px;
     background: #fff;
-    width: 312px;
+    width: 300px;
     position: fixed;
     opacity: 1;
     -webkit-transition: all .2s ease-in;
@@ -1808,7 +1808,7 @@ pre .id {
 }
 
 .tools-col {
-    width: 350px;
+    width: 360px;
     height: 100%;
     position: fixed;
     left: 0;
@@ -1850,7 +1850,7 @@ pre .id {
 }
 
 .tools-col .tools-section .search-wrap .search-ipt {
-    width: 350px;
+    width: 330px;
     color: #fff;
     background: none;
     border: none;
@@ -1883,7 +1883,7 @@ pre .id {
 .tools-col .tools-section .search-tag.tagcloud .search-tag-wording {
     font-size: 12px;
     float: right;
-    margin: 4px 75px 0 0
+    margin: 4px 75px 0 0;
 }
 
 .tools-col .tools-section .search-tag.tagcloud .search-switch {

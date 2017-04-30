@@ -1419,3 +1419,5 @@
                         return Dn() === In ? (En = !0, void i.close()) : void(bn || (Cn = !0, i.goTo(An().pid), Cn = !1)) }, updateURL: function() { Mn(), Cn || (Tn ? gn = setTimeout(Fn, 800) : Fn()) } } }), r.extend(i, ot) };
         return e })
 }]);
+
+
