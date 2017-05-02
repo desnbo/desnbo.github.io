@@ -187,8 +187,8 @@
 #pContent .ssBtn {
     width:25px;
     height:60px;
-    background:#1E272C none repeat scroll 0% 0%;
-    opacity: 0.9;
+    /*background: #FFF none repeat scroll 0% 0%;*/
+    border: 1px solid #1E272C;
     position:relative;
     right:0px;
     bottom:0px;
