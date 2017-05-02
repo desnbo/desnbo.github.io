@@ -362,7 +362,7 @@
     <link href="/2017/03/17/jQuery-treeview-plugin/"/>
     <id>/2017/03/17/jQuery-treeview-plugin/</id>
     <published>2017-03-17T12:43:13.000Z</published>
-    <updated>2017-04-17T18:30:01.726Z</updated>
+    <updated>2017-05-02T18:14:57.955Z</updated>
     
     <content type="html"><![CDATA[<p>在项目中，我们经常会需要一些树状结构的样式来显示层级结构，菜单等，利用Jquery的一些插件，可以实现这些效果的，如Jquery.treeview。jquery treeview树控件是一款非常实用的jquery插件。</p>
 <p><img src="http://p1.bqimg.com/567571/f1951362bac7bc5f.png" alt="" title="树状结构"></p>
@@ -370,7 +370,7 @@
 <h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h3><ul>
 <li>参数说明参看 <a href="http://www.cnblogs.com/akingyao/archive/2013/01/16/2862553.html" target="_blank" rel="external">jQuery treeview 插件参数说明</a></li>
 <li>其中 <strong>url ：String</strong> : 异步加载时，设置url地址。需要返回的是一个json数组。</li>
-<li>json数组相关节点的属性如下：<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">    &#123;</div><div class="line">      <span class="built_in">text</span>          : <span class="keyword">String</span>    文本</div><div class="line">      hasChildren   : <span class="keyword">boolean</span>   是否有紫菜单</div><div class="line">      children      ：json[]    子菜单信息</div><div class="line">      expanded      : <span class="keyword">boolean</span>   是否展开</div><div class="line">      classes       : <span class="keyword">String</span>    样式们 <span class="keyword">class</span>=<span class="string">"aa bb cc "</span></div><div class="line">      id            ：<span class="keyword">String</span>    唯一标识</div><div class="line">    &#125; </div><div class="line">]</div></pre></td></tr></table></figure>
+<li>json数组相关节点的属性如下：<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">    &#123;</div><div class="line">      <span class="built_in">text</span>          : <span class="keyword">String</span>    <span class="comment">// 文本</span></div><div class="line">      hasChildren   : <span class="keyword">boolean</span>   <span class="comment">// 是否有子菜单</span></div><div class="line">      children      ：json[]    <span class="comment">// 子菜单信息</span></div><div class="line">      expanded      : <span class="keyword">boolean</span>   <span class="comment">// 是否展开</span></div><div class="line">      classes       : <span class="keyword">String</span>    <span class="comment">// 样式们 class="aa bb cc "</span></div><div class="line">      id            ：<span class="keyword">String</span>    <span class="comment">// 唯一标识</span></div><div class="line">    &#125; </div><div class="line">]</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="在项目中导入相关的文件"><a href="#在项目中导入相关的文件" class="headerlink" title="在项目中导入相关的文件"></a>在项目中导入相关的文件</h3><ul>

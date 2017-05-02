@@ -3,7 +3,7 @@
 #QPlayer {
     position:fixed;
     overflow:hidden;
-    bottom:40px;
+    bottom:15px;
     left:-332px;
     transition:transform .5s ease;
 }
@@ -150,7 +150,7 @@
 #playlist {
     float:left;
     background:rgb(217,205,199);
-    width:330px;
+    width:332px;
     margin:0;
     padding:0;
     position:relative;
@@ -188,7 +188,7 @@
     width:25px;
     height:60px;
     background:#1E272C none repeat scroll 0% 0%;
-    opacity: 0.8;
+    opacity: 0.9;
     position:relative;
     right:0px;
     bottom:0px;
@@ -309,8 +309,8 @@ to {
 
 .qplayer-notification-icon {
     display: block;
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     position: absolute;
     float: left;
     text-align: center;
@@ -328,7 +328,7 @@ to {
 .qplayer-notification .body {
     padding-left: 18px;
     padding-right: 60px;
-    height: 45px;
+    height: 38px;
     vertical-align: middle;
     display: table;
     background-color: rgba(30,39,44,0.3);

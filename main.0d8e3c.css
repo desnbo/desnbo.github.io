@@ -844,9 +844,9 @@ html {
     position: absolute;
     min-height: 100%;
     background: #eaeaea;
-    left: 382px;
-    width: auto;
-    max-width: 1280px;
+    left: 350px;
+    margin: 0 auto;
+    max-width: 72em;
 }
 
 .mid-col.show {
@@ -859,8 +859,8 @@ html {
 }
 
 .left-col {
-    margin-top: 58px;
-    border: 1px solid silver;
+    margin-top: 52px;
+    border: 1px solid #61696E;
     left: 32px;
     background: #fff;
     width: 300px;
@@ -876,7 +876,7 @@ html {
     float: left;
     width: 100%;
     height: 144px;
-    position: absolute
+    position: absolute;
 }
 
 .left-col .intrude-less {
@@ -1057,7 +1057,7 @@ html {
 
 .article-entry .highlight,
 .article-entry pre {
-    background: #272822;
+    background: #263238;
     margin: 10px 0;
     padding: 10px;
     overflow: auto;
@@ -1808,8 +1808,9 @@ pre .id {
 }
 
 .tools-col {
+    margin-left: 32px;
     width: 360px;
-    height: 100%;
+    height: 95%;
     position: fixed;
     left: 0;
     top: 0;
@@ -1830,8 +1831,7 @@ pre .id {
 
 .tools-col .tools-section,
 .tools-col .tools-wrap {
-    margin-left: 30px;
-    height: 95%;
+    height: 100%;
     color: #e5e5e5;
     width: 360px;
     overflow: hidden;
@@ -1850,7 +1850,7 @@ pre .id {
 }
 
 .tools-col .tools-section .search-wrap .search-ipt {
-    width: 330px;
+    width: 320px;
     color: #fff;
     background: none;
     border: none;
@@ -2105,7 +2105,7 @@ pre .id {
 
 .article-inner h1.article-title,
 .article-title {
-    color: #696969;
+    color: #1E272C;
     margin-left: 0;
     font-weight: 300;
     line-height: 35px;
@@ -2230,7 +2230,6 @@ pre .id {
     letter-spacing: .140625em;
     text-transform: uppercase
 }
-
 .article-inner h6 {
     font-style: italic
 }
@@ -2340,7 +2339,7 @@ pre .id {
 .article-entry h6 {
     margin-top: 20px;
     font-weight: 700;
-    color: #574c4c;
+    color: #263238;
     padding-bottom: 5px;
     border-bottom: 1px solid #ddd
 }
@@ -3974,7 +3973,7 @@ a.pswp__share--download:hover {
 }
 .toc-title {
   font-size: 120%;
-  color: #574C4C;
+  color: #263238;
 }
 .toc {
   padding: 0;
@@ -3982,6 +3981,9 @@ a.pswp__share--download:hover {
   line-height: 1.8em;
   white-space: nowrap;
   overflow: hidden;
+}
+ #toc li{
+    list-style-type: none;
 }
 
 .toc-child {
