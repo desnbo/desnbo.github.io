@@ -74,7 +74,7 @@ var _hmt = _hmt || [];
 				
 				<li><a href="/archives/">全部文章</a></li>
 				
-				<li><a href="/tags/essay/">随笔</a></li>
+				<li><a href="#">相册</a></li>
 				
 			</ul>
 		</nav>
@@ -110,498 +110,463 @@ var _hmt = _hmt || [];
 </div>
 
 <div id="QPlayer">
-        <div id="pContent">
-            <div id="player">
-                <span class="cover"></span>
-                <div class="ctrl">
-                    <div class="musicTag marquee">
-                        <strong>Title</strong>
-                        <span> - </span>
-                        <span class="artist">Artist</span>
+    <div id="pContent">
+        <div id="player">
+            <span class="cover"></span>
+            <div class="ctrl">
+                <div class="musicTag marquee">
+                    <strong>Title</strong>
+                    <span> - </span>
+                    <span class="artist">Artist</span>
+                </div>
+                <div class="progress">
+                    <div class="timer left">0:00</div>
+                    <div class="contr">
+                        <div class="rewind icon"></div>
+                        <div class="playback icon"></div>
+                        <div class="fastforward icon"></div>
                     </div>
-                    <div class="progress">
-                        <div class="timer left">0:00</div>
-                        <div class="contr">
-                            <div class="rewind icon"></div>
-                            <div class="playback icon"></div>
-                            <div class="fastforward icon"></div>
-                        </div>
-                        <div class="right">
-                            <div class="liebiao icon"></div>
-                        </div>
+                    <div class="right">
+                        <div class="liebiao icon"></div>
                     </div>
                 </div>
             </div>
-            <div class="ssBtn">
-                <div class="adf"></div>
-            </div>
         </div>
-        <ol id="playlist"></ol>
+        <div class="ssBtn">
+            <div class="adf"></div>
+        </div>
     </div>
-    <!-- JQuery 2.2.4 -->
-    <script src="https://lib.baomitu.com/jquery/2.2.4/jquery.min.js" type"text/javascript" ></script>
-    <!-- jquery.marquee 1.4.0 -->
-    <script src="https://cdn.jsdelivr.net/jquery.marquee/1.4.0/jquery.marquee.min.js" type="text/javascript"></script>
-    <script>
+    <ol id="playlist"></ol>
+</div>
+<!-- JQuery 2.2.4 -->
+<script src="https://lib.baomitu.com/jquery/2.2.4/jquery.min.js" type"text/javascript" ></script>
+<!-- jquery.marquee 1.4.0 -->
+<script src="https://cdn.jsdelivr.net/jquery.marquee/1.4.0/jquery.marquee.min.js" type="text/javascript"></script>
+<script>
     var playlist = [{
-            title: "小半",
-            artist: "陈粒",
-            mp3: "http://m2.music.126.net/WFmdBsQqyHrLvkuOjhZM4g==/3416182636543715.mp3",
-            cover: "http://p1.music.126.net/HQxTggMCB7AHUXN-ZFEtmA==/1371091013186741.jpg?param=106x106",
-        }, {
-            title: "街灯晚餐",
-            artist: "卫兰",
-            mp3: "http://m2.music.126.net/wyv9vM-vG2dzRlxSGk1jAA==/2870824860146791.mp3",
-            cover: "http://p1.music.126.net/gFEst-n0ykOFL3Uf_x-O0Q==/1666859627714552.jpg?param=106x106",
-        }, {
-            title: "回电我",
-            artist: "卫兰",
-            mp3: "http://m2.music.126.net/Yu0eLWs57kEuA8DLB-ef5g==/2750978092718675.mp3",
-            cover: "http://p1.music.126.net/gFEst-n0ykOFL3Uf_x-O0Q==/1666859627714552.jpg?param=106x106",
-        }, {
-            title: "배영하는 물고기(仰泳的鱼)",
-            artist: "TAIBIAN/DIA",
-            mp3: "http://m2.music.126.net/C3HtOOlq8CjnDjlx89itTA==/3222668581180556.mp3",
-            cover: "http://p1.music.126.net/eJzpBpN7D6m0mk7eODXUXQ==/2536573326826311.jpg?param=106x106",
-        }, {
-            title: "너의 의미(你的意义)",
-            artist: "IU/金昌万",
-            mp3: "http://m2.music.126.net/2CSCPmZVJP2qYfNdwNMGXw==/6024224209074643.mp3",
-            cover: "http://p1.music.126.net/vvep8oWbYOhpWchNu4C8qg==/6022025185715205.jpg?param=106x106",
-        }, {
-            title: "잘 지내고 있니(过得好吗)",
-            artist: "尹美莱",
-            mp3: "http://m2.music.126.net/M1BE2PwrFIeOnSau7rLPIw==/3405187515703395.mp3",
-            cover: "http://p1.music.126.net/0SDLbucWGV8CiRLq_nsSCg==/3276544658893698.jpg?param=106x106",
-        }, {
-            title: "기억을 걷는 시간(聚集记忆时间)",
-            artist: "Nell",
-            cover: "http://p1.music.126.net/30Q4t9-HMLr80bHmIWWJaQ==/6632254138820637.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/VeJTUTFPZ0-9WPLcUy0eJQ==/1309518348684049.mp3",
-        }, {
-            title: "树高千丈 落叶帰根",
-            artist: "中島みゆき",
-            cover: "http://p1.music.126.net/PbUAqErM5O_3X8wNbzWtJw==/907097092915400.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/E9Nv2HnpKnLN8FF2ev2ThQ==/1987917023031274.mp3",
-        }, {
-            title: "荒岛",
-            artist: "谢春花",
-            cover: "http://p1.music.126.net/Eg4cy0_HIF2nrX2gMCsWkQ==/17967119509636556.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/__52VI9hED7vW6DqzJLZrQ==/3420580690782626.mp3",
-        }, {
-            title: "借我",
-            artist: "谢春花",
-            cover: "http://p1.music.126.net/Eg4cy0_HIF2nrX2gMCsWkQ==/17967119509636556.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/32gfmqzGHIAOnyOnCcZjrA==/3434874328861277.mp3",
-        }, {
-            title: "Melodies",
-            artist: "Madison Beer",
-            cover: "http://p1.music.126.net/5Qyxv8iYm_uOEXFU8Ff7xw==/1282030558024389.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/y72eEX-EeuIb2i6bSrsJWQ==/5721858511041616.mp3",
-        }, {
-            title: "小永远",
-            artist: "何洁",
-            cover: "http://p1.music.126.net/SV-n4Q1fKClZf8ZVnELbQg==/123145302327532.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/Up7FNlVNDLCqnYoycxQ-Uw==/3296335866581833.mp3",
-        }, {
-            title: "Love Is Easy",
-            artist: "McFly",
-            cover: "http://p1.music.126.net/5GXp7x9jNzN7kU793Rf6Bg==/2440915813685170.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/eiEt4BTdqzMUjm2mQrnxWw==/2788361488042084.mp3",
-        }, {
-            title: "Paralyse",
-            artist: "Polarheart",
-            cover: "http://p1.music.126.net/8rsDbQE-r-hK6641yHZDAQ==/6024224209305873.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/LCFDRjSt2-cexwI_riGbRQ==/5917571581099601.mp3",
-        }, {
-            title: "Must Be Something",
-            artist: "The Pierces",
-            cover: "http://p1.music.126.net/ceww4bHSaVIp89HpxB4ulw==/6671836557484173.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/XY-pJh9wE5ciITLF03Gr8g==/1389782711389178.mp3",
-        }, {
-            title: "Forgive Me",
-            artist: "Maher Zain",
-            cover: "http://p1.music.126.net/VuBRVqUj9bufzBmA4ciQVA==/2528876744624094.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/2LPFbjTBV-gpl3k2ihVBvQ==/1280931046376626.mp3",
-        }, {
-            title: "Let It Rain",
-            artist: "Gotthard",
-            cover: "http://p1.music.126.net/mvpVg3UZygrdRkTazhYZzA==/856519558087345.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/UQXtw08yeQwiN_ReDFB4Wg==/2046191139302555.mp3",
-        }, {
-            title: "EveryBreathUTake",
-            artist: "Karen Souza",
-            cover: "http://p1.music.126.net/Hbhf_67skL4KYL6kQMCGXA==/6633353651372221.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/38o-YCxl3yUtgHcfcJxg0A==/2780664906662166.mp3",
-        }, {
-            title: "Creep",
-            artist: "Daniela Andrade",
-            cover: "http://p1.music.126.net/NdTxjowXeFM6ZiihKUnCJQ==/3297435371857680.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/WqYgCzJ9yTmeLX5pMHg_3Q==/7791139395530336.mp3",
-        }, {
-            title: "LightMyWay",
-            artist: "Caroline Eddleman",
-            cover: "http://p1.music.126.net/yg2HweUf8eDCmSRrkFaUJg==/834529325534732.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/-lEM8pmpbYT2CA17bgchkQ==/2018703348606265.mp3",
-        }, {
-            title: "Home",
-            artist: "王诗安",
-            cover: "http://p1.music.126.net/Sw6oUm7jEL8YU76rPMJl-g==/18716986441276771.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/EGKMEeUPbleK1ByBPnJf1g==/1375489051703325.mp3",
-        }, {
-            title: "My Prayer",
-            artist: "Devotion",
-            cover: "http://p1.music.126.net/CxLeRqfmol2MPktb5mhcTw==/898300999947336.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/EpQan6Y33JgtPUsqKglG_Q==/2846635604356943.mp3",
-        }, {
-            title: "Better Off",
-            artist: "Lindsey Ray",
-            cover: "http://p1.music.126.net/ZJQjAxd1X_8RtR9pOp9ggQ==/775155697589300.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/IUNp5wfOkWtFv9p-v7EBsA==/2071479906741701.mp3",
-        }, {
-            title: "Where Is The Love",
-            artist: "Clément Bcx",
-            cover: "http://p1.music.126.net/knXuA0rAKFg9eViip-NaGQ==/7783442814172824.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/oe1GzrLtfJJM4v3dFacTtg==/7937374442963631.mp3",
-        }, {
-            title: "Try",
-            artist: "Asher Book",
-            cover: "http://p1.music.126.net/knXuA0rAKFg9eViip-NaGQ==/7783442814172824.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/cuwfehRCeANRYGj9IxJWoQ==/18821440046063422.mp3",
-        }, {
-            title: "Pop It In 2",
-            artist: "MADE IN HEIGHTS",
-            cover: "http://p1.music.126.net/fVNWEFG_lg_kF_ocaPYqwg==/7763651604616403.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/iC0b1dSo2Vvuc2pflGezpw==/7781243790667654.mp3",
-        }, {
-            title: "生命是场马拉松",
-            artist: "旅行团",
-            cover: "http://p1.music.126.net/-4bU_UtWVA-8ZE-U-41jYg==/6627856093363335.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/usOj3vLrEqC-66-I3ea6CQ==/2529976257334348.mp3",
-        }, {
-            title: "小太阳",
-            artist: "五月天",
-            cover: "http://p1.music.126.net/o-eYMU2vKtaF_X1q4j4-iA==/668503069723469.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/jF2prEF2_5jLub61vcB-hw==/5755943371491128.mp3",
-        }, {
-            title: "Think Again",
-            artist: "Kate Havnevik",
-            cover: "http://p1.music.126.net/XfcPoljRr2ONWK3A40fa2g==/827932255760293.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/U4OnUqayMj4957anbpwg5w==/2003310185817467.mp3",
-        }, {
-            title: "我也曾经像你一样",
-            artist: "黄渤",
-            cover: "http://p1.music.126.net/CG-5bm7EzHjL5uBGAlTehQ==/3410685069756453.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/rPetP1Az1mvT-TmUINle9A==/3441471395523782.mp3",
-        }, {
-            title: "When I'm Alone",
-            artist: "Nevertheless",
-            cover: "http://p1.music.126.net/1aoR5wgggZDMfDIVqagOVQ==/6626756581235394.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/vtmmT13VtjhdOb6allHLOQ==/2017603836978462.mp3",
-        }, {
-            title: "Locked Away",
-            artist: "OutaMatic",
-            cover: "http://p1.music.126.net/smViXHcka8aOsEkMYUwQDQ==/1416170978664558.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/K4GzT1x6ApvjKKJlDruw2w==/3424978723336211.mp3",
-        },{
-            title: "Yesterday",
-            artist: "Leona Lewis",
-            cover: "http://p1.music.126.net/RDt-37A7Lmo4KxBdI80FAA==/2531075767324013.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/MUlGPKR-DlWF5l3zDYuW8g==/1262239348702541.mp3",
-        }, {
-            title: "Why Would I Ever",
-            artist: "Paula DeAnda",
-            cover: "http://p1.music.126.net/5Drm6GNOZYxaXvrvUOpJqg==/1663561092840200.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/SGg3CkvDHkngYhyywSEJRQ==/6049512976516036.mp3",
-        }, {
-            title: "Take a Bow",
-            artist: "Rihanna",
-            cover: "http://p1.music.126.net/U4UHSnXeM0eO46rV0rHb4w==/5508553255230722.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/kg-5U_SjLwAum4zl9b3bpw==/5820814557561124.mp3",
-        }, {
-            title: "WeDon'tTalkAnymore",
-            artist: "双笙/囧菌",
-            cover: "http://p1.music.126.net/C-gvUOPPxJDpc1EFJGAF-A==/18417919277052735.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/HOazzhbBPP92pE_YboW_Ng==/3252355417674598.mp3",
-        }, {
-            title: "Jocelin",
-            artist: "Leddra Chapman",
-            cover: "http://p1.music.126.net/TskH58A2xAhc0NU0TZHfSA==/610228953422778.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/-ajscbDn2Y63KNvsnj9z5A==/2771868813647308.mp3",
-        }, {
-            title: "Monsters",
-            artist: "Katie Sky",
-            cover: "http://p1.music.126.net/I7FarvOvDNiCCWqSeIIOTg==/6005532511246533.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/-cyl1CaWPYgS8gYiUJQ1ew==/6649846325407258.mp3",
-        }, {
-            title: "Hotbox",
-            artist: "Raye",
-            cover: "http://p1.music.126.net/BVyTg5ugX_qE82Vkcu5jEQ==/2906009233601012.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/RdacdY96Givuv5OS_e4wCA==/7823025232440109.mp3",
-        }, {
-            title: "Zaynah",
-            artist: "Kate Linn",
-            cover: "http://p1.music.126.net/M4JRnCJgBTcMYnOOvDIbAA==/7791139394466338.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/4d-FRkkw5aY0_4m-i6U9RA==/7903289580509767.mp3",
-        }, {
-            title: "Marvin Gaye",
-            artist: "Charlie Puth",
-            cover: " http://p1.music.126.net/uB8CBWJkr6np4iogVZ7pZA==/7753755999271048.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/l61r4uv_2D4wem3wzM8t5A==/2536573327925292.mp3",
-        }, {
-            title: "Maps",
-            artist: "Alyson Stoner",
-            cover: "http://p1.music.126.net/N5DY2sjaktiGvtAr1pspQw==/7720770650777600.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/EDUYcZlXHnW70bfSTEBnBw==/7792238906634780.mp3",
-        }, {
-            title: "Paper Doll",
-            artist: "Bea Miller",
-            cover: "http://p1.music.126.net/4kmxLzqbeMveV2Fs788UQQ==/3330420720534055.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/6c2HXQxLAZ2XUQENcz-CBA==/7947270047056206.mp3",
-        }, {
-            title: "Blue",
-            artist: "Keith Hanley",
-            cover: "http://p1.music.126.net/ni5a2fu_WAPoVzd_OCuVRg==/5858197953003145.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/7pAlPpaCUCUohgIy0ZZ6HA==/6017627139188232.mp3",
-        }, {
-            title: "Free Fall",
-            artist: "The Workday Release",
-            cover: "http://p1.music.126.net/zIMv3uqUoFENT0v_w_tQsQ==/7752656487989382.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/jXE5biSL39xXfufuAy0wZw==/7818627185657554.mp3",
-        }, {
-            title: "Colors",
-            artist: "Halsey",
-            cover: "http://p1.music.126.net/deUIzjFMYkFP3uVRx9OFdw==/3344714371962950.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/d8Gvi6WpVC00u_uBf5cJ3Q==/7967061256921217.mp3",
-        }, {
-            title: "SYRUP",
-            artist: "Tea",
-            cover: "http://p1.music.126.net/wRi1N8wjtUZAe6e1FCcBAA==/2538772353415216.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/d1fv2c8G_22aIwDbvUDgog==/3396391422673346.mp3",
-        }, {
-            title: "Relax, Take It Easy",
-            artist: "Mika",
-            cover: "http://p1.music.126.net/rQ_71XNYnylminHeOVF2Vg==/2535473813685129.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/R7OgokyixhGYJlr7UNqDrQ==/2079176488133825.mp3",
-        }, {
-            title: "The Well",
-            artist: "Shine Dion",
-            cover: "http://p1.music.126.net/Ui48KgJir0gyLC8GZEr3GA==/1660262557951933.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/gLjf7pHdpUNYINV5RH5Y9Q==/2049489674183618.mp3",
-        }, {
-            title: "Sailboats",
-            artist: "Sky Sailing",
-            cover: "http://p1.music.126.net/tb8tSgoGi86U53UEfN94cA==/6659741930301805.jpgparam=106x106",
-            mp3: "http://m2.music.126.net/AvxIaARQJxoY53Dc3uEUNw==/1346901744027343.mp3",
-        }, {
-            title: "Black Mascara",
-            artist: "Eliane",
-            cover: "http://p1.music.126.net/_t3VXvQjW1kmvzE5IH29Aw==/2539871860333192.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/GAMcmb0g6osiaxjEzfRk3w==/5828511138876925.mp3",
-        }, {
-            title: "Lost On You",
-            artist: "LP",
-            cover: "http://p1.music.126.net/yeatwcdchj3o-BQOl-JYCQ==/3424978722848617.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/q7pELlD2GvJapqFrAV37NQ==/1365593456543358.mp3",
-        }, {
-            title: "Beautiful",
-            artist: "Virginia To Vegas",
-            cover: "http://p1.music.126.net/pioXs3JgpemtSSvCCkCARQ==/6657542907309950.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/Bd_kcrhAUYoL3Uugpa_Qjg==/3223768093279058.mp3",
-        }, {
-            title: "That Isn’t You",
-            artist: "Sofi de la Torre",
-            cover: "http://p1.music.126.net/SVzQff7JmPljPptkKjCbRQ==/2925800442026769.jpg?param=106x106",
-            mp3: "http://p1.music.126.net/SVzQff7JmPljPptkKjCbRQ==/2925800442026769.jpg",
-        }, {
-            title: "Our Own Heaven",
-            artist: "Masetti",
-            cover: "http://p1.music.126.net/FrmbIXMIM-OSxxDEuBfunQ==/3225967119021604.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/xCS_PPu6wouhUwl9cBGc-w==/7895592999105979.mp3",
-        }, {
-            title: "I Am You",
-            artist: "Kim Taylor",
-            cover: "http://p1.music.126.net/ZGBvv1kp8rlq1Mk7iO0aHA==/932385860406884.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/cNoG-WA2odguY1w01aK6JQ==/2064882836972697.mp3",
-        }, {
-            title: "Half on a Baby",
-            artist: "Shivaree",
-            cover: "http://p1.music.126.net/jTXzlcLVkhkaVSzpXzRH7Q==/745468883675088.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/-1TxJHpdEunR3ED_PTcMLw==/2049489674183532.mp3",
-        }, {
-            title: "Comfortable",
-            artist: "Lauv",
-            cover: "http://p1.music.126.net/va3qIXkcEu0lnJyQLo_BIQ==/3324923163521330.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/wdIxpshbYEzql8FolaZ0OA==/3406287023246810.mp3",
-        }, {
-            title: "Paris",
-            artist: "Caro Emerald",
-            cover: "http://p1.music.126.net/tDsMly6GqQUDHwXuRjcS8g==/2501388953239774.jpg?param=106x106",
-            mp3: " http://m2.music.126.net/4irTi8dpXMf6lok3Ug8UZQ==/5505254720341110.mp3",
-        }, {
-            title: "Air",
-            artist: "Shawn Mendes",
-            cover: "http://p1.music.126.net/9hc8bW27GiexAulNeyJ1UQ==/7699879929620183.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/WnUAX9OU9dIWurXXQM1nPQ==/2942293116307097.mp3",
-        }, {
-            title: "Hawk Fly Tiger Run",
-            artist: "Ofelia K",
-            cover: "http://p1.music.126.net/ptKx3sb7zj80_HnliEVeXQ==/3408486049299253.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/OYAJwjrzrk_Cereyi5LdjA==/1365593460914291.mp3",
-        }, {
-            title: "Cry Me Out",
-            artist: "Pixie Lott",
-            cover: "http://p1.music.126.net/pItZJirP4aZdwELEK9bzeA==/788349837124457.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/PhEVMULBqsbyFogLF030mw==/1984618488145514.mp3",
-        }, {
-            title: "The Climb",
-            artist: "Coeur de Pirate",
-            cover: "http://p1.music.126.net/k-1BSX_4dn4DP870AkTFxA==/7981354908088106.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/S8PV3ahTCKyCUboJNbz7pg==/3368903627996408.mp3",
-        }, {
-            title: "Drops",
-            artist: "Blanc",
-            cover: "http://p1.music.126.net/WgzXTcA-ke0uBhV1dRIUiA==/7934075908365120.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/RocSn8B_th-LIOPwScC5Bw==/7946170536272829.mp3",
-        }, {
-            title: "小幸运(Cover 田馥甄)",
-            artist: "金玟岐",
-            cover: "http://p1.music.126.net/1j5VLDiGdQo8nFlx-ORtiQ==/3250156382031364.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/D7GY-8m9japXRmzBPlfovA==/3445869444824734.mp3",
-        }, {
-            title: "At the Same Time",
-            artist: "The Coronas",
-            cover: "http://p1.music.126.net/HYwwLyzm5UZCSwxEfhR2fg==/2895014117256992.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/d_d9V8RROAC_7WTWXiY1Gw==/3420580733570878.mp3",
-        }, {
-            title: "LivingInTheMoment",
-            artist: "Jason Mraz",
-            cover: "http://p1.music.126.net/5tPxkPMi-ghj8rzjEQs2NA==/569547023197655.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/il1MIIDIF-ijCXW1wYnJtQ==/1238050092892762.mp3",
-        }, {
-            title: "New Americana",
-            artist: "Halsey",
-            cover: "http://p1.music.126.net/5RN6gVd-4PC7iAPH8UOlZg==/1420569028327605.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/X8AkE2RgpJVRnBlEhGoLQg==/2901611188258928.mp3",
-        }, {
-            title: "So:Lo",
-            artist: "Kate Havnevik",
-            cover: "http://p1.music.126.net/ZdAdMUDNVjGyCChxLlEAYg==/2312272953278181.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/g-Q6-Oy-B6_pl8Q5fuV54Q==/5746047766813163.mp3",
-        }, {
-            title: "Closer To Me",
-            artist: "Megan & Liz",
-            cover: "http://p1.music.126.net/rltCB_IhT7_Tul4dVteDCQ==/2286984185839064.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/KtnjS8wfZ1N73EGD_1aFdw==/3138006185727693.mp3",
-        }, {
-            title: "Touch",
-            artist: "Barcelona",
-            cover: "http://p1.music.126.net/Iigr0ChiuuaIaMt18-OIZA==/5992338371427562.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/hbPrtqI_d9tw1oqhMcjjGA==/5932964743579869.mp3",
-        }, {
-            title: "LUBOV",
-            artist: "Various Artists",
-            cover: "http://p1.music.126.net/bDNd-r-7vVwFIqdE0cb02Q==/2454109953255262.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/gTLalfi1MKsKiEi6tS_9JA==/3116015953172181.mp3",
-        }, {
-            title: "Für immer",
-            artist: "Eisblume",
-            cover: "http://p1.music.126.net/MAUIyLE3tUG3ED01a1Yo_w==/755364488290776.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/fYvxKGX0f4DFD7piCBtweA==/1048934092908341.mp3",
-        }, {
-            title: "Tom's Diner",
-            artist: "Suzanne Vega",
-            cover: "http://p1.music.126.net/-WuPGOb1rSX9BNn2gYoU5Q==/1710840092825736.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/gjbs1UmbB4sRXDAKKf4C0A==/2083574534646208.mp3",
-        }, {
-            title: "Summer's Gone",
-            artist: "Lunik",
-            cover: "http://p1.music.126.net/KTAj1REcKss6RIhZ1RoQbA==/2538772349758259.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/IaYUqZ4Un2FwaVd28SKBMA==/1000555581276958.mp3",
-        }, {
-            title: "Five Star Recovery",
-            artist: "Sophia Moon",
-            cover: "http://p1.music.126.net/mda4vhEqQKt_3vrdwAbCpA==/5998935441353276.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/eJLvtYLv7UyxIsE_ODsmFQ==/6064906139146972.mp3",
-        }, {
-            title: "Hallo Goodbye",
-            artist: "The Pancakes",
-            cover: "http://p1.music.126.net/he-xMaSZ5Yv6KgFN22ZsMA==/1716337650968175.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/RPHxVBgdLNqObfFTK9N7tA==/2068181371847101.mp3",
-        }, {
-            title: "Nothing Hurts Like This",
-            artist: "Slo",
-            cover: "http://p1.music.126.net/7qgnuJVyjX-yswzpuIGgxg==/2911506791798950.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/XXEnC_BEPOWnW1wI9gJPUg==/7910986162649485.mp3",
-        }, {
-            title: "오늘(今天)",
-            artist: "Epitone Project",
-            cover: "http://p1.music.126.net/Hl7pDyNBemg6OwdFqlx5BA==/6636652185368762.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/fZqG_lu5hTZb-_zFqgZcOg==/5704266324962174.mp3",
-        }, {
-            title: "Better in Time",
-            artist: "Leona Lewis",
-            cover: "http://p1.music.126.net/4DRm5E8ahUJu5r1c4cNNbQ==/2450811418334469.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/bgoTqJJ9_l4JYq_rssUXVw==/2870824860123835.mp3",
-        }, {
-            title: "One Last Time",
-            artist: "Kelly Mack",
-            cover: "http://p1.music.126.net/D-suihNnWxeqZyniGl0IxA==/823534209226843.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/7jZ1hl5EwxizaE5-IPnKJg==/1007152651043380.mp3",
-        }, {
-            title: "오늘날씨(今天天气)",
-            artist: "MJ/Mellow",
-            cover: "http://p1.music.126.net/iTfjpiuzN2E5-o_ouuI6IQ==/2257297371873541.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/FNXva_3pTTSHOboMlIM8Wg==/2805953674121499.mp3",
-        }, {
-            title: "I'll Take the Blame",
-            artist: "Agnes Kain",
-            cover: "http://p1.music.126.net/FLmrWedRkcCCqTKNOWvf9Q==/3113816929935244.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/iZe3wbcSn4E2hKEw72qtow==/5501956185475706.mp3",
-        }, {
-            title: "Color Blind",
-            artist: "Matt B",
-            cover: "http://p1.music.126.net/wyX6w97irHYX9cXtrIYGNA==/6624557557981797.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/8wsI2gmwAeVgx6-XNAdYHg==/2542070883629379.mp3",
-        }, {
-            title: "Better Man",
-            artist: "Robbie Williams",
-            cover: "http://p1.music.126.net/7GLYrZh-Mz6ue0wxNBgLBw==/2535473814084183.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/swC3MONMg124vcLUcfz78w==/1148989651029382.mp3",
-        },{
-            title: "喜欢你 (粤)",
-            artist: "郭易",
-            cover: "http://p1.music.126.net/jI1ppmJFj4bdZ70qRBaSFQ==/35184372103350.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/yF7ROawXW9bigNcTj1Xsww==/5664683906380826.mp3",
-        },{
-            title: "Raindrops",
-            artist: "Eliane",
-            cover: "http://p1.music.126.net/_t3VXvQjW1kmvzE5IH29Aw==/2539871860333192.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/xQqKsZtWZvPdKrB3sUS4FA==/5790028231905042.mp3",
-        },{
-            title: "你好吗 天气好吗",
-            artist: "邓福如",
-            cover: "http://p1.music.126.net/2t-Rcq3yNvAy5Dgx_DN1wA==/87960930222969.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/Ip2BBJ_Jsj0c_7KfdAijyw==/1088516511507290.mp3",
-        },{
-            title: "함께걷던길(一起走的路)",
-            artist: "The Film",
-            cover: "http://p1.music.126.net/VCjG6BtX0SS4ygCuysRLzw==/6667438510932880.jpg?param=106x106",
-            mp3: "http://m2.music.126.net/qrUhpXfd58a6nyTrrtcqdQ==/1271035441750034.mp3",
-        },];
+        title: "小半",
+        artist: "陈粒",
+        mp3: "http://m2.music.126.net/WFmdBsQqyHrLvkuOjhZM4g==/3416182636543715.mp3",
+        cover: "http://p1.music.126.net/HQxTggMCB7AHUXN-ZFEtmA==/1371091013186741.jpg?param=106x106",
+    },{
+        title: "Love Is Easy",
+        artist: "McFly",
+        cover: "http://p1.music.126.net/5GXp7x9jNzN7kU793Rf6Bg==/2440915813685170.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/eiEt4BTdqzMUjm2mQrnxWw==/2788361488042084.mp3",
+    }, {
+        title: "Paralyse",
+        artist: "Polarheart",
+        cover: "http://p1.music.126.net/8rsDbQE-r-hK6641yHZDAQ==/6024224209305873.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/LCFDRjSt2-cexwI_riGbRQ==/5917571581099601.mp3",
+    }, {
+        title: "Must Be Something",
+        artist: "The Pierces",
+        cover: "http://p1.music.126.net/ceww4bHSaVIp89HpxB4ulw==/6671836557484173.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/XY-pJh9wE5ciITLF03Gr8g==/1389782711389178.mp3",
+    }, {
+        title: "Forgive Me",
+        artist: "Maher Zain",
+        cover: "http://p1.music.126.net/VuBRVqUj9bufzBmA4ciQVA==/2528876744624094.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/2LPFbjTBV-gpl3k2ihVBvQ==/1280931046376626.mp3",
+    }, {
+        title: "Let It Rain",
+        artist: "Gotthard",
+        cover: "http://p1.music.126.net/mvpVg3UZygrdRkTazhYZzA==/856519558087345.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/UQXtw08yeQwiN_ReDFB4Wg==/2046191139302555.mp3",
+    }, {
+        title: "EveryBreathUTake",
+        artist: "Karen Souza",
+        cover: "http://p1.music.126.net/Hbhf_67skL4KYL6kQMCGXA==/6633353651372221.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/38o-YCxl3yUtgHcfcJxg0A==/2780664906662166.mp3",
+    }, {
+        title: "Creep",
+        artist: "Daniela Andrade",
+        cover: "http://p1.music.126.net/NdTxjowXeFM6ZiihKUnCJQ==/3297435371857680.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/WqYgCzJ9yTmeLX5pMHg_3Q==/7791139395530336.mp3",
+    }, {
+        title: "LightMyWay",
+        artist: "Caroline Eddleman",
+        cover: "http://p1.music.126.net/yg2HweUf8eDCmSRrkFaUJg==/834529325534732.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/-lEM8pmpbYT2CA17bgchkQ==/2018703348606265.mp3",
+    }, {
+        title: "Home",
+        artist: "王诗安",
+        cover: "http://p1.music.126.net/Sw6oUm7jEL8YU76rPMJl-g==/18716986441276771.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/EGKMEeUPbleK1ByBPnJf1g==/1375489051703325.mp3",
+    }, {
+        title: "My Prayer",
+        artist: "Devotion",
+        cover: "http://p1.music.126.net/CxLeRqfmol2MPktb5mhcTw==/898300999947336.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/EpQan6Y33JgtPUsqKglG_Q==/2846635604356943.mp3",
+    }, {
+        title: "Better Off",
+        artist: "Lindsey Ray",
+        cover: "http://p1.music.126.net/ZJQjAxd1X_8RtR9pOp9ggQ==/775155697589300.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/IUNp5wfOkWtFv9p-v7EBsA==/2071479906741701.mp3",
+    }, {
+        title: "Where Is The Love",
+        artist: "Clément Bcx",
+        cover: "http://p1.music.126.net/knXuA0rAKFg9eViip-NaGQ==/7783442814172824.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/oe1GzrLtfJJM4v3dFacTtg==/7937374442963631.mp3",
+    }, {
+        title: "Try",
+        artist: "Asher Book",
+        cover: "http://p1.music.126.net/knXuA0rAKFg9eViip-NaGQ==/7783442814172824.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/cuwfehRCeANRYGj9IxJWoQ==/18821440046063422.mp3",
+    }, {
+        title: "Pop It In 2",
+        artist: "MADE IN HEIGHTS",
+        cover: "http://p1.music.126.net/fVNWEFG_lg_kF_ocaPYqwg==/7763651604616403.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/iC0b1dSo2Vvuc2pflGezpw==/7781243790667654.mp3",
+    }, {
+        title: "生命是场马拉松",
+        artist: "旅行团",
+        cover: "http://p1.music.126.net/-4bU_UtWVA-8ZE-U-41jYg==/6627856093363335.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/usOj3vLrEqC-66-I3ea6CQ==/2529976257334348.mp3",
+    }, {
+        title: "小太阳",
+        artist: "五月天",
+        cover: "http://p1.music.126.net/o-eYMU2vKtaF_X1q4j4-iA==/668503069723469.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/jF2prEF2_5jLub61vcB-hw==/5755943371491128.mp3",
+    }, {
+        title: "Think Again",
+        artist: "Kate Havnevik",
+        cover: "http://p1.music.126.net/XfcPoljRr2ONWK3A40fa2g==/827932255760293.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/U4OnUqayMj4957anbpwg5w==/2003310185817467.mp3",
+    }, {
+        title: "我也曾经像你一样",
+        artist: "黄渤",
+        cover: "http://p1.music.126.net/CG-5bm7EzHjL5uBGAlTehQ==/3410685069756453.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/rPetP1Az1mvT-TmUINle9A==/3441471395523782.mp3",
+    }, {
+        title: "When I'm Alone",
+        artist: "Nevertheless",
+        cover: "http://p1.music.126.net/1aoR5wgggZDMfDIVqagOVQ==/6626756581235394.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/vtmmT13VtjhdOb6allHLOQ==/2017603836978462.mp3",
+    }, {
+        title: "Locked Away",
+        artist: "OutaMatic",
+        cover: "http://p1.music.126.net/smViXHcka8aOsEkMYUwQDQ==/1416170978664558.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/K4GzT1x6ApvjKKJlDruw2w==/3424978723336211.mp3",
+    },{
+        title: "Yesterday",
+        artist: "Leona Lewis",
+        cover: "http://p1.music.126.net/RDt-37A7Lmo4KxBdI80FAA==/2531075767324013.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/MUlGPKR-DlWF5l3zDYuW8g==/1262239348702541.mp3",
+    }, {
+        title: "Why Would I Ever",
+        artist: "Paula DeAnda",
+        cover: "http://p1.music.126.net/5Drm6GNOZYxaXvrvUOpJqg==/1663561092840200.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/SGg3CkvDHkngYhyywSEJRQ==/6049512976516036.mp3",
+    }, {
+        title: "Take a Bow",
+        artist: "Rihanna",
+        cover: "http://p1.music.126.net/U4UHSnXeM0eO46rV0rHb4w==/5508553255230722.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/kg-5U_SjLwAum4zl9b3bpw==/5820814557561124.mp3",
+    }, {
+        title: "WeDon'tTalkAnymore",
+        artist: "双笙/囧菌",
+        cover: "http://p1.music.126.net/C-gvUOPPxJDpc1EFJGAF-A==/18417919277052735.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/HOazzhbBPP92pE_YboW_Ng==/3252355417674598.mp3",
+    }, {
+        title: "Jocelin",
+        artist: "Leddra Chapman",
+        cover: "http://p1.music.126.net/TskH58A2xAhc0NU0TZHfSA==/610228953422778.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/-ajscbDn2Y63KNvsnj9z5A==/2771868813647308.mp3",
+    }, {
+        title: "Monsters",
+        artist: "Katie Sky",
+        cover: "http://p1.music.126.net/I7FarvOvDNiCCWqSeIIOTg==/6005532511246533.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/-cyl1CaWPYgS8gYiUJQ1ew==/6649846325407258.mp3",
+    }, {
+        title: "Hotbox",
+        artist: "Raye",
+        cover: "http://p1.music.126.net/BVyTg5ugX_qE82Vkcu5jEQ==/2906009233601012.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/RdacdY96Givuv5OS_e4wCA==/7823025232440109.mp3",
+    }, {
+        title: "Zaynah",
+        artist: "Kate Linn",
+        cover: "http://p1.music.126.net/M4JRnCJgBTcMYnOOvDIbAA==/7791139394466338.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/4d-FRkkw5aY0_4m-i6U9RA==/7903289580509767.mp3",
+    },{
+        title: "Maps",
+        artist: "Alyson Stoner",
+        cover: "http://p1.music.126.net/N5DY2sjaktiGvtAr1pspQw==/7720770650777600.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/EDUYcZlXHnW70bfSTEBnBw==/7792238906634780.mp3",
+    }, {
+        title: "Paper Doll",
+        artist: "Bea Miller",
+        cover: "http://p1.music.126.net/4kmxLzqbeMveV2Fs788UQQ==/3330420720534055.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/6c2HXQxLAZ2XUQENcz-CBA==/7947270047056206.mp3",
+    }, {
+        title: "Blue",
+        artist: "Keith Hanley",
+        cover: "http://p1.music.126.net/ni5a2fu_WAPoVzd_OCuVRg==/5858197953003145.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/7pAlPpaCUCUohgIy0ZZ6HA==/6017627139188232.mp3",
+    }, {
+        title: "Free Fall",
+        artist: "The Workday Release",
+        cover: "http://p1.music.126.net/zIMv3uqUoFENT0v_w_tQsQ==/7752656487989382.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/jXE5biSL39xXfufuAy0wZw==/7818627185657554.mp3",
+    }, {
+        title: "Colors",
+        artist: "Halsey",
+        cover: "http://p1.music.126.net/deUIzjFMYkFP3uVRx9OFdw==/3344714371962950.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/d8Gvi6WpVC00u_uBf5cJ3Q==/7967061256921217.mp3",
+    }, {
+        title: "SYRUP",
+        artist: "Tea",
+        cover: "http://p1.music.126.net/wRi1N8wjtUZAe6e1FCcBAA==/2538772353415216.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/d1fv2c8G_22aIwDbvUDgog==/3396391422673346.mp3",
+    }, {
+        title: "Relax, Take It Easy",
+        artist: "Mika",
+        cover: "http://p1.music.126.net/rQ_71XNYnylminHeOVF2Vg==/2535473813685129.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/R7OgokyixhGYJlr7UNqDrQ==/2079176488133825.mp3",
+    }, {
+        title: "The Well",
+        artist: "Shine Dion",
+        cover: "http://p1.music.126.net/Ui48KgJir0gyLC8GZEr3GA==/1660262557951933.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/gLjf7pHdpUNYINV5RH5Y9Q==/2049489674183618.mp3",
+    }, {
+        title: "Sailboats",
+        artist: "Sky Sailing",
+        cover: "http://p1.music.126.net/tb8tSgoGi86U53UEfN94cA==/6659741930301805.jpgparam=106x106",
+        mp3: "http://m2.music.126.net/AvxIaARQJxoY53Dc3uEUNw==/1346901744027343.mp3",
+    }, {
+        title: "Black Mascara",
+        artist: "Eliane",
+        cover: "http://p1.music.126.net/_t3VXvQjW1kmvzE5IH29Aw==/2539871860333192.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/GAMcmb0g6osiaxjEzfRk3w==/5828511138876925.mp3",
+    }, {
+        title: "Lost On You",
+        artist: "LP",
+        cover: "http://p1.music.126.net/yeatwcdchj3o-BQOl-JYCQ==/3424978722848617.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/q7pELlD2GvJapqFrAV37NQ==/1365593456543358.mp3",
+    }, {
+        title: "Beautiful",
+        artist: "Virginia To Vegas",
+        cover: "http://p1.music.126.net/pioXs3JgpemtSSvCCkCARQ==/6657542907309950.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/Bd_kcrhAUYoL3Uugpa_Qjg==/3223768093279058.mp3",
+    }, {
+        title: "That Isn’t You",
+        artist: "Sofi de la Torre",
+        cover: "http://p1.music.126.net/SVzQff7JmPljPptkKjCbRQ==/2925800442026769.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/lytiwvig-srTCiPZMhwW8g==/7941772488050515.mp3",
+    }, {
+        title: "Our Own Heaven",
+        artist: "Masetti",
+        cover: "http://p1.music.126.net/FrmbIXMIM-OSxxDEuBfunQ==/3225967119021604.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/xCS_PPu6wouhUwl9cBGc-w==/7895592999105979.mp3",
+    }, {
+        title: "I Am You",
+        artist: "Kim Taylor",
+        cover: "http://p1.music.126.net/ZGBvv1kp8rlq1Mk7iO0aHA==/932385860406884.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/cNoG-WA2odguY1w01aK6JQ==/2064882836972697.mp3",
+    }, {
+        title: "Half on a Baby",
+        artist: "Shivaree",
+        cover: "http://p1.music.126.net/jTXzlcLVkhkaVSzpXzRH7Q==/745468883675088.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/-1TxJHpdEunR3ED_PTcMLw==/2049489674183532.mp3",
+    }, {
+        title: "Comfortable",
+        artist: "Lauv",
+        cover: "http://p1.music.126.net/va3qIXkcEu0lnJyQLo_BIQ==/3324923163521330.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/wdIxpshbYEzql8FolaZ0OA==/3406287023246810.mp3",
+    }, {
+        title: "Paris",
+        artist: "Caro Emerald",
+        cover: "http://p1.music.126.net/tDsMly6GqQUDHwXuRjcS8g==/2501388953239774.jpg?param=106x106",
+        mp3: " http://m2.music.126.net/4irTi8dpXMf6lok3Ug8UZQ==/5505254720341110.mp3",
+    }, {
+        title: "Air",
+        artist: "Shawn Mendes",
+        cover: "http://p1.music.126.net/9hc8bW27GiexAulNeyJ1UQ==/7699879929620183.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/WnUAX9OU9dIWurXXQM1nPQ==/2942293116307097.mp3",
+    }, {
+        title: "Hawk Fly Tiger Run",
+        artist: "Ofelia K",
+        cover: "http://p1.music.126.net/ptKx3sb7zj80_HnliEVeXQ==/3408486049299253.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/OYAJwjrzrk_Cereyi5LdjA==/1365593460914291.mp3",
+    }, {
+        title: "Cry Me Out",
+        artist: "Pixie Lott",
+        cover: "http://p1.music.126.net/pItZJirP4aZdwELEK9bzeA==/788349837124457.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/PhEVMULBqsbyFogLF030mw==/1984618488145514.mp3",
+    }, {
+        title: "The Climb",
+        artist: "Coeur de Pirate",
+        cover: "http://p1.music.126.net/k-1BSX_4dn4DP870AkTFxA==/7981354908088106.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/S8PV3ahTCKyCUboJNbz7pg==/3368903627996408.mp3",
+    }, {
+        title: "小幸运(Cover 田馥甄)",
+        artist: "金玟岐",
+        cover: "http://p1.music.126.net/1j5VLDiGdQo8nFlx-ORtiQ==/3250156382031364.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/D7GY-8m9japXRmzBPlfovA==/3445869444824734.mp3",
+    }, {
+        title: "At the Same Time",
+        artist: "The Coronas",
+        cover: "http://p1.music.126.net/HYwwLyzm5UZCSwxEfhR2fg==/2895014117256992.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/d_d9V8RROAC_7WTWXiY1Gw==/3420580733570878.mp3",
+    }, {
+        title: "LivingInTheMoment",
+        artist: "Jason Mraz",
+        cover: "http://p1.music.126.net/5tPxkPMi-ghj8rzjEQs2NA==/569547023197655.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/il1MIIDIF-ijCXW1wYnJtQ==/1238050092892762.mp3",
+    },{
+        title: "街灯晚餐",
+        artist: "卫兰",
+        mp3: "http://m2.music.126.net/wyv9vM-vG2dzRlxSGk1jAA==/2870824860146791.mp3",
+        cover: "http://p1.music.126.net/gFEst-n0ykOFL3Uf_x-O0Q==/1666859627714552.jpg?param=106x106",
+    }, {
+        title: "回电我",
+        artist: "卫兰",
+        mp3: "http://m2.music.126.net/Yu0eLWs57kEuA8DLB-ef5g==/2750978092718675.mp3",
+        cover: "http://p1.music.126.net/gFEst-n0ykOFL3Uf_x-O0Q==/1666859627714552.jpg?param=106x106",
+    }, {
+        title: "배영하는 물고기(仰泳的鱼)",
+        artist: "TAIBIAN/DIA",
+        mp3: "http://m2.music.126.net/C3HtOOlq8CjnDjlx89itTA==/3222668581180556.mp3",
+        cover: "http://p1.music.126.net/eJzpBpN7D6m0mk7eODXUXQ==/2536573326826311.jpg?param=106x106",
+    }, {
+        title: "잘 지내고 있니(过得好吗)",
+        artist: "尹美莱",
+        mp3: "http://m2.music.126.net/M1BE2PwrFIeOnSau7rLPIw==/3405187515703395.mp3",
+        cover: "http://p1.music.126.net/0SDLbucWGV8CiRLq_nsSCg==/3276544658893698.jpg?param=106x106",
+    }, {
+        title: "기억을 걷는 시간(聚集记忆时间)",
+        artist: "Nell",
+        cover: "http://p1.music.126.net/30Q4t9-HMLr80bHmIWWJaQ==/6632254138820637.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/VeJTUTFPZ0-9WPLcUy0eJQ==/1309518348684049.mp3",
+    },  {
+        title: "Melodies",
+        artist: "Madison Beer",
+        cover: "http://p1.music.126.net/5Qyxv8iYm_uOEXFU8Ff7xw==/1282030558024389.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/y72eEX-EeuIb2i6bSrsJWQ==/5721858511041616.mp3",
+    }, {
+        title: "New Americana",
+        artist: "Halsey",
+        cover: "http://p1.music.126.net/5RN6gVd-4PC7iAPH8UOlZg==/1420569028327605.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/X8AkE2RgpJVRnBlEhGoLQg==/2901611188258928.mp3",
+    }, {
+        title: "So:Lo",
+        artist: "Kate Havnevik",
+        cover: "http://p1.music.126.net/ZdAdMUDNVjGyCChxLlEAYg==/2312272953278181.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/g-Q6-Oy-B6_pl8Q5fuV54Q==/5746047766813163.mp3",
+    }, {
+        title: "Closer To Me",
+        artist: "Megan & Liz",
+        cover: "http://p1.music.126.net/rltCB_IhT7_Tul4dVteDCQ==/2286984185839064.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/KtnjS8wfZ1N73EGD_1aFdw==/3138006185727693.mp3",
+    }, {
+        title: "Touch",
+        artist: "Barcelona",
+        cover: "http://p1.music.126.net/Iigr0ChiuuaIaMt18-OIZA==/5992338371427562.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/hbPrtqI_d9tw1oqhMcjjGA==/5932964743579869.mp3",
+    }, {
+        title: "LUBOV",
+        artist: "Various Artists",
+        cover: "http://p1.music.126.net/bDNd-r-7vVwFIqdE0cb02Q==/2454109953255262.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/gTLalfi1MKsKiEi6tS_9JA==/3116015953172181.mp3",
+    }, {
+        title: "Für immer",
+        artist: "Eisblume",
+        cover: "http://p1.music.126.net/MAUIyLE3tUG3ED01a1Yo_w==/755364488290776.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/fYvxKGX0f4DFD7piCBtweA==/1048934092908341.mp3",
+    }, {
+        title: "Tom's Diner",
+        artist: "Suzanne Vega",
+        cover: "http://p1.music.126.net/-WuPGOb1rSX9BNn2gYoU5Q==/1710840092825736.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/gjbs1UmbB4sRXDAKKf4C0A==/2083574534646208.mp3",
+    }, {
+        title: "Summer's Gone",
+        artist: "Lunik",
+        cover: "http://p1.music.126.net/KTAj1REcKss6RIhZ1RoQbA==/2538772349758259.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/IaYUqZ4Un2FwaVd28SKBMA==/1000555581276958.mp3",
+    }, {
+        title: "Five Star Recovery",
+        artist: "Sophia Moon",
+        cover: "http://p1.music.126.net/mda4vhEqQKt_3vrdwAbCpA==/5998935441353276.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/eJLvtYLv7UyxIsE_ODsmFQ==/6064906139146972.mp3",
+    }, {
+        title: "Hallo Goodbye",
+        artist: "The Pancakes",
+        cover: "http://p1.music.126.net/he-xMaSZ5Yv6KgFN22ZsMA==/1716337650968175.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/RPHxVBgdLNqObfFTK9N7tA==/2068181371847101.mp3",
+    }, {
+        title: "Nothing Hurts Like This",
+        artist: "Slo",
+        cover: "http://p1.music.126.net/7qgnuJVyjX-yswzpuIGgxg==/2911506791798950.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/XXEnC_BEPOWnW1wI9gJPUg==/7910986162649485.mp3",
+    }, {
+        title: "오늘(今天)",
+        artist: "Epitone Project",
+        cover: "http://p1.music.126.net/Hl7pDyNBemg6OwdFqlx5BA==/6636652185368762.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/fZqG_lu5hTZb-_zFqgZcOg==/5704266324962174.mp3",
+    }, {
+        title: "Better in Time",
+        artist: "Leona Lewis",
+        cover: "http://p1.music.126.net/4DRm5E8ahUJu5r1c4cNNbQ==/2450811418334469.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/bgoTqJJ9_l4JYq_rssUXVw==/2870824860123835.mp3",
+    }, {
+        title: "One Last Time",
+        artist: "Kelly Mack",
+        cover: "http://p1.music.126.net/D-suihNnWxeqZyniGl0IxA==/823534209226843.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/7jZ1hl5EwxizaE5-IPnKJg==/1007152651043380.mp3",
+    }, {
+        title: "오늘날씨(今天天气)",
+        artist: "MJ/Mellow",
+        cover: "http://p1.music.126.net/iTfjpiuzN2E5-o_ouuI6IQ==/2257297371873541.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/FNXva_3pTTSHOboMlIM8Wg==/2805953674121499.mp3",
+    }, {
+        title: "I'll Take the Blame",
+        artist: "Agnes Kain",
+        cover: "http://p1.music.126.net/FLmrWedRkcCCqTKNOWvf9Q==/3113816929935244.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/iZe3wbcSn4E2hKEw72qtow==/5501956185475706.mp3",
+    }, {
+        title: "Color Blind",
+        artist: "Matt B",
+        cover: "http://p1.music.126.net/wyX6w97irHYX9cXtrIYGNA==/6624557557981797.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/8wsI2gmwAeVgx6-XNAdYHg==/2542070883629379.mp3",
+    }, {
+        title: "Better Man",
+        artist: "Robbie Williams",
+        cover: "http://p1.music.126.net/7GLYrZh-Mz6ue0wxNBgLBw==/2535473814084183.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/swC3MONMg124vcLUcfz78w==/1148989651029382.mp3",
+    },{
+        title: "喜欢你 (粤)",
+        artist: "郭易",
+        cover: "http://p1.music.126.net/jI1ppmJFj4bdZ70qRBaSFQ==/35184372103350.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/yF7ROawXW9bigNcTj1Xsww==/5664683906380826.mp3",
+    },{
+        title: "Raindrops",
+        artist: "Eliane",
+        cover: "http://p1.music.126.net/_t3VXvQjW1kmvzE5IH29Aw==/2539871860333192.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/xQqKsZtWZvPdKrB3sUS4FA==/5790028231905042.mp3",
+    },{
+        title: "你好吗 天气好吗",
+        artist: "邓福如",
+        cover: "http://p1.music.126.net/2t-Rcq3yNvAy5Dgx_DN1wA==/87960930222969.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/Ip2BBJ_Jsj0c_7KfdAijyw==/1088516511507290.mp3",
+    },{
+        title: "함께걷던길(一起走的路)",
+        artist: "The Film",
+        cover: "http://p1.music.126.net/VCjG6BtX0SS4ygCuysRLzw==/6667438510932880.jpg?param=106x106",
+        mp3: "http://m2.music.126.net/qrUhpXfd58a6nyTrrtcqdQ==/1271035441750034.mp3",
+    },];
 
     var isRotate = true;
     var autoplay = false;
-    </script>
+</script>
 
-    <script>
+<script>
     function bgChange() {
         var lis = $('.lib');
         for (var i = 0; i < lis.length; i += 2)
             lis[i].style.background = 'rgba(246, 246, 246, 0.5)';
     }
     window.onload = bgChange;
-    </script>
+</script>
 
 
     </div>
@@ -657,7 +622,7 @@ var _hmt = _hmt || [];
 		        
 					<li style="width: 33.333333333333336%"><a href="/archives/">全部文章</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/tags/essay/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="#">相册</a></li>
 		        
 				</ul>
 			</nav>
@@ -847,14 +812,6 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">SublimeText</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">Markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">centos</a>
               </li>
              
@@ -864,6 +821,14 @@ var _hmt = _hmt || [];
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">SublimeText</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -859,7 +859,8 @@ html {
 }
 
 .left-col {
-    margin-top: 52px;
+    top: 50px;
+    bottom:  42px;
     border: 1px solid #61696E;
     left: 32px;
     background: #fff;
@@ -868,7 +869,6 @@ html {
     opacity: 1;
     -webkit-transition: all .2s ease-in;
     transition: all .2s ease-in;
-    height: 90%;
     z-index: 999
 }
 
@@ -938,7 +938,7 @@ html {
 
 .left-col #header .header-smart-menu {
     font-size: 12px;
-    margin-bottom: 20px
+    margin-bottom: 16px
 }
 
 .left-col #header .header-smart-menu a:after {

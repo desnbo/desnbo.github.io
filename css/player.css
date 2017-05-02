@@ -3,7 +3,7 @@
 #QPlayer {
     position:fixed;
     overflow:hidden;
-    bottom:15px;
+    bottom:12px;
     left:-332px;
     transition:transform .5s ease;
 }
@@ -278,8 +278,8 @@ to {
 
 .qplayer-notification {
     position: fixed;
-    top: 0px;
-    left: -5px;
+    top: -4px;
+    left: 2px;
     display: inline-block;
     z-index: 999999;
     margin: 10px;
