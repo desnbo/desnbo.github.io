@@ -2273,7 +2273,7 @@ pre .id {
     margin: 0 3px;
     background: #ddd;
     border: 1px solid #ccc;
-    font-family: Menlo, Monaco, Andale Mono, lucida console, Courier New, monospace;
+    font-family: Ubuntu Mono, Menlo, Monaco, Andale Mono, lucida console, Courier New, monospace;
     word-wrap: break-word;
     font-size: 14px;
 }
@@ -2299,16 +2299,17 @@ pre .id {
 .article-entry ol li:before,
 .article-entry ul li:before {
     content: "";
-    width: 6px;
-    height: 6px;
+    width: 5px;
+    height: 5px;
     border: 1px solid #999;
-    border-radius: 10px;
-    background: #aaa;
+    border-radius: 6px;
+    background: #394334;
     display: inline-block;
     margin-right: 10px;
     float: left;
-    margin-top: 12px
+    margin-top: 9px
 }
+
 
 .article-entry ol,
 .article-entry ul {
@@ -3972,17 +3973,19 @@ a.pswp__share--download:hover {
   max-width: 80%;
 }
 .toc-title {
-  font-size: 120%;
+  font-size: 1.2em;
   color: #263238;
 }
+
 .toc {
   padding: 0;
   margin: 1em;
-  line-height: 1.8em;
+  line-height: 1.6em;
   white-space: nowrap;
   overflow: hidden;
 }
- #toc li{
+
+li{
     list-style-type: none;
 }
 
@@ -3994,3 +3997,33 @@ a.pswp__share--download:hover {
 /*music begin*/
 /*music end*/
 
+/*.scroll begin*/
+.scroll {
+   z-index: 999;
+   position: fixed;
+   top: 61.8%;
+   right: 0px;
+   text-align: center;
+   a {
+       display: block;
+       width: 29px;
+       font-size: 28px;
+       background: rgba(215, 216, 215, .4);
+       border-bottom: 1px solid white;
+       &:last-child {
+               border-bottom: none;
+       };
+   }
+   .fa {
+       color: rgba(255, 255, 255, .8);
+       padding-top: 6px;
+       padding-bottom: 6px;
+   }
+   a:hover {
+       background: rgba(147, 181, 224, .3); 
+      .fa {
+       color: white;
+       }
+   }
+}
+ /*.scroll end*/

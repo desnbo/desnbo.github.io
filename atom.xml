@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Desnbo&#39;s Notes</title>
+  <title>Desnbo</title>
   <subtitle>Done is better than perfect.</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2017-04-29T15:01:40.530Z</updated>
+  <updated>2017-05-03T14:36:28.025Z</updated>
   <id>/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="/2017/04/20/Hexo-yilia-toc/"/>
     <id>/2017/04/20/Hexo-yilia-toc/</id>
     <published>2017-04-19T20:44:37.000Z</published>
-    <updated>2017-04-29T15:01:40.530Z</updated>
+    <updated>2017-05-03T14:36:28.025Z</updated>
     
-    <content type="html"><![CDATA[<p>自从使用Hexo建博客以来,前后体验过好几种主题，最喜欢的还是 <em>Litten</em> 的<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">Yilia</a>,一见倾心,果断收入麾下,在此表示衷心的感谢!!<br>Yilia 主题目前还没有添加toc目录功能,长篇幅文章有目录会显得层次清晰,所以简单的实现并记录之!    </p>
+    <content type="html"><![CDATA[<p>自从使用Hexo建博客以来,前后体验过好几种主题，最喜欢的还是 <em>Litten</em> 的 <a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">Yilia</a>, 一见倾心,果断收入麾下,在此表示衷心的感谢!!<br>Yilia 主题目前还没有添加toc目录功能,长篇幅文章有目录会显得层次清晰,所以简单的实现并记录之!    </p>
 <a id="more"></a>
 <h3 id="修改hexo主题的ejs文件"><a href="#修改hexo主题的ejs文件" class="headerlink" title="修改hexo主题的ejs文件"></a>修改hexo主题的ejs文件</h3><ul>
 <li>编辑文章显示页面的模板<br><code>themes/yilia/layout/_partial/article.ejs</code>文件。在这个文件中找到<code>&lt;%- post.content %&gt;</code>，并在这一行之前加入如下代码：</li>
@@ -42,7 +42,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;自从使用Hexo建博客以来,前后体验过好几种主题，最喜欢的还是 &lt;em&gt;Litten&lt;/em&gt; 的&lt;a href=&quot;https://github.com/litten/hexo-theme-yilia&quot;&gt;Yilia&lt;/a&gt;,一见倾心,果断收入麾下,在此表示衷心的感谢!!&lt;br&gt;Yilia 主题目前还没有添加toc目录功能,长篇幅文章有目录会显得层次清晰,所以简单的实现并记录之!    &lt;/p&gt;
+      &lt;p&gt;自从使用Hexo建博客以来,前后体验过好几种主题，最喜欢的还是 &lt;em&gt;Litten&lt;/em&gt; 的 &lt;a href=&quot;https://github.com/litten/hexo-theme-yilia&quot;&gt;Yilia&lt;/a&gt;, 一见倾心,果断收入麾下,在此表示衷心的感谢!!&lt;br&gt;Yilia 主题目前还没有添加toc目录功能,长篇幅文章有目录会显得层次清晰,所以简单的实现并记录之!    &lt;/p&gt;
     
     </summary>
     
@@ -58,16 +58,17 @@
   </entry>
   
   <entry>
-    <title>我有一个大胆的想法</title>
+    <title>小林家的两小只</title>
     <link href="/2017/04/17/first-essay/"/>
     <id>/2017/04/17/first-essay/</id>
     <published>2017-04-17T04:05:29.000Z</published>
-    <updated>2017-04-17T13:52:19.743Z</updated>
+    <updated>2017-05-02T22:12:54.770Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://i4.buimg.com/567571/061194a964916717.jpg" alt="">  </p>
 <a id="more"></a>
-<p><img src="http://i2.muimg.com/567571/727f2d4728641c07.jpg" alt=""></p>
-<div><br>    <object width="340" height="86" data="http://music.163.com/style/swf/widget.swf?sid=465132188&type=2&auto=1&width=320&height=66" type="application/x-shockwave-flash"><br></object><br></div>
+<p><img src="http://i2.muimg.com/567571/727f2d4728641c07.jpg" alt="">  </p>
+<p>小林家的两小只 0.O!</p>
+<div><br>    <object width="340" height="86" data="http://music.163.com/style/swf/widget.swf?sid=465132188&type=2&auto=0&width=320&height=66" type="application/x-shockwave-flash"><br></object><br></div>
 
 <h2 id="☆END☆"><a href="#☆END☆" class="headerlink" title="☆END☆"></a>☆END☆</h2>]]></content>
     
@@ -551,13 +552,13 @@
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="/2017/03/09/hello-world/"/>
-    <id>/2017/03/09/hello-world/</id>
+    <title>Hello Hexo</title>
+    <link href="/2017/03/09/hello-hexo/"/>
+    <id>/2017/03/09/hello-hexo/</id>
     <published>2017-03-09T08:30:01.109Z</published>
-    <updated>2017-04-23T16:37:26.444Z</updated>
+    <updated>2017-05-03T16:46:13.419Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.<br><a id="more"></a></p>
+    <content type="html"><![CDATA[<h1 id="Hello-Hexo"><a href="#Hello-Hexo" class="headerlink" title="Hello Hexo"></a>Hello Hexo</h1><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.<br><a id="more"></a></p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start "></a>Quick Start </h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
@@ -570,7 +571,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;br&gt;
+      &lt;h1 id=&quot;Hello-Hexo&quot;&gt;&lt;a href=&quot;#Hello-Hexo&quot; class=&quot;headerlink&quot; title=&quot;Hello Hexo&quot;&gt;&lt;/a&gt;Hello Hexo&lt;/h1&gt;&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;br&gt;
     
     </summary>
     

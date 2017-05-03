@@ -6,25 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="">
-  <title>Hexo Yilia 主题添加目录 | Desnbo&#39;s Notes</title>
+  <title>Hexo Yilia 主题添加目录 | Desnbo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="自从使用Hexo建博客以来,前后体验过好几种主题，最喜欢的还是 Litten 的Yilia,一见倾心,果断收入麾下,在此表示衷心的感谢!!Yilia 主题目前还没有添加toc目录功能,长篇幅文章有目录会显得层次清晰,所以简单的实现并记录之!">
+  <meta name="description" content="自从使用Hexo建博客以来,前后体验过好几种主题，最喜欢的还是 Litten 的 Yilia, 一见倾心,果断收入麾下,在此表示衷心的感谢!!Yilia 主题目前还没有添加toc目录功能,长篇幅文章有目录会显得层次清晰,所以简单的实现并记录之!">
 <meta name="keywords" content="blog,hexo,hexo-theme">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo Yilia 主题添加目录">
 <meta property="og:url" content="/2017/04/20/Hexo-yilia-toc/index.html">
-<meta property="og:site_name" content="Desnbo's Notes">
-<meta property="og:description" content="自从使用Hexo建博客以来,前后体验过好几种主题，最喜欢的还是 Litten 的Yilia,一见倾心,果断收入麾下,在此表示衷心的感谢!!Yilia 主题目前还没有添加toc目录功能,长篇幅文章有目录会显得层次清晰,所以简单的实现并记录之!">
+<meta property="og:site_name" content="Desnbo">
+<meta property="og:description" content="自从使用Hexo建博客以来,前后体验过好几种主题，最喜欢的还是 Litten 的 Yilia, 一见倾心,果断收入麾下,在此表示衷心的感谢!!Yilia 主题目前还没有添加toc目录功能,长篇幅文章有目录会显得层次清晰,所以简单的实现并记录之!">
 <meta property="og:image" content="http://i1.piimg.com/567571/6c0397c4f7df7fff.png">
 <meta property="og:image" content="http://i1.piimg.com/567571/39d8862d41aedd5d.png">
 <meta property="og:image" content="http://i1.piimg.com/567571/fde89359e2f51c56.gif">
-<meta property="og:updated_time" content="2017-04-29T15:01:40.530Z">
+<meta property="og:updated_time" content="2017-05-03T14:36:28.025Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo Yilia 主题添加目录">
-<meta name="twitter:description" content="自从使用Hexo建博客以来,前后体验过好几种主题，最喜欢的还是 Litten 的Yilia,一见倾心,果断收入麾下,在此表示衷心的感谢!!Yilia 主题目前还没有添加toc目录功能,长篇幅文章有目录会显得层次清晰,所以简单的实现并记录之!">
+<meta name="twitter:description" content="自从使用Hexo建博客以来,前后体验过好几种主题，最喜欢的还是 Litten 的 Yilia, 一见倾心,果断收入麾下,在此表示衷心的感谢!!Yilia 主题目前还没有添加toc目录功能,长篇幅文章有目录会显得层次清晰,所以简单的实现并记录之!">
 <meta name="twitter:image" content="http://i1.piimg.com/567571/6c0397c4f7df7fff.png">
   
-    <link rel="alternative" href="/atom.xml" title="Desnbo&#39;s Notes" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Desnbo" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -47,7 +47,7 @@
 var _hmt = _hmt || [];
 (function() {
 	var hm = document.createElement("script");
-	hm.src = "https://hm.baidu.com/hm.js?desnbo";
+	hm.src = "https://hm.baidu.com/hm.js?cfb838bc0cdbeea6622ed505429ab9a9";
 	var s = document.getElementsByTagName("script")[0]; 
 	s.parentNode.insertBefore(hm, s);
 })();
@@ -67,7 +67,7 @@ var _hmt = _hmt || [];
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="/uploads/avatar.png" class="js-avatar">
+			<img src="/avatar.png" class="js-avatar">
 		</a>
 		<hgroup>
 			<h1 class="header-author"><a href="/">Desnbo</a></h1>
@@ -81,9 +81,9 @@ var _hmt = _hmt || [];
 				
 				<li><a href="/">主页</a></li>
 				
-				<li><a href="/archives/">全部文章</a></li>
-				
 				<li><a href="#">相册</a></li>
+				
+				<li><a href="/archives/">全部文章</a></li>
 				
 			</ul>
 		</nav>
@@ -94,9 +94,11 @@ var _hmt = _hmt || [];
 			
 			
 			
+			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友邻</a>
 			
 			
-			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
+			
+			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">ME</a>
 			
 			
 		</nav>
@@ -110,8 +112,6 @@ var _hmt = _hmt || [];
 				<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
 				
 				<a class="jianshu" target="_blank" href="http://www.jianshu.com" title="jianshu"><i class="icon-jianshu"></i></a>
-				
-				<a class="facebook" target="_blank" href="#" title="facebook"><i class="icon-facebook"></i></a>
 				
 			</div>
 		</nav>
@@ -589,7 +589,7 @@ var _hmt = _hmt || [];
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="/uploads/avatar.png" class="js-avatar">
+				<img src="/avatar.png" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">Desnbo</h1>
@@ -618,8 +618,6 @@ var _hmt = _hmt || [];
 			        
 						<a class="jianshu" target="_blank" href="http://www.jianshu.com" title="jianshu"><i class="icon-jianshu"></i></a>
 			        
-						<a class="facebook" target="_blank" href="#" title="facebook"><i class="icon-facebook"></i></a>
-			        
 				</div>
 			</nav>
 
@@ -629,9 +627,9 @@ var _hmt = _hmt || [];
 				
 					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/archives/">全部文章</a></li>
-		        
 					<li style="width: 33.333333333333336%"><a href="#">相册</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/archives/">全部文章</a></li>
 		        
 				</ul>
 			</nav>
@@ -674,7 +672,7 @@ var _hmt = _hmt || [];
           
           <!--Table of Contents end -->
           
-          <p>自从使用Hexo建博客以来,前后体验过好几种主题，最喜欢的还是 <em>Litten</em> 的<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">Yilia</a>,一见倾心,果断收入麾下,在此表示衷心的感谢!!<br>Yilia 主题目前还没有添加toc目录功能,长篇幅文章有目录会显得层次清晰,所以简单的实现并记录之!    </p>
+          <p>自从使用Hexo建博客以来,前后体验过好几种主题，最喜欢的还是 <em>Litten</em> 的 <a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">Yilia</a>, 一见倾心,果断收入麾下,在此表示衷心的感谢!!<br>Yilia 主题目前还没有添加toc目录功能,长篇幅文章有目录会显得层次清晰,所以简单的实现并记录之!    </p>
 <a id="more"></a>
 <h3 id="修改hexo主题的ejs文件"><a href="#修改hexo主题的ejs文件" class="headerlink" title="修改hexo主题的ejs文件"></a>修改hexo主题的ejs文件</h3><ul>
 <li>编辑文章显示页面的模板<br><code>themes/yilia/layout/_partial/article.ejs</code>文件。在这个文件中找到<code>&lt;%- post.content %&gt;</code>，并在这一行之前加入如下代码：</li>
@@ -790,7 +788,7 @@ var _hmt = _hmt || [];
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          我有一个大胆的想法
+          小林家的两小只
         
       </div>
     </a>
@@ -826,6 +824,19 @@ var _hmt = _hmt || [];
 
                             
 
+
+    <style type="text/css">
+     #scroll {
+       display: none;
+     }
+     </style>
+     <div class="scroll">
+     <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+     <a href="#ds-thread" title="查看评论"><i class="fa fa-comments-o"></i></a>
+     <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+     </div>
+ 
+
           </div>
         </div>
       </div>
@@ -844,6 +855,7 @@ var _hmt = _hmt || [];
 
 
   <!--Musci begin-->
+
 
 </footer>
     </div>
@@ -880,6 +892,12 @@ var _hmt = _hmt || [];
 
 
 
+
+<div class="scroll" id="scroll">
+ <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+ <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div> 
+ <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
     
 <div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
   <div class="tools-nav header-menu">
@@ -889,6 +907,8 @@ var _hmt = _hmt || [];
       
       
     
+      
+      
       
     
       
@@ -901,13 +921,15 @@ var _hmt = _hmt || [];
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">标签</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">标签</a></li>
       
         
       
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友邻</a></li>
+      
         
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">ME</a></li>
       
         
     </ul>
@@ -926,6 +948,14 @@ var _hmt = _hmt || [];
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">SublimeText</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">Markdown</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">blog</a>
@@ -952,14 +982,6 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">SublimeText</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">Markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">随笔</a>
               </li>
              
@@ -980,6 +1002,14 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Quartz</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">jquery</a>
               </li>
              
@@ -993,14 +1023,6 @@ var _hmt = _hmt || [];
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">viewdata</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Spring</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Quartz</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1054,6 +1076,22 @@ var _hmt = _hmt || [];
     	</section>
     
 
+    
+    	<section class="tools-section tools-section-friends" q-show="friends">
+  		
+        <ul class="search-ul">
+          
+            <li class="search-li">
+              <a href="#" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>错过的时光</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="#" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>遗失的美好</a>
+            </li>
+          
+        </ul>
+  		
+    	</section>
     
 
     
