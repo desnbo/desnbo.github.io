@@ -2,23 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>/2017/05/10/newer-three/</loc>
+    <loc>/2017/04/20/Hexo-yilia-toc/</loc>
     
-    <lastmod>2017-05-10T05:47:18.802Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>/2017/05/10/newer-two/</loc>
-    
-    <lastmod>2017-05-10T05:47:14.174Z</lastmod>
+    <lastmod>2017-05-10T15:45:24.901Z</lastmod>
     
   </url>
   
   <url>
-    <loc>/2017/05/10/newer-one/</loc>
+    <loc>/2017/04/12/centos7-tomcat-autostart/</loc>
     
-    <lastmod>2017-05-10T05:46:40.424Z</lastmod>
+    <lastmod>2017-05-10T12:55:47.489Z</lastmod>
     
   </url>
   
@@ -47,20 +40,6 @@
     <loc>/2017/04/17/first-essay/</loc>
     
     <lastmod>2017-05-09T10:36:38.449Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>/2017/04/12/centos7-tomcat-autostart/</loc>
-    
-    <lastmod>2017-05-09T10:36:28.688Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>/2017/04/20/Hexo-yilia-toc/</loc>
-    
-    <lastmod>2017-05-09T10:35:38.602Z</lastmod>
     
   </url>
   

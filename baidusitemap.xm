@@ -4,51 +4,48 @@
 
     
   <url>
-    <loc>/2017/05/10/newer-three/</loc>
-    <lastmod>2017-05-10T05:47:18.802Z</lastmod>
+    <loc>/2017/04/20/Hexo-yilia-toc/</loc>
+    <lastmod>2017-05-10T15:45:24.901Z</lastmod>
     <data>
         <display>
-        <title>这是最新一篇</title>
-        <pubTime>2017-05-10T05:20:40.000Z</pubTime>
+        <title>Hexo Yilia 主题添加目录</title>
+        <pubTime>2017-04-19T20:44:37.000Z</pubTime>
         
-        <tag>测试</tag>
+        <tag>blog</tag>
+         
+        <tag>hexo</tag>
+         
+        <tag>hexo-theme</tag>
          
          
            
+             
+              <breadCrumb title="hexo" url="/categories/hexo/"/>
+          
         </display>
     </data>
     </url>
 
     
   <url>
-    <loc>/2017/05/10/newer-two/</loc>
-    <lastmod>2017-05-10T05:47:14.174Z</lastmod>
+    <loc>/2017/04/12/centos7-tomcat-autostart/</loc>
+    <lastmod>2017-05-10T12:55:47.489Z</lastmod>
     <data>
         <display>
-        <title>这是中间一篇</title>
-        <pubTime>2017-05-10T05:18:53.000Z</pubTime>
+        <title>CentOS7 tomcat的安装及开机自启动配置</title>
+        <pubTime>2017-04-11T19:18:17.000Z</pubTime>
         
-        <tag>测试</tag>
+        <tag>centos</tag>
+         
+        <tag>tomcat</tag>
+         
+        <tag>java</tag>
          
          
            
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>/2017/05/10/newer-one/</loc>
-    <lastmod>2017-05-10T05:46:40.424Z</lastmod>
-    <data>
-        <display>
-        <title>第三篇测试</title>
-        <pubTime>2017-05-10T05:16:53.000Z</pubTime>
-        
-        <tag>测试</tag>
-         
-         
-           
+             
+              <breadCrumb title="linux" url="/categories/linux/"/>
+          
         </display>
     </data>
     </url>
@@ -140,54 +137,6 @@
            
              
               <breadCrumb title="随笔" url="/categories/essay/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>/2017/04/12/centos7-tomcat-autostart/</loc>
-    <lastmod>2017-05-09T10:36:28.688Z</lastmod>
-    <data>
-        <display>
-        <title>CentOS7 tomcat的安装及开机自启动配置</title>
-        <pubTime>2017-04-11T19:18:17.000Z</pubTime>
-        
-        <tag>centos</tag>
-         
-        <tag>tomcat</tag>
-         
-        <tag>java</tag>
-         
-         
-           
-             
-              <breadCrumb title="linux" url="/categories/linux/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>/2017/04/20/Hexo-yilia-toc/</loc>
-    <lastmod>2017-05-09T10:35:38.602Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo Yilia 主题添加目录</title>
-        <pubTime>2017-04-19T20:44:37.000Z</pubTime>
-        
-        <tag>blog</tag>
-         
-        <tag>hexo</tag>
-         
-        <tag>hexo-theme</tag>
-         
-         
-           
-             
-              <breadCrumb title="hexo" url="/categories/hexo/"/>
           
         </display>
     </data>
