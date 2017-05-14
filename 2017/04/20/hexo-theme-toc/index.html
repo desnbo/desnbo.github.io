@@ -6,21 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="">
-  <title>Hexo Yilia 主题添加目录 | Desnbo</title>
+  <title>Hexo主题添加目录 | Desnbo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="自从使用Hexo建博客以来,前后体验过好几种主题，其中 Litten 的 Yilia, 简洁优雅,十分喜欢. 在此表示感谢!!Yilia 主题目前还没有添加toc目录功能,长篇幅文章有目录会显得层次清晰,所以简单的实现并记录之!">
 <meta name="keywords" content="blog,hexo,hexo-theme">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo Yilia 主题添加目录">
-<meta property="og:url" content="/2017/04/20/Hexo-yilia-toc/index.html">
+<meta property="og:title" content="Hexo主题添加目录">
+<meta property="og:url" content="/2017/04/20/hexo-theme-toc/index.html">
 <meta property="og:site_name" content="Desnbo">
 <meta property="og:description" content="自从使用Hexo建博客以来,前后体验过好几种主题，其中 Litten 的 Yilia, 简洁优雅,十分喜欢. 在此表示感谢!!Yilia 主题目前还没有添加toc目录功能,长篇幅文章有目录会显得层次清晰,所以简单的实现并记录之!">
 <meta property="og:image" content="/assets/bimg/toc_1.png">
 <meta property="og:image" content="/assets/bimg/toc_2.png">
 <meta property="og:image" content="/assets/bimg/toc_3.gif">
-<meta property="og:updated_time" content="2017-05-14T08:20:03.034Z">
+<meta property="og:updated_time" content="2017-05-14T12:35:56.477Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo Yilia 主题添加目录">
+<meta name="twitter:title" content="Hexo主题添加目录">
 <meta name="twitter:description" content="自从使用Hexo建博客以来,前后体验过好几种主题，其中 Litten 的 Yilia, 简洁优雅,十分喜欢. 在此表示感谢!!Yilia 主题目前还没有添加toc目录功能,长篇幅文章有目录会显得层次清晰,所以简单的实现并记录之!">
 <meta name="twitter:image" content="/assets/bimg/toc_1.png">
   
@@ -36,6 +36,10 @@
       background: linear-gradient(200deg,#a0cfe4,#e8c37e);
     }
   </style>
+  
+ <script src="/pace/pace.min.js"></script>
+ <link href="/pace/themes/pace-theme-flash.css" rel="stylesheet" />
+ 
   
 
   
@@ -248,19 +252,19 @@ function initMarquee(){$(".marquee").marquee({duration:15e3,gap:50,delayBeforeSt
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Hexo-yilia-toc" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-hexo-theme-toc" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hexo Yilia 主题添加目录
+      Hexo主题添加目录
     </h1>
   
 
         
-        <a href="/2017/04/20/Hexo-yilia-toc/" class="archive-article-date">
+        <a href="/2017/04/20/hexo-theme-toc/" class="archive-article-date">
   	<time datetime="2017-04-19T20:44:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-20</time>
 </a>
         
@@ -275,7 +279,7 @@ function initMarquee(){$(".marquee").marquee({duration:15e3,gap:50,delayBeforeSt
             <strong class="toc-title">目录</strong>
             <a class="js-toggle-toc" href="javascript:void(0)"></a>
             <div class="toc-content">
-              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#修改hexo主题的ejs文件"><span class="toc-number">1.</span> <span class="toc-text">修改hexo主题的ejs文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开启目录"><span class="toc-number">2.</span> <span class="toc-text">开启目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为目录编写CSS文件"><span class="toc-number">3.</span> <span class="toc-text">为目录编写CSS文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为目录编写js实现展开收起"><span class="toc-number">4.</span> <span class="toc-text">为目录编写js实现展开收起</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#修改hexo主题的ejs文件"><span class="toc-number">1.</span> <span class="toc-text">修改hexo主题的ejs文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开启目录"><span class="toc-number">2.</span> <span class="toc-text">开启目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为目录编写CSS"><span class="toc-number">3.</span> <span class="toc-text">为目录编写CSS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为目录编写js"><span class="toc-number">4.</span> <span class="toc-text">为目录编写js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li></ol>
             </div>
           </div>
         
@@ -284,21 +288,21 @@ function initMarquee(){$(".marquee").marquee({duration:15e3,gap:50,delayBeforeSt
         <p>自从使用Hexo建博客以来,前后体验过好几种主题，其中 <em>Litten</em> 的 <a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">Yilia</a>, 简洁优雅,十分喜欢. 在此表示感谢!!<br>Yilia 主题目前还没有添加toc目录功能,长篇幅文章有目录会显得层次清晰,所以简单的实现并记录之!    </p>
 <a id="more"></a>
 <h3 id="修改hexo主题的ejs文件"><a href="#修改hexo主题的ejs文件" class="headerlink" title="修改hexo主题的ejs文件"></a>修改hexo主题的ejs文件</h3><p><strong>编辑文章显示页面的模板</strong><br>编辑 <code>themes/yilia/layout/_partial/article.ejs</code>文件。在该文件中<code>&lt;%- post.content %&gt;</code> 之前加入如下代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;% &#125; else &#123; %&gt;</div><div class="line"></div><div class="line">  &lt;!--Table of Contents begin--&gt;</div><div class="line">  &lt;% if (  post.toc || ( theme.toc &amp;&amp; post.toc !== false) &amp;&amp; !index)&#123; %&gt;</div><div class="line">    &lt;div id=&quot;toc&quot; class=&quot;toc-article&quot;&gt;</div><div class="line">      &lt;strong class=&quot;toc-title&quot;&gt;目录&lt;/strong&gt;</div><div class="line">      &lt;a class=&quot;js-toggle-toc&quot; href=&quot;javascript:void(0)&quot;&gt;&lt;/a&gt;</div><div class="line">      &lt;div class=&quot;toc-content&quot;&gt;</div><div class="line">        &lt;%- toc(post.content) %&gt;</div><div class="line">      &lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">  &lt;% &#125; %&gt;</div><div class="line">  &lt;!--Table of Contents end --&gt;</div><div class="line"></div><div class="line">  &lt;%- post.content %&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;% &#125; <span class="keyword">else</span> &#123; %&gt;</div><div class="line"></div><div class="line">  <span class="xml"><span class="comment">&lt;!--Table of Contents begin--&gt;</span></span></div><div class="line">  <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (  <span class="attr">post.toc</span> || ( <span class="attr">theme.toc</span> &amp;&amp; <span class="attr">post.toc</span> !== <span class="string">false)</span> &amp;&amp; !<span class="attr">index</span>)&#123; %&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"toc"</span> <span class="attr">class</span>=<span class="string">"toc-article"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">strong</span> <span class="attr">class</span>=<span class="string">"toc-title"</span>&gt;</span>目录<span class="tag">&lt;/<span class="name">strong</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"js-toggle-toc"</span> <span class="attr">href</span>=<span class="string">"javascript:void(0)"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"toc-content"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">%-</span> <span class="attr">toc</span>(<span class="attr">post.content</span>) %&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></div><div class="line">  <span class="comment">&lt;!--Table of Contents end --&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">%-</span> <span class="attr">post.content</span> %&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></div></pre></td></tr></table></figure>
 <p>如果生成的目录不需要前面的编号，将 <code>&lt;%- toc(post.content) %&gt;</code><br>修改为 <code>&lt;%- toc(post.content, {list_number: false}) %&gt;</code></p>
-<h3 id="开启目录"><a href="#开启目录" class="headerlink" title="开启目录"></a>开启目录</h3><p><strong>1. 默认开启：</strong><br>主题配置文件下 <code>toc: true</code> ,默认开启全局目录生成,<br>在不需要生成目录的单篇文章开头 <code>front-matter</code> 添加 <code>toc: false</code>  </p>
-<p><strong>2. 默认不开启：</strong><br> 如果主题配置文件下 <code>toc: false</code> 在需要生成toc的文章开头添加 <code>toc: true</code></p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">---</span></div><div class="line"><span class="attr">title:</span> <span class="string">Hexo</span> <span class="string">Yilia</span> <span class="string">主题添加目录</span></div><div class="line"><span class="attr">toc:</span> <span class="literal">true</span></div><div class="line"><span class="meta">---</span></div></pre></td></tr></table></figure>
+<h3 id="开启目录"><a href="#开启目录" class="headerlink" title="开启目录"></a>开启目录</h3><p><strong>1. 默认开启：</strong><br>主题配置文件 <code>themes/yilia/_config.yml</code> 下 <code>toc: true</code> , 默认开启全局目录生成,<br>在不需要生成目录的单篇文章开头 <code>front-matter</code> 添加 <code>toc: false</code>  </p>
+<p><strong>2. 默认不开启：</strong><br> 如果主题配置文件中 <code>toc: false</code> , 则在需要生成目录的文章开头添加 <code>toc: true</code></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">---</span></div><div class="line"><span class="attr">title:</span> <span class="string">Hexo主题添加目录</span></div><div class="line"><span class="attr">toc:</span> <span class="literal">true</span></div><div class="line"><span class="meta">---</span></div></pre></td></tr></table></figure>
 <p><strong>TOC默认的样式</strong><br><img src="/assets/bimg/toc_1.png" alt="toc_1" title="TOC默认样式">  </p>
-<h3 id="为目录编写CSS文件"><a href="#为目录编写CSS文件" class="headerlink" title="为目录编写CSS文件"></a>为目录编写CSS文件</h3><p>在<code>themes/yilia/source-src/css/</code> 下新建 <code>toc.scss</code>, 在文件的最后，添加如下样式,并在 <code>main.scss</code> 中引入 <code>@import &quot;./toc&quot;;</code></p>
-<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">  <span class="comment">/*toc begin*/</span></div><div class="line"><span class="selector-class">.toc-article</span> &#123;</div><div class="line">    <span class="attribute">background</span>: <span class="number">#eee</span>;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0.2em</span>;</div><div class="line">    <span class="attribute">padding</span>: <span class="number">1em</span>;</div><div class="line">    -webkit-<span class="attribute">border-radius</span>: <span class="number">5px</span>;</div><div class="line">    <span class="attribute">border-radius</span>: <span class="number">5px</span>;</div><div class="line">    <span class="attribute">line-height</span>: <span class="number">1.5em</span>;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">1em</span>;</div><div class="line">    <span class="attribute">float</span>: right;</div><div class="line">    <span class="attribute">max-width</span>: <span class="number">32%</span>;</div><div class="line">    <span class="attribute">min-width</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#C0C0C0</span>;</div><div class="line">    <span class="attribute">white-space</span>: nowrap;</div><div class="line">    <span class="attribute">overflow</span>: hidden; </div><div class="line"></div><div class="line">    <span class="selector-tag">strong</span> &#123;</div><div class="line">        <span class="attribute">padding</span>: <span class="number">0.3em</span> <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="selector-tag">ol</span>,</div><div class="line">    <span class="selector-tag">li</span> &#123;</div><div class="line">        <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0.2em</span>;</div><div class="line">        <span class="attribute">list-style-type</span>: none;</div><div class="line">    &#125;</div><div class="line">    <span class="selector-tag">ol</span> <span class="selector-tag">li</span>:before &#123;</div><div class="line">        <span class="attribute">display</span>: none;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">/*下级目录的缩进量 */</span></div><div class="line">    <span class="selector-class">.toc-child</span> &#123;</div><div class="line">        <span class="attribute">margin-left</span>: <span class="number">0.8em</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* toc end*/</span></div></pre></td></tr></table></figure>
-<p><strong>目录效果预览:</strong><br><img src="/assets/bimg/toc_2.png" alt="toc_2" title="目录效果"></p>
-<h3 id="为目录编写js实现展开收起"><a href="#为目录编写js实现展开收起" class="headerlink" title="为目录编写js实现展开收起"></a>为目录编写js实现展开收起</h3><p>在<code>themes/yilia/source-src/js/</code> 下新建 <code>toc.js</code>, 代码如下</p>
+<h3 id="为目录编写CSS"><a href="#为目录编写CSS" class="headerlink" title="为目录编写CSS"></a>为目录编写CSS</h3><p>在<code>themes/yilia/source-src/css/</code> 下新建 <code>toc.scss</code>, 在文件的最后，添加如下样式,并在 <code>main.scss</code> 中引入 <code>@import &quot;./toc&quot;;</code></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">  /*toc begin*/</div><div class="line">.toc-article &#123;</div><div class="line">    background: #eee;</div><div class="line">    margin: 0 0 0 0.2em;</div><div class="line">    padding: 1em;</div><div class="line">    -webkit-border-radius: 5px;</div><div class="line">    border-radius: 5px;</div><div class="line">    line-height: 1.5em;</div><div class="line">    font-size: 1em;</div><div class="line">    float: right;</div><div class="line">    max-width: 32%;</div><div class="line">    min-width: 200px;</div><div class="line">    border: 1px solid #C0C0C0;</div><div class="line">    white-space: nowrap;</div><div class="line">    overflow: hidden; </div><div class="line"></div><div class="line">    strong &#123;</div><div class="line">        padding: 0.3em 0;</div><div class="line">    &#125;</div><div class="line">    ol,</div><div class="line">    li &#123;</div><div class="line">        margin: 0 0 0 0.2em;</div><div class="line">        list-style-type: none;</div><div class="line">    &#125;</div><div class="line">    ol li:before &#123;</div><div class="line">        display: none;</div><div class="line">    &#125;</div><div class="line">    /*下级目录的缩进量 */</div><div class="line">    .toc-child &#123;</div><div class="line">        margin-left: 0.8em;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">/* toc end*/</div></pre></td></tr></table></figure>
+<p><strong>目录效果预览:</strong><br><img src="/assets/bimg/toc_2.png" alt="toc_2" title="目录效果">  </p>
+<h3 id="为目录编写js"><a href="#为目录编写js" class="headerlink" title="为目录编写js"></a>为目录编写js</h3><p><strong>为目录编写js文件实现目录展开和折叠效果</strong><br>在<code>themes/yilia/source-src/js/</code> 下新建 <code>toc.js</code>, 添加代码如下</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//需要jQuery支持</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">init</span>(<span class="params"></span>)</span></div><div class="line"> &#123;</div><div class="line">  $(<span class="string">".js-toggle-toc"</span>).css(<span class="string">'color'</span>, <span class="string">'#FF4081'</span>);</div><div class="line">     $(<span class="string">".js-toggle-toc"</span>).text(<span class="string">"丨☆丨 收起  Ⅴ"</span>);</div><div class="line"> </div><div class="line">     $(<span class="string">".js-toggle-toc"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">         <span class="keyword">var</span> toc = $(<span class="string">".toc-content"</span>);</div><div class="line">         toc.toggle();</div><div class="line">         <span class="keyword">if</span> (toc.is(<span class="string">":hidden"</span>)) &#123;</div><div class="line">             $(<span class="keyword">this</span>).text(<span class="string">"丨★丨 展开 》》"</span>);</div><div class="line">         &#125; <span class="keyword">else</span> &#123;</div><div class="line">             $(<span class="keyword">this</span>).text(<span class="string">"丨☆丨 收起  Ⅴ"</span>);</div><div class="line">         &#125;</div><div class="line">         <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">     &#125;);</div><div class="line"> &#125;</div><div class="line"></div><div class="line"> <span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="attr">init</span> : init</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
 <p>并在 <code>main.js</code> 中加载 <code>toc.js</code> </p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 目录</span></div><div class="line"><span class="keyword">import</span> Toc <span class="keyword">from</span> <span class="string">'./toc'</span></div><div class="line">addLoadEvent(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  Toc.init()</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <p><strong>目录展开收起效果:</strong><br><img src="/assets/bimg/toc_3.gif" alt="toc_3" title="目录展开收起效果"></p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>只是实现了基本目录功能,并添加了简单的样式，可以根据需求近一步修改和美化.</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>只是实现了基本目录功能,并添加了简单的样式，可以根据个人需求进一步修改和美化.</p>
 <p><strong>☆end☆</strong></p>
 
       
@@ -388,7 +392,7 @@ function initMarquee(){$(".marquee").marquee({duration:15e3,gap:50,delayBeforeSt
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http:/2017/04/20/Hexo-yilia-toc/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http:/2017/04/20/hexo-theme-toc/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -421,6 +425,32 @@ function initMarquee(){$(".marquee").marquee({duration:15e3,gap:50,delayBeforeSt
   
 
   
+
+  
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: '/2017/04/20/hexo-theme-toc/', // 可选。默认为 location.href
+  owner: 'desnbo',
+  repo: 'https://github.com/desnbo/gitment.git',
+  oauth: {
+    client_id: '10122bbbe4e6d113e3f7',
+    client_secret: '5a4bc4b137cdf1a56cf2322153ffeb8e7070c0fd',
+  },
+})
+gitment.render('comments')
+</script>
+
+<style type="text/css">
+.gitment-root-container {
+  margin: 15px 40px;
+}
+
+</style>
+  
+
 
 
           </div>
@@ -508,18 +538,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">blog</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">hexo-theme</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">SublimeText</a>
               </li>
              
@@ -569,6 +587,18 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">javaweb</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">blog</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">hexo-theme</a>
               </li>
              
               <li class="article-tag-list-item">
