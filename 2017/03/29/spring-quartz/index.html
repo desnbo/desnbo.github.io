@@ -465,14 +465,16 @@ function initMarquee(){$(".marquee").marquee({duration:15e3,gap:50,delayBeforeSt
 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
+  /* id: '/2017/03/29/spring-quartz/', // 可选。默认为 location.href */
   owner: 'desnbo',
-  repo: 'git@github.com:desnbo/gitment.git',
+  repo: 'gitment',
   oauth: {
     client_id: '10122bbbe4e6d113e3f7',
     client_secret: '5a4bc4b137cdf1a56cf2322153ffeb8e7070c0fd',
   },
 })
-gitment.render('comments')
+/* gitment.render('comments') */
+gitment.render(document.getElementById("comments"));
 </script>
 
 <style type="text/css">
