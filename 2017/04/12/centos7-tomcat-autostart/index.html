@@ -439,12 +439,13 @@ function initMarquee(){$(".marquee").marquee({duration:15e3,gap:50,delayBeforeSt
   
 
   
-    <div id="comments"></div>
+  <!-- gitment begin -->
+<div id="comments"></div>
 <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: '/2017/04/12/centos7-tomcat-autostart/', // 可选。默认为 location.href
+  id: '/2017/04/12/centos7-tomcat-autostart/', 
   owner: 'desnbo',
   repo: 'gitment',
   oauth: {
@@ -458,9 +459,10 @@ gitment.render(document.getElementById("comments"));
 
 <style type="text/css">
 .gitment-root-container {
-  margin: 15px 40px;
+  margin: 15px 45px;
 }
 </style>
+<!-- gitment end -->
   
 
 
