@@ -5,7 +5,7 @@
     
   <url>
     <loc>/2017/04/20/hexo-theme-toc/</loc>
-    <lastmod>2017-05-14T12:35:56.477Z</lastmod>
+    <lastmod>2017-05-18T10:01:16.017Z</lastmod>
     <data>
         <display>
         <title>Hexo主题添加目录</title>
