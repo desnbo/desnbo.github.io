@@ -432,11 +432,11 @@
       <category term="jQuery" scheme="/categories/jQuery/"/>
     
     
+      <category term="javaweb" scheme="/tags/javaweb/"/>
+    
       <category term="jquery" scheme="/tags/jquery/"/>
     
       <category term="treeview" scheme="/tags/treeview/"/>
-    
-      <category term="javaweb" scheme="/tags/javaweb/"/>
     
   </entry>
   
@@ -555,9 +555,9 @@
       <category term="java" scheme="/categories/java/"/>
     
     
-      <category term="javaweb" scheme="/tags/javaweb/"/>
-    
       <category term="viewdata" scheme="/tags/viewdata/"/>
+    
+      <category term="javaweb" scheme="/tags/javaweb/"/>
     
   </entry>
   
