@@ -6,14 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="">
-  <title>CentOS7 tomcat的安装及开机自启动配置 | Desnbo</title>
+  <title>CentOS7 tomcat的安装及开机自启动配置 | Desnbo的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="安装tomcat tomcat是免安装软件,下载tomcat8.x.xx.tar.gz,使用sftp或vsftp等上传到服务器   通过tar命令直接解压到 /usr/local/ 目录下,为了方便操作,将其修改为tomcat8.sudo tar zxvf tomcat8.x.xx.tar.gz -C /usr/local/sudo mv tomcat8.x.xx tomcat8">
 <meta name="keywords" content="centos,tomcat,java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CentOS7 tomcat的安装及开机自启动配置">
 <meta property="og:url" content="/2017/04/12/centos7-tomcat-autostart/index.html">
-<meta property="og:site_name" content="Desnbo">
+<meta property="og:site_name" content="Desnbo的博客">
 <meta property="og:description" content="安装tomcat tomcat是免安装软件,下载tomcat8.x.xx.tar.gz,使用sftp或vsftp等上传到服务器   通过tar命令直接解压到 /usr/local/ 目录下,为了方便操作,将其修改为tomcat8.sudo tar zxvf tomcat8.x.xx.tar.gz -C /usr/local/sudo mv tomcat8.x.xx tomcat8">
 <meta property="og:image" content="http://i4.buimg.com/567571/d189f29b6e7dc720.png">
 <meta property="og:image" content="http://i1.piimg.com/567571/5cb55a9ea03d39bb.png">
@@ -23,7 +23,7 @@
 <meta name="twitter:description" content="安装tomcat tomcat是免安装软件,下载tomcat8.x.xx.tar.gz,使用sftp或vsftp等上传到服务器   通过tar命令直接解压到 /usr/local/ 目录下,为了方便操作,将其修改为tomcat8.sudo tar zxvf tomcat8.x.xx.tar.gz -C /usr/local/sudo mv tomcat8.x.xx tomcat8">
 <meta name="twitter:image" content="http://i4.buimg.com/567571/d189f29b6e7dc720.png">
   
-    <link rel="alternative" href="/atom.xml" title="Desnbo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Desnbo的博客" type="application/atom+xml">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
@@ -40,13 +40,26 @@
  <link href="/pace/themes/pace-theme-flash.css" rel="stylesheet" />
  
   
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-100391159-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
 
   
 <script>
 var _hmt = _hmt || [];
 (function() {
 	var hm = document.createElement("script");
-	hm.src = "https://hm.baidu.com/hm.js?cfb838bc0cdbeea6622ed505429ab9a9";
+	hm.src = "https://hm.baidu.com/hm.js?72a3884185f3328f4de2a286aecc58b4";
 	var s = document.getElementsByTagName("script")[0]; 
 	s.parentNode.insertBefore(hm, s);
 })();
@@ -499,7 +512,7 @@ gitment.render(document.getElementById("comments"));
     		&copy; 2017 Desnbo
     	</div>
       	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
       	</div>
     </div>
   </div>
@@ -603,6 +616,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">centos</a>
               </li>
              
@@ -612,10 +629,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -647,7 +660,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">viewdata</a>
+                <a href="javascript:void(0)" class="js-tag color2">jquery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">treeview</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -655,11 +672,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jquery</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">treeview</a>
+                <a href="javascript:void(0)" class="js-tag color4">viewdata</a>
               </li>
              
               <li class="article-tag-list-item">
