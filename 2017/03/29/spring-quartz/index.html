@@ -182,6 +182,7 @@ document.write('<scr'+'ipt type="text/javascript" src="'+playlist+'"></scr'+'ipt
     // player.js 必须在歌曲信息后,否则报错(歌曲列表为空)
 function initMarquee(){$(".marquee").marquee({duration:15e3,gap:50,delayBeforeStart:0,direction:"left",duplicated:!0})}function isExceedTag(){var t=!1;return $(".musicTag strong").width()+$(".musicTag span").width()+$(".musicTag .artist").width()>$(".musicTag").width()&&(t=!0),t}function shuffle(t){for(var a,e,i=t.length;i;)e=Math.floor(Math.random()*i--),a=t[i],t[i]=t[e],t[e]=a;return t}function showNotification(t){isShowNotification=!0,$(".qplayer-notification").length>0&&($(".qplayer-notification").remove(),clearTimeout(autoClearTimer),clearTimeout(autoShowTimer)),$("body").append('<div class="qplayer-notification animation-target"><span class="qplayer-notification-icon">i</span><span class="body" style="box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0px 5px;"><span class="message"></span></span><a class="close" href="#" onclick="closeNotification();return false;">×</a><div style="clear: both"></div>'),$(".qplayer-notification .message").text(t);var a=$(".qplayer-notification").css({opacity:"0",width:"auto"}).width()+20;$(".qplayer-notification").css({width:"50px",opacity:"1"}),autoShowTimer=setTimeout(function(){$(".qplayer-notification").css({width:a,transition:"all .7s ease"}),$(".qplayer-notification .close").delay(500).show(0)},1500),autoClearTimer=setTimeout("if ($('.qplayer-notification').length>0) {closeNotification()}",4e3)}function closeNotification(){isShowNotification=!1,$(".qplayer-notification").css({width:"50px",transition:"all .7s ease"}),$(".qplayer-notification .close").delay(500).hide(0),setTimeout(function(){isShowNotification||($(".qplayer-notification").css("opacity","0"),$(".qplayer-notification-icon").css({transform:"scale(0)",transition:"transform .5s ease"}))},1e3),setTimeout(function(){isShowNotification||$(".qplayer-notification").remove()},1500),clearTimeout(autoClearTimer),clearTimeout(autoShowTimer)}function showTips(t,a,e){$("body").append('<div class="qplayer_tips"><span class="tips_arrow"></span><span class="info" style="display:none">'+a+'</span><button class="tips_button" onclick="removeTips()">不再提示</button></div>'),$(".qplayer_tips").css({top:$(t).offset().top-100-30-15,left:$(t).offset().left-28}),$(".qplayer_tips").css({height:100,transition:"all .5s ease-in-out"}),$(".qplayer_tips .info").delay(500).fadeIn(),$(".tips_arrow").css({"border-width":"15px",transition:"all .5s ease-in-out"}),$(".tips_button").css({height:"30px",transition:"all .5s ease-in-out"}),void 0!=e&&$(".tips_button").click(e)}function removeTips(){$(".qplayer_tips .info").fadeOut(),$(".qplayer_tips").css({height:"0",transition:"all .5s ease-in-out"}),$(".tips_arrow").css({"border-width":"0",transition:"all .5s ease-in-out"}),$(".tips_button").css({opacity:"0",transition:"all .2s ease-in-out"}),setTimeout(function(){$(".qplayer_tips").remove()},500)}!function(t){for(var a,e=!0,i=[],s=void 0==localStorage.qplayer,o=void 0!=localStorage.qplayer&&"true"===localStorage.qplayer,n=0;n<playlist.length;n++){var r=playlist[n];t("#playlist").append('<li class="lib" style="overflow:hidden;"><strong style="margin-left: 5px;">'+r.title+'</strong><span style="float: right;" class="artist">'+r.artist+"</span></li>"),""==r.mp3&&t("#playlist li").eq(n).css("color","#ddd")}var l,c,p=0,u=localStorage.qplayer_shuffle_array;o&&void 0!=u&&playlist.length===(i=JSON.parse(u)).length?(p=i[0],a=0,t("#QPlayer .cover").attr("title","点击关闭随机播放")):(o=!1,t("#QPlayer .cover").attr("title","点击开启随机播放"));for(var f=0,n=0;n<playlist.length;n++)f+=t("#playlist li").eq(n).height()+6;if(f>360&&(t("#playlist").css("overflow","auto"),o)){for(var y=0,h=0;h<p;h++)y+=t("#playlist li").eq(h).height()+6;t("#playlist").scrollTop(y)}var d=function(){l.volume=.3,l.play(),isRotate&&(t("#player .cover img").css("animation","9.8s linear 0s normal none infinite rotate"),t("#player .cover img").css("animation-play-state","running")),t(".playback").addClass("playing"),c=setInterval(v,500),isExceedTag()&&(e?(initMarquee(),e=!1):t(".marquee").marquee("resume"))},m=function(){l.pause(),t("#player .cover img").css("animation-play-state","paused"),t(".playback").removeClass("playing"),clearInterval(c),isExceedTag()&&t(".marquee").marquee("pause")},g=function(a){var e=parseInt(a%60)<10?"0"+parseInt(a%60):parseInt(a%60);l.duration,t(".timer").html(parseInt(a/60)+":"+e)},v=function(){g(l.currentTime)},T=function(a){a<0?track=p=playlist.length-1:a>=playlist.length?track=p=0:track=a,e=!0,t("audio").remove(),k(track),d()},q=function(t){1===t?(++a===i.length&&(a=0),p=i[a]):0===t&&(--a<0&&(a=i.length-1),p=i[a]),T(p)},w=function(){m(),l.currentTime=0,o?q(1):p<playlist.length&&T(++p)},$=function(){this.seekable&&this.seekable.length&&this.seekable.end(0)},b=function(){1==autoplay&&d()},k=function(e){for(var s=playlist[e];""==s.mp3;)showNotification("歌曲地址为空，已自动跳过"),o?(++a===i.length&&(a=0),e=p=i[a]):p=++e,s=playlist[e];var n=t("<audio>").html('<source src="'+s.mp3+'"><source src="'+s.ogg+'">').appendTo("#player");t(".cover").html('<img  src="'+s.cover+'" alt="'+s.album+'" class="circle" >'),t(".musicTag").html("<strong>"+s.title+'</strong><span> - </span><span class="artist">'+s.artist+"</span>"),t("#playlist li").removeClass("playing").eq(e).addClass("playing"),l=n[0],l.addEventListener("progress",$,!1),l.addEventListener("durationchange",$,!1),l.addEventListener("canplay",b,!1),l.addEventListener("ended",w,!1)};k(p),t(".playback").on("click",function(){t(this).hasClass("playing")?m():d()}),t(".rewind").on("click",function(){o?q(0):T(--p)}),t(".fastforward").on("click",function(){o?q(1):T(++p)}),t("#playlist li").each(function(e){t(this).on("click",function(){if(o){for(var t=0;t<i.length;t++)if(i[t]===e){a=t;break}}else p=e;T(e)})}),t("#QPlayer .liebiao,#QPlayer .liebiao").on("click",function(){var a=t("#playlist");!1===a.hasClass("go")?(a.css({"max-height":"302px",transition:"max-height .5s ease"}),a.css("border","1px solid #dedede"),a.addClass("go")):(a.css({"max-height":"0px",transition:"max-height .5s ease"}),a.css("border","0"),a.removeClass("go"))}),t("#QPlayer .ssBtn").on("click",function(){var a=t("#QPlayer");!1===t(".ssBtn .adf").hasClass("on")?(s&&(setTimeout("showTips('#player .cover','点击封面开启(关闭)随机播放', "+function(){setTimeout("showTips('#player .ctrl .musicTag','点击拖动标题栏快进(快退)')",1e3)}+");",500),s=!s,localStorage.qplayer="false"),a.css("transform","translateX(300px)"),t(".ssBtn .adf").addClass("on")):(a.css("transform","translateX(0px)"),t(".ssBtn .adf").removeClass("on"))}),t("#player .cover").on("click",function(){if(o=!o){t("#player .cover").attr("title","点击关闭随机播放"),showNotification("已开启随机播放");for(var e=[],s=0;s<playlist.length;s++)e[s]=s;i=shuffle(e);for(var n=0;n<i.length;n++)if(i[n]===p){a=n;break}localStorage.qplayer_shuffle_array=JSON.stringify(i)}else t("#player .cover").attr("title","点击开启随机播放"),showNotification("已关闭随机播放"),localStorage.removeItem("qplayer_shuffle_array");localStorage.qplayer=o});var x,_;t("#player .ctrl .musicTag").mousedown(function(t){x=t.screenX}).mousemove(function(t){if(1===t.which){_=t.screenX;var a=Math.round((_-x)/678*100);l.currentTime+=a,g(l.currentTime)}}),t("#player .ctrl .musicTag").bind("touchstart",function(t){x=t.originalEvent.targetTouches[0].screenX}).bind("touchmove",function(t){_=t.originalEvent.targetTouches[0].screenX;var a=Math.round((_-x)/678*100);l.currentTime+=a,g(l.currentTime)})}(jQuery);
 </script>
+
     </div>
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
@@ -623,6 +624,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">centos</a>
               </li>
              
@@ -635,7 +640,27 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color2">jquery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">treeview</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">javaweb</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">blog</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">hexo-theme</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -655,39 +680,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">blog</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">hexo-theme</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jquery</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">treeview</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">javaweb</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">viewdata</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Quartz</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -696,6 +689,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">JNDI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Quartz</a>
               </li>
             
             <div class="clearfix"></div>
