@@ -6,24 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="">
-  <title>CentOS7 tomcat的安装及开机自启动配置 | Desnbo的博客</title>
+  <title>CentOS7 tomcat的安装及开机自启动配置 | Dnsnb的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="安装tomcat tomcat是免安装软件,下载tomcat8.x.xx.tar.gz,使用sftp或vsftp等上传到服务器   通过tar命令直接解压到 /usr/local/ 目录下,为了方便操作,将其修改为tomcat8.sudo tar zxvf tomcat8.x.xx.tar.gz -C /usr/local/sudo mv tomcat8.x.xx tomcat8">
 <meta name="keywords" content="centos,tomcat,java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CentOS7 tomcat的安装及开机自启动配置">
 <meta property="og:url" content="/2017/04/12/centos7-tomcat-autostart/index.html">
-<meta property="og:site_name" content="Desnbo的博客">
+<meta property="og:site_name" content="Dnsnb的博客">
 <meta property="og:description" content="安装tomcat tomcat是免安装软件,下载tomcat8.x.xx.tar.gz,使用sftp或vsftp等上传到服务器   通过tar命令直接解压到 /usr/local/ 目录下,为了方便操作,将其修改为tomcat8.sudo tar zxvf tomcat8.x.xx.tar.gz -C /usr/local/sudo mv tomcat8.x.xx tomcat8">
 <meta property="og:image" content="http://i4.buimg.com/567571/d189f29b6e7dc720.png">
 <meta property="og:image" content="http://i1.piimg.com/567571/5cb55a9ea03d39bb.png">
-<meta property="og:updated_time" content="2017-05-10T12:55:47.489Z">
+<meta property="og:updated_time" content="2017-06-07T07:00:48.920Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS7 tomcat的安装及开机自启动配置">
 <meta name="twitter:description" content="安装tomcat tomcat是免安装软件,下载tomcat8.x.xx.tar.gz,使用sftp或vsftp等上传到服务器   通过tar命令直接解压到 /usr/local/ 目录下,为了方便操作,将其修改为tomcat8.sudo tar zxvf tomcat8.x.xx.tar.gz -C /usr/local/sudo mv tomcat8.x.xx tomcat8">
 <meta name="twitter:image" content="http://i4.buimg.com/567571/d189f29b6e7dc720.png">
   
-    <link rel="alternative" href="/atom.xml" title="Desnbo的博客" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Dnsnb的博客" type="application/atom+xml">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
@@ -47,7 +47,7 @@
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-ga('create', 'UA-100391159-1', 'auto');
+ga('create', 'UA-100391159-2', 'auto');
 ga('send', 'pageview');
 
 </script>
@@ -59,7 +59,7 @@ ga('send', 'pageview');
 var _hmt = _hmt || [];
 (function() {
 	var hm = document.createElement("script");
-	hm.src = "https://hm.baidu.com/hm.js?cfb838bc0cdbeea6622ed505429ab9a9";
+	hm.src = "https://hm.baidu.com/hm.js?5d021a98238f9dd946a6bb78d7e3318b";
 	var s = document.getElementsByTagName("script")[0]; 
 	s.parentNode.insertBefore(hm, s);
 })();
@@ -81,7 +81,7 @@ var _hmt = _hmt || [];
 			<img src="/assets/img/avatar.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Desnbo</a></h1>
+		  <h1 class="header-author"><a href="/">Dnsnb</a></h1>
 		</hgroup>
 		
 		<p class="header-subtitle">Done is better than perfect.</p>
@@ -114,7 +114,7 @@ var _hmt = _hmt || [];
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="https://github.com/desnbo" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/dnsnb" title="github"><i class="icon-github"></i></a>
 		        
 					<a class="weibo" target="_blank" href="http://weibo.com/u/3517404784" title="weibo"><i class="icon-weibo"></i></a>
 		        
@@ -213,7 +213,7 @@ function initMarquee(){$(".marquee").marquee({duration:15e3,gap:50,delayBeforeSt
 				<img src="/assets/img/avatar.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Desnbo</h1>
+			  <h1 class="header-author js-header-author">Dnsnb</h1>
 			</hgroup>
 			
 			<p class="header-subtitle"><i class="icon icon-quo-left"></i>Done is better than perfect.<i class="icon icon-quo-right"></i></p>
@@ -231,7 +231,7 @@ function initMarquee(){$(".marquee").marquee({duration:15e3,gap:50,delayBeforeSt
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="https://github.com/desnbo" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/dnsnb" title="github"><i class="icon-github"></i></a>
 			        
 						<a class="weibo" target="_blank" href="http://weibo.com/u/3517404784" title="weibo"><i class="icon-weibo"></i></a>
 			        
@@ -295,9 +295,9 @@ function initMarquee(){$(".marquee").marquee({duration:15e3,gap:50,delayBeforeSt
 <li>通过tar命令直接解压到 /usr/local/ 目录下,为了方便操作,将其修改为tomcat8.<br><code>sudo tar zxvf tomcat8.x.xx.tar.gz -C /usr/local/</code><br><code>sudo mv tomcat8.x.xx tomcat8</code><a id="more"></a>
 <h2 id="配置开机运行"><a href="#配置开机运行" class="headerlink" title="配置开机运行"></a>配置开机运行</h2></li>
 </ul>
-<h3 id="tomcat增加启动参数"><a href="#tomcat增加启动参数" class="headerlink" title="tomcat增加启动参数"></a>tomcat增加启动参数</h3><p>tomcat需要增加一个pid文件,在 _<code>$tomcat_home/bin</code><em> 目录下面，增加 </em><code>setenv.sh</code><em> 配置，</em><code>catalina.sh</code>_ 启动的时候会调用，同时配置java内存参数. 添加如下命令：<br><code>[root@desnbo bin]# vi setenv.sh</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#tomcat startup pid</span></div><div class="line"></div><div class="line"><span class="comment">#set java runtime environment variable </span></div><div class="line"><span class="built_in">export</span> JAVA_HOME=/usr/java/jdk1.8.0_121</div><div class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$JAVA_HOME</span>/bin</div><div class="line"></div><div class="line"><span class="built_in">export</span> CATALINA_HOME=/usr/<span class="built_in">local</span>/tomcat8</div><div class="line"><span class="built_in">export</span> CATALINA_BASE=/usr/<span class="built_in">local</span>/tomcat8</div><div class="line"></div><div class="line"><span class="comment">#add tomcat pid</span></div><div class="line">CATALINA_PID=<span class="string">"<span class="variable">$CATALINA_BASE</span>/tomcat.pid"</span></div><div class="line"></div><div class="line"><span class="comment">#add java opts</span></div><div class="line">JAVA_OPTS=<span class="string">"-server -XX:PermSize=256M -XX:MaxPermSize=1024m -Xms512M -Xmx1024M -XX:MaxNewSize=256m"</span></div></pre></td></tr></table></figure></p>
+<h3 id="tomcat增加启动参数"><a href="#tomcat增加启动参数" class="headerlink" title="tomcat增加启动参数"></a>tomcat增加启动参数</h3><p>tomcat需要增加一个pid文件,在 _<code>$tomcat_home/bin</code><em> 目录下面，增加 </em><code>setenv.sh</code><em> 配置，</em><code>catalina.sh</code>_ 启动的时候会调用，同时配置java内存参数. 添加如下命令：<br><code>[root@dnsnb bin]# vi setenv.sh</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#tomcat startup pid</span></div><div class="line"></div><div class="line"><span class="comment">#set java runtime environment variable </span></div><div class="line"><span class="built_in">export</span> JAVA_HOME=/usr/java/jdk1.8.0_121</div><div class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$JAVA_HOME</span>/bin</div><div class="line"></div><div class="line"><span class="built_in">export</span> CATALINA_HOME=/usr/<span class="built_in">local</span>/tomcat8</div><div class="line"><span class="built_in">export</span> CATALINA_BASE=/usr/<span class="built_in">local</span>/tomcat8</div><div class="line"></div><div class="line"><span class="comment">#add tomcat pid</span></div><div class="line">CATALINA_PID=<span class="string">"<span class="variable">$CATALINA_BASE</span>/tomcat.pid"</span></div><div class="line"></div><div class="line"><span class="comment">#add java opts</span></div><div class="line">JAVA_OPTS=<span class="string">"-server -XX:PermSize=256M -XX:MaxPermSize=1024m -Xms512M -Xmx1024M -XX:MaxNewSize=256m"</span></div></pre></td></tr></table></figure></p>
 <p><strong>注意:</strong> 配置开机运行时,需要再次添加 JAVA_HOME</p>
-<h3 id="增加-tomcat-service"><a href="#增加-tomcat-service" class="headerlink" title="增加 tomcat.service"></a>增加 tomcat.service</h3><p>在/usr/lib/systemd/system目录下增加tomcat.service，目录必须是绝对目录,添加如下命令：<br><code>[root@desnbo bin]# vim /usr/lib/systemd/system/tomcat.service</code></p>
+<h3 id="增加-tomcat-service"><a href="#增加-tomcat-service" class="headerlink" title="增加 tomcat.service"></a>增加 tomcat.service</h3><p>在/usr/lib/systemd/system目录下增加tomcat.service，目录必须是绝对目录,添加如下命令：<br><code>[root@dnsnb bin]# vim /usr/lib/systemd/system/tomcat.service</code></p>
 <figure class="highlight ini"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># conf service desc ,set do this after network started</span></div><div class="line"><span class="section">[Unit]</span></div><div class="line"><span class="attr">Description</span>=tomcat </div><div class="line"><span class="attr">After</span>=syslog.target network.target remote-fs.target nss-lookup.target</div><div class="line"></div><div class="line"><span class="comment"># conf service pid, start,stop and restart</span></div><div class="line"><span class="section">[Service]</span></div><div class="line"><span class="attr">Type</span>=forking</div><div class="line"><span class="attr">PIDFile</span>=/usr/local/tomcat8/tomcat.pid</div><div class="line"><span class="attr">ExecStart</span>=/usr/local/tomcat8/bin/startup.sh</div><div class="line"><span class="attr">ExecStop</span>=/bin/kill -s QUIT <span class="variable">$MAINPID</span></div><div class="line"><span class="attr">ExecReload</span>=/bin/kill -s HUP <span class="variable">$MAINPID</span></div><div class="line"><span class="attr">PrivateTmp</span>=<span class="literal">true</span></div><div class="line"></div><div class="line"><span class="comment"># conf user </span></div><div class="line"><span class="section">[Install]</span></div><div class="line"><span class="attr">WantedBy</span>=multi-user.target</div></pre></td></tr></table></figure>
 <p><em>[unit]:</em> 配置了服务的描述，规定了在network启动之后执行，</p>
 <p><em>[service]:</em> 配置服务的pid，服务的启动，停止，重启</p>
@@ -317,7 +317,7 @@ function initMarquee(){$(".marquee").marquee({duration:15e3,gap:50,delayBeforeSt
 </ul>
 <p>因为配置pid，在启动的时候会在tomcat的根目录下生产tomcat.pid文件,服务停止后删除.<br>同时tomcat在启动时，执行start不会启动两个tomcat，保证始终只有一个tomcat服务在运行.多个tomcat可以配置在多个目录下，互不影响。</p>
 <h2 id="查看效果"><a href="#查看效果" class="headerlink" title="查看效果"></a>查看效果</h2><p>重启服务器后,通过wget访问,终端输出如下所示,配置tomcat开机自启动成功!</p>
-<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">[desnbo@desnbo ~]$ sudo wget <span class="number">192.168</span><span class="meta">.1</span><span class="meta">.200</span>:<span class="number">8080</span></div><div class="line">--<span class="number">2017</span>-<span class="number">04</span>-<span class="number">12</span> <span class="number">03</span>:<span class="number">09</span>:<span class="number">09</span>--  http://<span class="number">192.168</span><span class="meta">.1</span><span class="meta">.200</span>:<span class="number">8080</span>/</div><div class="line">Connecting to <span class="number">192.168</span><span class="meta">.1</span><span class="meta">.200</span>:<span class="number">8080</span>... connected.</div><div class="line">HTTP request sent, awaiting response... <span class="number">200</span> OK</div><div class="line"><span class="symbol">Length:</span> unspecified [text/html]</div><div class="line">Saving to: ‘index.html<span class="meta">.3</span>’</div><div class="line"></div><div class="line">    [ &lt;=&gt;    ] <span class="number">11</span>,<span class="number">230</span>  --.-K/s   <span class="keyword">in</span> 0s</div><div class="line"><span class="number">2017</span>-<span class="number">04</span>-<span class="number">12</span> <span class="number">03</span>:<span class="number">09</span>:<span class="number">09</span> (<span class="number">158</span> MB/s) - ‘index.html<span class="meta">.3</span>’ saved [<span class="number">11230</span>]</div></pre></td></tr></table></figure>
+<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">[dnsnb@dnsnb ~]$ sudo wget <span class="number">192.168</span><span class="meta">.1</span><span class="meta">.200</span>:<span class="number">8080</span></div><div class="line">--<span class="number">2017</span>-<span class="number">04</span>-<span class="number">12</span> <span class="number">03</span>:<span class="number">09</span>:<span class="number">09</span>--  http://<span class="number">192.168</span><span class="meta">.1</span><span class="meta">.200</span>:<span class="number">8080</span>/</div><div class="line">Connecting to <span class="number">192.168</span><span class="meta">.1</span><span class="meta">.200</span>:<span class="number">8080</span>... connected.</div><div class="line">HTTP request sent, awaiting response... <span class="number">200</span> OK</div><div class="line"><span class="symbol">Length:</span> unspecified [text/html]</div><div class="line">Saving to: ‘index.html<span class="meta">.3</span>’</div><div class="line"></div><div class="line">    [ &lt;=&gt;    ] <span class="number">11</span>,<span class="number">230</span>  --.-K/s   <span class="keyword">in</span> 0s</div><div class="line"><span class="number">2017</span>-<span class="number">04</span>-<span class="number">12</span> <span class="number">03</span>:<span class="number">09</span>:<span class="number">09</span> (<span class="number">158</span> MB/s) - ‘index.html<span class="meta">.3</span>’ saved [<span class="number">11230</span>]</div></pre></td></tr></table></figure>
 <p><img src="http://i4.buimg.com/567571/d189f29b6e7dc720.png" alt="" title="CentOS7-Tomcat-1"></p>
 <p>同时,客户端浏览器也能成功访问:<br><img src="http://i1.piimg.com/567571/5cb55a9ea03d39bb.png" alt="" title="CentOS7-Tomcat-2"></p>
 <p><strong>☆end☆</strong></p>
@@ -476,28 +476,22 @@ function initMarquee(){$(".marquee").marquee({duration:15e3,gap:50,delayBeforeSt
   
   <!-- gitment begin -->
 <div id="comments"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<link rel="stylesheet" href="/./gitment/css/gitment.css">
+<script src="/./gitment/js/gitment.min.js"></script>
 <script>
 var gitment = new Gitment({
   id: '/2017/04/12/centos7-tomcat-autostart/', 
-  owner: 'desnbo',
+  owner: 'dnsnb',
   repo: 'gitment',
   oauth: {
     client_id: '10122bbbe4e6d113e3f7',
-    client_secret: '5a4bc4b137cdf1a56cf2322153ffeb8e7070c0fd',
+    client_secret: '88fa60df9c621fe9e71551ca4986ac0da3ea0f79',
   },
 })
 /* gitment.render('comments') */
 gitment.render(document.getElementById("comments"));
-</script>
 
-<style type="text/css">
-.gitment-root-container {
-  margin: 15px 45px;
-}
-</style>
-<!-- gitment end -->
+/* gitment end */
   
 
 
@@ -509,7 +503,7 @@ gitment.render(document.getElementById("comments"));
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 Desnbo
+    		&copy; 2017 Dnsnb
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
@@ -660,11 +654,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jquery</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">treeview</a>
+                <a href="javascript:void(0)" class="js-tag color4">viewdata</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -672,7 +662,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">viewdata</a>
+                <a href="javascript:void(0)" class="js-tag color2">jquery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">treeview</a>
               </li>
              
               <li class="article-tag-list-item">

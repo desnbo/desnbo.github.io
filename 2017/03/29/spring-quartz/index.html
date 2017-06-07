@@ -6,21 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="">
-  <title>Spring整合Quartz作业调度框架 | Desnbo的博客</title>
+  <title>Spring整合Quartz作业调度框架 | Dnsnb的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Quartz 简介Quartz: 是一个完全由java编写的开源作业调度框架。是OpenSymphony开源组织在Job scheduling领域又一个开源项目，它可以与J2EE与J2SE应用程序相结合也可以单独使用。Quartz可以用来创建或简单或复杂的程序。Jobs可以做成标准的Java组件或 EJBs。">
 <meta name="keywords" content="Spring,Quartz">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring整合Quartz作业调度框架">
 <meta property="og:url" content="/2017/03/29/spring-quartz/index.html">
-<meta property="og:site_name" content="Desnbo的博客">
+<meta property="og:site_name" content="Dnsnb的博客">
 <meta property="og:description" content="Quartz 简介Quartz: 是一个完全由java编写的开源作业调度框架。是OpenSymphony开源组织在Job scheduling领域又一个开源项目，它可以与J2EE与J2SE应用程序相结合也可以单独使用。Quartz可以用来创建或简单或复杂的程序。Jobs可以做成标准的Java组件或 EJBs。">
-<meta property="og:updated_time" content="2017-04-16T16:31:44.823Z">
+<meta property="og:updated_time" content="2017-06-07T07:02:49.685Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring整合Quartz作业调度框架">
 <meta name="twitter:description" content="Quartz 简介Quartz: 是一个完全由java编写的开源作业调度框架。是OpenSymphony开源组织在Job scheduling领域又一个开源项目，它可以与J2EE与J2SE应用程序相结合也可以单独使用。Quartz可以用来创建或简单或复杂的程序。Jobs可以做成标准的Java组件或 EJBs。">
   
-    <link rel="alternative" href="/atom.xml" title="Desnbo的博客" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Dnsnb的博客" type="application/atom+xml">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
@@ -44,7 +44,7 @@
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-ga('create', 'UA-100391159-1', 'auto');
+ga('create', 'UA-100391159-2', 'auto');
 ga('send', 'pageview');
 
 </script>
@@ -56,7 +56,7 @@ ga('send', 'pageview');
 var _hmt = _hmt || [];
 (function() {
 	var hm = document.createElement("script");
-	hm.src = "https://hm.baidu.com/hm.js?cfb838bc0cdbeea6622ed505429ab9a9";
+	hm.src = "https://hm.baidu.com/hm.js?5d021a98238f9dd946a6bb78d7e3318b";
 	var s = document.getElementsByTagName("script")[0]; 
 	s.parentNode.insertBefore(hm, s);
 })();
@@ -78,7 +78,7 @@ var _hmt = _hmt || [];
 			<img src="/assets/img/avatar.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Desnbo</a></h1>
+		  <h1 class="header-author"><a href="/">Dnsnb</a></h1>
 		</hgroup>
 		
 		<p class="header-subtitle">Done is better than perfect.</p>
@@ -111,7 +111,7 @@ var _hmt = _hmt || [];
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="https://github.com/desnbo" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/dnsnb" title="github"><i class="icon-github"></i></a>
 		        
 					<a class="weibo" target="_blank" href="http://weibo.com/u/3517404784" title="weibo"><i class="icon-weibo"></i></a>
 		        
@@ -210,7 +210,7 @@ function initMarquee(){$(".marquee").marquee({duration:15e3,gap:50,delayBeforeSt
 				<img src="/assets/img/avatar.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Desnbo</h1>
+			  <h1 class="header-author js-header-author">Dnsnb</h1>
 			</hgroup>
 			
 			<p class="header-subtitle"><i class="icon icon-quo-left"></i>Done is better than perfect.<i class="icon icon-quo-right"></i></p>
@@ -228,7 +228,7 @@ function initMarquee(){$(".marquee").marquee({duration:15e3,gap:50,delayBeforeSt
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="https://github.com/desnbo" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/dnsnb" title="github"><i class="icon-github"></i></a>
 			        
 						<a class="weibo" target="_blank" href="http://weibo.com/u/3517404784" title="weibo"><i class="icon-weibo"></i></a>
 			        
@@ -291,7 +291,7 @@ function initMarquee(){$(".marquee").marquee({duration:15e3,gap:50,delayBeforeSt
 <p>简单地创建一个实现org.quartz.Job接口的java类,实现Job接口包含的唯一方法：<br><code>public void execute(JobExecutionContext context) throws JobExecutionException</code></p>
 <p>在自己的Job接口实现类里面，添加一些逻辑到execute()方法。一旦你配置好Job实现类并设定好调度时间表，Quartz将密切注意剩余时间。当调度程序确定该是通知你的作业的时候，Quartz框架将调用你Job实现类（作业类）上的execute()方法并允许做它该做的事情。无需报告任何东西给调度器或调用任何特定的东西。仅仅执行任务和结束任务即可。如果配置你的作业在随后再次被调用，Quartz框架将在恰当的时间再次调用它.</p>
 <h2 id="Spring整合-Quartz"><a href="#Spring整合-Quartz" class="headerlink" title="Spring整合 Quartz"></a>Spring整合 Quartz</h2><h4 id="引入quartz-jar"><a href="#引入quartz-jar" class="headerlink" title="引入quartz.jar"></a>引入quartz.jar</h4><p>首先下载 quartz 1.6.1.jar,并加入到项目lib文件夹中;<br>如果是使用Maven构建的项目,在pom.xml中添加如下依赖:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- quartz --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.opensymphony.quartz<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>quartz<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.6.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<h3 id="相关文件的配置"><a href="#相关文件的配置" class="headerlink" title="相关文件的配置"></a>相关文件的配置</h3><p>新建调度工具类TimerTask.java<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> me.util.quartz;</div><div class="line"><span class="keyword">import</span> me.util.format.FormatUtil;</div><div class="line"><span class="comment">/**</span></div><div class="line"> * Quartz定时器调度工具类</div><div class="line"> * <span class="doctag">@author</span> Desnbo</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TimerTask</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fnDemo</span><span class="params">()</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"--- begin &gt;&gt;&gt;"</span>);</div><div class="line">        System.out.println(<span class="string">"Quartz 定时器测试---"</span> + FormatUtil.formatDateTime(System.currentTimeMillis()));</div><div class="line">        System.out.println(<span class="string">"--- end &lt;&lt;&lt;"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="相关文件的配置"><a href="#相关文件的配置" class="headerlink" title="相关文件的配置"></a>相关文件的配置</h3><p>新建调度工具类TimerTask.java<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> me.util.quartz;</div><div class="line"><span class="keyword">import</span> me.util.format.FormatUtil;</div><div class="line"><span class="comment">/**</span></div><div class="line"> * Quartz定时器调度工具类</div><div class="line"> * <span class="doctag">@author</span> Dnsnb</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TimerTask</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fnDemo</span><span class="params">()</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"--- begin &gt;&gt;&gt;"</span>);</div><div class="line">        System.out.println(<span class="string">"Quartz 定时器测试---"</span> + FormatUtil.formatDateTime(System.currentTimeMillis()));</div><div class="line">        System.out.println(<span class="string">"--- end &lt;&lt;&lt;"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h4 id="配置applicationContext-quartz-xml"><a href="#配置applicationContext-quartz-xml" class="headerlink" title="配置applicationContext-quartz.xml"></a>配置applicationContext-quartz.xml</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span><span class="meta">?&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span> <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></div><div class="line">    <span class="attr">xsi:schemaLocation</span>=<span class="string">"</span></div><div class="line">        http://www.springframework.org/schema/beans </div><div class="line">        http://www.springframework.org/schema/beans/spring-beans.xsd "&gt;</div><div class="line"></div><div class="line">    <span class="comment">&lt;!-- 1.将要控制的任务配置成Spring可以管理的对象(Bean) --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"timerTask"</span> <span class="attr">class</span>=<span class="string">"me.util.quartz.TimerTask"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="comment">&lt;!-- 2.定义作业业务 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"jobTask"</span> <span class="attr">class</span>=<span class="string">"org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"</span>&gt;</span></div><div class="line">        <span class="comment">&lt;!-- 目标对象:指定对应的作业bean --&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"targetObject"</span> <span class="attr">ref</span>=<span class="string">"timerTask"</span> /&gt;</span></div><div class="line">        <span class="comment">&lt;!-- 目标方法:指定对应的作业方法 --&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"targetMethod"</span> <span class="attr">value</span>=<span class="string">"fnDemo"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></div><div class="line">    </div><div class="line">     <span class="comment">&lt;!-- 3.配置具体的任务执行触发时间 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"doTime"</span> <span class="attr">class</span>=<span class="string">"org.springframework.scheduling.quartz.CronTriggerBean"</span>&gt;</span></div><div class="line">        <span class="comment">&lt;!-- 指定对应的任务 --&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"jobDetail"</span> <span class="attr">ref</span>=<span class="string">"jobTask"</span> /&gt;</span></div><div class="line">        <span class="comment">&lt;!-- cron表达式指定对应的执行周期,此处为每30秒执行一次 --&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"cronExpression"</span> <span class="attr">value</span>=<span class="string">"0/30 * * * * ?"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="comment">&lt;!-- 4. 总管理类:设置具体运行的定时任务,如果将lazy-init='false'那么容器启动就会执行调度程序 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"startQuertz"</span> <span class="attr">class</span>=<span class="string">"org.springframework.scheduling.quartz.SchedulerFactoryBean"</span>&gt;</span></div><div class="line">        <span class="comment">&lt;!-- 定义任务序列,list下可加入其他的调度器--&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"triggers"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">list</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">ref</span> <span class="attr">bean</span>=<span class="string">"doTime"</span> /&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">list</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></div></pre></td></tr></table></figure>
 <h4 id="配置web-xml"><a href="#配置web-xml" class="headerlink" title="配置web.xml"></a>配置web.xml</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 设置Spring的监听，项目启动时候初始化 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">listener</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">listener-class</span>&gt;</span>org.springframework.web.context.ContextLoaderListener<span class="tag">&lt;/<span class="name">listener-class</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">listener</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 指定Spring配置文件的路径,可使用通配符classpath:applicationContext*.xml--&gt;</span> </div><div class="line"> <span class="tag">&lt;<span class="name">context-param</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>contextConfigLocation<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>classpath:applicationContext-quartz.xml<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></div></pre></td></tr></table></figure>
 <ul>
@@ -497,28 +497,22 @@ function initMarquee(){$(".marquee").marquee({duration:15e3,gap:50,delayBeforeSt
   
   <!-- gitment begin -->
 <div id="comments"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<link rel="stylesheet" href="/./gitment/css/gitment.css">
+<script src="/./gitment/js/gitment.min.js"></script>
 <script>
 var gitment = new Gitment({
   id: '/2017/03/29/spring-quartz/', 
-  owner: 'desnbo',
+  owner: 'dnsnb',
   repo: 'gitment',
   oauth: {
     client_id: '10122bbbe4e6d113e3f7',
-    client_secret: '5a4bc4b137cdf1a56cf2322153ffeb8e7070c0fd',
+    client_secret: '88fa60df9c621fe9e71551ca4986ac0da3ea0f79',
   },
 })
 /* gitment.render('comments') */
 gitment.render(document.getElementById("comments"));
-</script>
 
-<style type="text/css">
-.gitment-root-container {
-  margin: 15px 45px;
-}
-</style>
-<!-- gitment end -->
+/* gitment end */
   
 
 
@@ -530,7 +524,7 @@ gitment.render(document.getElementById("comments"));
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 Desnbo
+    		&copy; 2017 Dnsnb
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
@@ -681,11 +675,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jquery</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">treeview</a>
+                <a href="javascript:void(0)" class="js-tag color4">viewdata</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -693,7 +683,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">viewdata</a>
+                <a href="javascript:void(0)" class="js-tag color2">jquery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">treeview</a>
               </li>
              
               <li class="article-tag-list-item">
